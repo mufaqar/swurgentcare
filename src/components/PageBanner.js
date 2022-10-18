@@ -6,7 +6,7 @@ const PageBanner = ({ bgnone, pageName, title }) => {
       className={`page-title-area ${bgnone ? "" : " page-title-bg"}`}
       style={{
         backgroundImage: !bgnone
-          ? "url(assets/img/section-bg/page-title.jpg)"
+          ? "url(assets/page-title.jpeg)"
           : "",
       }}
     >

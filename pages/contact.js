@@ -19,8 +19,7 @@ const Contact = () => {
                       <i className="fal fa-map-marker-alt" /> Address
                     </h3>
                     <p>
-                      7895 Piermont Dr NE Albuquerque, <br />
-                      NM 198866, See Our Stores
+                    5900 Chimney Rock, Suite X Houston,<br/> Texas 77081
                     </p>
                   </div>
                   <div className="single-contact-info">
@@ -30,16 +29,16 @@ const Contact = () => {
                     <ul>
                       <li>
                         <span>Phone Number</span>
-                        <a href="tel:+012020200">+012 (345) 6789</a>
+                        <a href="tel:+012020200">(346) 341-7573</a>
                       </li>
                       <li>
                         <span>Email Address</span>
-                        <a href="mailto:support@gmail.com">support@gmail.com</a>
+                        <a href="mailto:support@gmail.com">swurgentcare@outlook.com</a>
                       </li>
-                      <li>
+                      {/* <li>
                         <span>Hotline</span>
                         <a href="tel:+12345678">12345678</a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                   <div className="single-contact-info">
@@ -132,7 +131,7 @@ const Contact = () => {
       <section className="contact-form-area">
         <div className="contact-map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d107201.226767341!2d-74.05027451789393!3d40.71534534062428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1634195102348!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.0698715806884!2d-95.48070708527048!3d29.717735240887784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c22a14ce8355%3A0x35bc1bec9466aac4!2s5900%20Chimney%20Rock%20Rd%2C%20Houston%2C%20TX%2077081%2C%20USA!5e0!3m2!1sen!2s!4v1666086007916!5m2!1sen!2s"
             loading="lazy"
           />
         </div>
@@ -185,7 +184,7 @@ const Contact = () => {
                         <label htmlFor="website">Website</label>
                         <input
                           type="url"
-                          placeholder="www.seeva.com"
+                          placeholder="www.swurgentcare.com"
                           id="website"
                         />
                       </div>

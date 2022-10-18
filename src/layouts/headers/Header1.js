@@ -94,32 +94,20 @@ const Header1 = ({ headerTopbar, position }) => {
                 </li>
                 <li>
                   <a href="#">
-                    Pages
+                    Services
                     <span className="dd-trigger">
                       <i className="far fa-plus" />
                     </span>
                   </a>
                   <ul className="sub-menu">
-                    <li>
-                      <Link href="service">
-                        <a>
-                          Services
-                          <span className="dd-trigger">
-                            <i className="far fa-plus" />
-                          </span>
-                        </a>
-                      </Link>
-                      <ul className="sub-menu">
-                        <Services />
-                      </ul>
-                    </li>
+                    
                     <Pages />
                   </ul>
                 </li>
                 <li>
                   <Link href="/doctor">
                     <a>
-                      Doctors
+                      Providers
                       <span className="dd-trigger">
                         <i className="far fa-plus" />
                       </span>
@@ -132,7 +120,7 @@ const Header1 = ({ headerTopbar, position }) => {
                 <li>
                   <Link href="blog-standard">
                     <a>
-                      Blog
+                      Health Vault
                       <span className="dd-trigger">
                         <i className="far fa-plus" />
                       </span>
@@ -143,20 +131,7 @@ const Header1 = ({ headerTopbar, position }) => {
                   </ul>
                 </li>
                 <li>
-                  <Link href="/shop">
-                    <a>
-                      Shop
-                      <span className="dd-trigger">
-                        <i className="far fa-plus" />
-                      </span>
-                    </a>
-                  </Link>
-                  <ul className="sub-menu">
-                    <Shop />
-                  </ul>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </nav>

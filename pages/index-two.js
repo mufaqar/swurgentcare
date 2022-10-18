@@ -107,7 +107,7 @@ const Index2 = () => {
                   >
                     <img
                       className="animate-float-bob-x"
-                      src="assets/img/tile-gallery/01.jpg"
+                      src="assets/01.jpeg"
                       alt="Image"
                     />
                   </div>
@@ -115,55 +115,56 @@ const Index2 = () => {
                     className="image-two wow fadeInDown"
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/img/tile-gallery/02.jpg" alt="Image" />
+                    <img src="assets/02.jpeg" alt="Image" />
                   </div>
                   <div
                     className="image-three wow fadeInUp"
                     data-wow-delay="0.5s"
                   >
-                    <img src="assets/img/tile-gallery/03.jpg" alt="Image" />
+                    <img src="assets/03.png" alt="Image" />
                   </div>
                 </div>
               </div>
               <div className="col-xl-5 col-lg-8 col-md-9">
                 <div className="about-text">
                   <div className="section-heading mb-30">
-                    <span className="tagline">About Seeva</span>
+                    <span className="tagline">About Swurgentcare</span>
                     <h2 className="title">
-                      25 Years We Caring Medical Services
+                      Welcome To Southwest Urgent Care And Family Practice!
                     </h2>
                   </div>
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error voluptatem
-                    accusantium doloremque laudantium totam rem aperieaquey ipsa
-                    quae abillo inventore veritatis quasi architecto
+                    We are a team of family practice doctors able to provide ongoing medical care for your whole family.
+                    As board certified family doctors, our team can handle any medical issues you may have.
+                    Combining the comprehensive care, trust and confidence you build with your local family practice physician, with a dependable Urgent Care Service,
+                    Southwest Urgent Care and Family Practice is the best and most affordable option for your family’s medical care
                   </p>
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div
-                        className="simple-icon mt-40 wow fadeInUp"
-                        data-wow-delay="0.3s"
-                      >
-                        <div className="icon">
-                          <i className="flaticon-dental-care-1" />
-                        </div>
-                        <h4 className="title">Optimize Health Care Services</h4>
-                        <p>Perspiciatis unde omniste natus error volutatem</p>
-                      </div>
+                  <div className="mt-3">
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Affordable Rates ($50 doctor’s consultation fee)</h6>
                     </div>
-                    <div className="col-sm-6">
-                      <div
-                        className="simple-icon mt-40 wow fadeInUp"
-                        data-wow-delay="0.4s"
-                      >
-                        <div className="icon">
-                          <i className="flaticon-dental-care-2" />
-                        </div>
-                        <h4 className="title">
-                          Accelerate Return On Investment
-                        </h4>
-                        <p>Perspiciatis unde omniste natus error volutatem</p>
-                      </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Open 7 Days a Week.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Walk-in Clinic. No Waiting / Overcrowding.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Medicaid & Medicare Accepted.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">
+                        Accept Most Insurance Plans.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">
+                      Serve Non-insured Patients. (Insurance is not required to be our patient)</h6>
                     </div>
                   </div>
                 </div>
@@ -178,10 +179,13 @@ const Index2 = () => {
             <div className="row justify-content-center">
               <div className="col-lg-8">
                 <div className="section-heading text-center mb-40">
-                  <span className="tagline">What We Offer</span>
-                  <h2 className="title">
-                    Breakthrough in Comprehensive, Flexible Care Models
-                  </h2>
+                <h2 className="title">What We Offer</h2>
+                  <span className="mt-2">
+                    Team of our Expert providers offering you the best treatment options for your unique medical needs.
+                    The latest and most advanced treatment options and diagnosis and preventation of various types 
+                    diseases is part of our Services. Check our Services Section to know about some of the main services 
+                    provided at Southwest Urgent Care
+                  </span>
                 </div>
               </div>
             </div>
@@ -195,7 +199,7 @@ const Index2 = () => {
                     <i className="flaticon-tooth-1" />
                   </div>
                   <h4 className="title">
-                    <Link href="/service-details">Medicine Care</Link>
+                    <Link href="/service-details">Allergies</Link>
                   </h4>
                   <p>Perspiciatis unde omniste natus error volutatem</p>
                   <Link href="/service-details">
@@ -214,7 +218,7 @@ const Index2 = () => {
                     <i className="flaticon-tooth-2" />
                   </div>
                   <h4 className="title">
-                    <Link href="/service-details">Medicine Care</Link>
+                    <Link href="/service-details">Asthma</Link>
                   </h4>
                   <p>Perspiciatis unde omniste natus error volutatem</p>
                   <Link href="/service-details">
@@ -233,7 +237,7 @@ const Index2 = () => {
                     <i className="flaticon-tooth-3" />
                   </div>
                   <h4 className="title">
-                    <Link href="/service-details">Dental Care</Link>
+                    <Link href="/service-details">Covid Testing</Link>
                   </h4>
                   <p>Perspiciatis unde omniste natus error volutatem</p>
                   <Link href="/service-details">
@@ -252,7 +256,7 @@ const Index2 = () => {
                     <i className="flaticon-tooth-4" />
                   </div>
                   <h4 className="title">
-                    <Link href="/service-details">Child Care</Link>
+                    <Link href="/service-details">Cold & Flu</Link>
                   </h4>
                   <p>Perspiciatis unde omniste natus error volutatem</p>
                   <Link href="/service-details">
@@ -270,7 +274,7 @@ const Index2 = () => {
         <section
           className="cta-section bg-size-cover section-gap-100 bg-color-primary blend-mode-multiply"
           style={{
-            backgroundImage: "url(assets/img/cta-img/cta-section-bg.jpg)",
+            backgroundImage: "url(assets/cta-section-bg.jpeg)",
           }}
         >
           <div className="container">
@@ -523,7 +527,7 @@ const Index2 = () => {
           <div className="video-with-content bg-color-primary">
             <div className="seeva-video">
               <div className="video-thumbnail">
-                <img src="assets/img/section-img/video.jpg" alt="Image" />
+                <img src="assets/hero-img-2.jpeg" alt="Image" />
               </div>
               <a
                 href="#"
@@ -775,7 +779,7 @@ const Index2 = () => {
               <div
                 className="appointment-image"
                 style={{
-                  backgroundImage: "url(assets/img/appointment/03.jpg)",
+                  backgroundImage: "url(assets/appoinment-pic.jpeg)",
                 }}
               ></div>
               <div className="form-wrap">
@@ -956,18 +960,18 @@ const Index2 = () => {
             <div
               className="image-one animate-float-bob-y"
               style={{
-                backgroundImage: "url(assets/img/testimonial/bg-1.jpg)",
+                backgroundImage: "url(assets/bg-1.jpg)",
               }}
             ></div>
             <div
               className="image-two animate-float-bob-y"
-              style={{ backgroundImage: "url(assets/img/testimonial/bg.jpg)" }}
+              style={{ backgroundImage: "url(assets/bg.jpeg)" }}
             ></div>
           </div>
         </section>
         {/*====== Testimonials Section End ======*/}
         {/*====== Latest Blog Start ======*/}
-        <section className="latest-blog-section section-gap">
+        {/* <section className="latest-blog-section section-gap">
           <div className="container">
             <div className="row justify-content-between align-items-center mb-40">
               <div className="col-lg-6 col-md-7">
@@ -1082,7 +1086,7 @@ const Index2 = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/*====== Latest Blog End ======*/}
         {/*====== Partner Section Start ======*/}
         <div className="partner-section section-gap-80 bg-color-grey dots-map-pattern">
