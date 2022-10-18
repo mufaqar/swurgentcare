@@ -1,193 +1,323 @@
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import Counter from "../src/components/Counter";
+import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
-import { testimonialOne } from "../src/sliderProps";
+import {
+  heroSlider,
+  partnerSlider,
+  TestimonialsSliderTwo,
+} from "../src/sliderProps";
 
-const Index = () => {
+
+const Index2 = () => {
+  const [video, setVideo] = useState(false);
   return (
-    <Layouts position={"absolute"}>
+    <Layouts headerTopbar footer={2} noNewsletters>
+      {video && <VideoPopup close={setVideo} />}
       <>
-        {/*====== Hero Area Start ======*/}
-        <section className="hero-area-one">
-          <div className="container">
-            <div className="row align-items-center justify-content-center">
-              <div className="col-lg-5 col-md-8">
-                <div className="hero-content">
-                  <h1 className="title wow fadeInDown" data-wow-delay="0.3s">
-                    We Care Medical &amp; Health
+        {/*====== Hero Slider Start ======*/}
+        <section className="hero-slider hero-slider-one">
+          <Slider {...heroSlider} className="hero-slider-active">
+            <div className="single-hero-slider">
+              <div
+                className="hero-slider-bg bg-size-cover"
+                style={{
+                  backgroundImage: "url(assets/hero-slider-3.jpeg)",
+                }}
+              />
+              <div className="container container-1400">
+                <div
+                  className="slider-content-box"
+                  data-animation="fadeInUp"
+                  data-delay="0.4s"
+                >
+                  <h1
+                    className="title"
+                    data-animation="fadeInDown"
+                    data-delay="0.7s"
+                  >
+                    SOUTHWEST URGENT CARE
+                    &amp; FAMILY PRACTICE {" "}
                   </h1>
-                  <p className="wow fadeInLeft" data-wow-delay="0.4s">
+                  <p data-animation="fadeInLeft" data-delay="0.8s">
                     Dolor sit amet consectetur adipiscing elitsedes eiusmod
-                    tempor incididunt utlabore Lorem
+                    tempor incididunt utlabore
                   </p>
-                  <Link href="/contact">
-                    <a
-                      className="template-btn wow fadeInUp"
-                      data-wow-delay="0.5s"
-                    >
-                      Make an Appointment <i className="far fa-plus" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <div className="col-lg-7">
-                <div className="hero-img wow fadeInUp" data-wow-delay="0.3s">
-                  <img src="assets/img/hero-img/hero-img.png" alt="Hero" />
+                  <a
+                    href="#"
+                    className="template-btn"
+                    data-animation="fadeInUp"
+                    data-delay="0.9s"
+                  >
+                    Make an Appointment <i className="far fa-plus" />
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
+            <div className="single-hero-slider">
+              <div
+                className="hero-slider-bg bg-size-cover"
+                style={{
+                  backgroundImage: "url(assets/s1bg-min.png)",
+                }}
+              />
+              <div className="container container-1400">
+                <div
+                  className="slider-content-box"
+                  data-animation="fadeInUp"
+                  data-delay="0.4s"
+                >
+                  <h1
+                    className="title"
+                    data-animation="fadeInDown"
+                    data-delay="0.7s"
+                  >
+                    We Care Medical &amp; Health{" "}
+                  </h1>
+                  <p data-animation="fadeInLeft" data-delay="0.8s">
+                    Dolor sit amet consectetur adipiscing elitsedes eiusmod
+                    tempor incididunt utlabore
+                  </p>
+                  <a
+                    href="#"
+                    className="template-btn"
+                    data-animation="fadeInUp"
+                    data-delay="0.9s"
+                  >
+                    Make an Appointment <i className="far fa-plus" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Slider>
+          <div className="hero-slider-arrow" />
         </section>
-        {/*====== Hero Area End ======*/}
-        {/*====== Why Choose Section Start ======*/}
-        <section className="wcu-section section-gap-top">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-md-10">
-                <div className="section-heading heading-white text-center mb-40">
-                  <span className="tagline">Why Choose Our Medical</span>
-                  <h2 className="title">
-                    Breakthrough in Comprehensive, Flexible Care Delivery Models
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <div className="row justify-content-center">
-              <div
-                className="col-lg-4 col-md-6 col-sm-9 wow fadeInUp"
-                data-wow-delay="0.3s"
-              >
-                <div className="image-title-box mt-30">
-                  <h4 className="title">
-                    <Link href="/service">
-                      <a>Optimize Your Health Care Services</a>
-                    </Link>
-                  </h4>
-                  <div className="image">
-                    <img src="assets/img/img-title-box/01.jpg" alt="Image" />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 col-sm-9 wow fadeInUp"
-                data-wow-delay="0.4s"
-              >
-                <div className="image-title-box mt-30">
-                  <h4 className="title">
-                    <Link href="/service">
-                      <a>Boost Employee Engagement</a>
-                    </Link>
-                  </h4>
-                  <div className="image">
-                    <img src="assets/img/img-title-box/02.jpg" alt="Image" />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 col-sm-9 wow fadeInUp"
-                data-wow-delay="0.5s"
-              >
-                <div className="image-title-box mt-30">
-                  <h4 className="title">
-                    <Link href="/service">
-                      <a>Accelerate Your Return On Investment</a>
-                    </Link>
-                  </h4>
-                  <div className="image">
-                    <img src="assets/img/img-title-box/03.jpg" alt="Image" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/*====== Why Choose Section End ======*/}
+        {/*====== Hero Slider End ======*/}
         {/*====== About Section Start ======*/}
         <section className="about-section section-gap">
           <div className="container">
-            <div className="row justify-content-lg-between justify-content-center align-items-center">
-              <div className="col-lg-6 col-md-10">
-                <div className="circle-image-gallery mb-md-50">
-                  <div className="row">
-                    <div className="col-6 gallery-left">
-                      <div
-                        className="single-img wow fadeInLeft"
-                        data-wow-delay="0.3s"
-                      >
-                        <img
-                          src="assets/img/circle-image-gallery/01.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        className="single-img wow fadeInRight"
-                        data-wow-delay="0.4s"
-                      >
-                        <img
-                          src="assets/img/circle-image-gallery/04.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                    <div className="col-6 gallery-right">
-                      <div
-                        className="single-img wow fadeInLeft"
-                        data-wow-delay="0.5s"
-                      >
-                        <img
-                          className="animate-float-bob-y"
-                          src="assets/img/circle-image-gallery/03.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div
-                        className="single-img wow fadeInRight"
-                        data-wow-delay="0.6s"
-                      >
-                        <img
-                          src="assets/img/circle-image-gallery/02.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
+            <div className="row align-items-center justify-content-center">
+              <div className="col-xl-7 col-lg-9 col-md-11">
+                <div className="tile-gallery mb-xl-50">
+                  <div
+                    className="image-one wow fadeInLeft"
+                    data-wow-delay="0.3s"
+                  >
+                    <img
+                      className="animate-float-bob-x"
+                      src="assets/01.jpeg"
+                      alt="Image"
+                    />
+                  </div>
+                  <div
+                    className="image-two wow fadeInDown"
+                    data-wow-delay="0.4s"
+                  >
+                    <img src="assets/02.jpeg" alt="Image" />
+                  </div>
+                  <div
+                    className="image-three wow fadeInUp"
+                    data-wow-delay="0.5s"
+                  >
+                    <img src="assets/03.png" alt="Image" />
                   </div>
                 </div>
               </div>
-              <div className="col-xl-5 col-lg-6 col-md-8">
+              <div className="col-xl-5 col-lg-8 col-md-9">
                 <div className="about-text">
-                  <div className="section-heading mb-35">
-                    <span className="tagline">About Seeva</span>
+                  <div className="section-heading mb-30">
+                    <span className="tagline">About Swurgentcare</span>
                     <h2 className="title">
-                      All-in-One Worksite Health Solution
+                      Welcome To Southwest Urgent Care And Family Practice!
                     </h2>
-                    <p>25 Years Of Experience in Medical Services</p>
                   </div>
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error voluptatem
-                    accusantium doloremque laudantium totam rem aperieaque ipsa
-                    quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo. Nemo enim ipsam voluptatemsy
-                    quia voluptas sit aspernatur aut odit aut fugit quia
-                    conquntur magni dolores eos qui ratione voluptatem
+                    We are a team of family practice doctors able to provide ongoing medical care for your whole family.
+                    As board certified family doctors, our team can handle any medical issues you may have.
+                    Combining the comprehensive care, trust and confidence you build with your local family practice physician, with a dependable Urgent Care Service,
+                    Southwest Urgent Care and Family Practice is the best and most affordable option for your family’s medical care
                   </p>
-                  <Link href="/about">
-                    <a className="template-btn mt-40">
-                      Learn More <i className="far fa-plus" />
-                    </a>
-                  </Link>
+                  <div className="mt-3">
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Affordable Rates ($50 doctor’s consultation fee)</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Open 7 Days a Week.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Walk-in Clinic. No Waiting / Overcrowding.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">Medicaid & Medicare Accepted.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">
+                        Accept Most Insurance Plans.</h6>
+                    </div>
+                    <div className="d-flex item-center">
+                      <span className="mr-2">+</span>
+                      <h6 className="pt-2">
+                      Serve Non-insured Patients. (Insurance is not required to be our patient)</h6>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
         {/*====== About Section End ======*/}
-        {/*====== Service Section Start ======*/}
-        <section className="service-section bg-color-grey section-gap">
+        {/*====== Feature Section Start ======*/}
+        <section className="feature-section section-gap bg-color-grey">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-xl-7 col-lg-8">
+              <div className="col-lg-8">
+                <div className="section-heading text-center mb-40">
+                <h2 className="title">What We Offer</h2>
+                  <span className="mt-2">
+                    Team of our Expert providers offering you the best treatment options for your unique medical needs.
+                    The latest and most advanced treatment options and diagnosis and preventation of various types 
+                    diseases is part of our Services. Check our Services Section to know about some of the main services 
+                    provided at Southwest Urgent Care
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="row justify-content-center service-looop">
+              <div className="col-lg-3 col-md-6 col-sm-10">
+                <div
+                  className="iconic-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.3s"
+                >
+                  <div className="icon">
+                    <i className="flaticon-tooth-1" />
+                  </div>
+                  <h4 className="title">
+                    <Link href="/service-details">Allergies</Link>
+                  </h4>
+                  <p>Perspiciatis unde omniste natus error volutatem</p>
+                  <Link href="/service-details">
+                    <a className="box-link">
+                      <i className="far fa-plus" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-10">
+                <div
+                  className="iconic-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+                  <div className="icon">
+                    <i className="flaticon-tooth-2" />
+                  </div>
+                  <h4 className="title">
+                    <Link href="/service-details">Asthma</Link>
+                  </h4>
+                  <p>Perspiciatis unde omniste natus error volutatem</p>
+                  <Link href="/service-details">
+                    <a className="box-link">
+                      <i className="far fa-plus" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-10">
+                <div
+                  className="iconic-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.5s"
+                >
+                  <div className="icon">
+                    <i className="flaticon-tooth-3" />
+                  </div>
+                  <h4 className="title">
+                    <Link href="/service-details">Covid Testing</Link>
+                  </h4>
+                  <p>Perspiciatis unde omniste natus error volutatem</p>
+                  <Link href="/service-details">
+                    <a className="box-link">
+                      <i className="far fa-plus" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-sm-10">
+                <div
+                  className="iconic-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.6s"
+                >
+                  <div className="icon">
+                    <i className="flaticon-tooth-4" />
+                  </div>
+                  <h4 className="title">
+                    <Link href="/service-details">Cold & Flu</Link>
+                  </h4>
+                  <p>Perspiciatis unde omniste natus error volutatem</p>
+                  <Link href="/service-details">
+                    <a className="box-link">
+                      <i className="far fa-plus" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Feature Section End ======*/}
+        {/*====== Call to Action Start ======*/}
+        <section
+          className="cta-section bg-size-cover section-gap-100 bg-color-primary blend-mode-multiply"
+          style={{
+            backgroundImage: "url(assets/cta-section-bg.jpeg)",
+          }}
+        >
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-5">
+                <div className="section-heading heading-white">
+                  <span className="tagline">Get Free Consultations</span>
+                  <h2 className="title">
+                    Looking a Doctors to Get Your Services
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-7">
+                <ul className="cta-buttons d-sm-flex justify-content-lg-end mt-md-40 flex-wrap">
+                  <li className="mb-3 mb-sm-0">
+                    <a
+                      href="#"
+                      className="template-btn template-btn-white wow fadeInRight"
+                      data-wow-delay="0.4s"
+                    >
+                      Get Free Quote <i className="far fa-plus" />
+                    </a>
+                  </li>
+                  <li className="ml-sm-2">
+                    <a
+                      href="#"
+                      className="template-btn template-btn-bordered wow fadeInRight"
+                      data-wow-delay="0.5s"
+                    >
+                      Get Appointment <i className="far fa-plus" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Call to Action End ======*/}
+        {/*====== Service Section Start ======*/}
+        <section className="services-section section-gap">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-7 col-md-10">
                 <div className="section-heading text-center mb-40">
                   <span className="tagline">Popular Medical Services</span>
                   <h2 className="title">
@@ -196,172 +326,132 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="row justify-content-center service-loop">
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.3s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/heart.png" alt="Icon" />
+          </div>
+          <div className="container-fluid fluid-100">
+            <div className="row justify-content-center custom-service-grid">
+              <div className="col">
+                <div className="fancy-content-box mt-30">
+                  <div className="box-thumbnail">
+                    <img src="assets/img/fancy-box/01.jpg" alt="Image" />
                   </div>
-                  <h4 className="title">
+                  <div className="box-content">
+                    <h4 className="title">
+                      <Link href="/service-details">
+                        <a>Cardiology</a>
+                      </Link>
+                    </h4>
+                    <p>
+                      Sed ut perspiciats undec omnise vluptate accusantium
+                      dolore
+                    </p>
                     <Link href="/service-details">
-                      <a>Cardiology</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
+                      <a className="box-btn">
                         Read More <i className="far fa-plus" />
                       </a>
                     </Link>
+                    <div className="box-icon">
+                      <i className="flaticon-virus" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.4s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/lungs.png" alt="Icon" />
+              <div className="col">
+                <div className="fancy-content-box mt-30">
+                  <div className="box-thumbnail">
+                    <img src="assets/img/fancy-box/02.jpg" alt="Image" />
                   </div>
-                  <h4 className="title">
+                  <div className="box-content">
+                    <h4 className="title">
+                      <Link href="/service-details">Pulmonary</Link>
+                    </h4>
+                    <p>
+                      Sed ut perspiciats undec omnise vluptate accusantium
+                      dolore
+                    </p>
                     <Link href="/service-details">
-                      <a>Pulmonary</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
+                      <a className="box-btn">
                         Read More <i className="far fa-plus" />
                       </a>
                     </Link>
+                    <div className="box-icon">
+                      <i className="flaticon-virus" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/brain.png" alt="Icon" />
+              <div className="col">
+                <div className="fancy-content-box mt-30">
+                  <div className="box-thumbnail">
+                    <img src="assets/img/fancy-box/03.jpg" alt="Image" />
                   </div>
-                  <h4 className="title">
+                  <div className="box-content">
+                    <h4 className="title">
+                      <Link href="/service-details">
+                        <a>Neurology</a>
+                      </Link>
+                    </h4>
+                    <p>
+                      Sed ut perspiciats undec omnise vluptate accusantium
+                      dolore
+                    </p>
                     <Link href="/service-details">
-                      <a>Neurology</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
+                      <a className="box-btn">
                         Read More <i className="far fa-plus" />
                       </a>
                     </Link>
+                    <div className="box-icon">
+                      <i className="flaticon-virus" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.6s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/stomach.png" alt="Icon" />
+              <div className="col">
+                <div className="fancy-content-box mt-30">
+                  <div className="box-thumbnail">
+                    <img src="assets/img/fancy-box/04.jpg" alt="Image" />
                   </div>
-                  <h4 className="title">
+                  <div className="box-content">
+                    <h4 className="title">
+                      <Link href="/service-details">Covid - 19</Link>
+                    </h4>
+                    <p>
+                      Sed ut perspiciats undec omnise vluptate accusantium
+                      dolore
+                    </p>
                     <Link href="/service-details">
-                      <a>Gastroenterology</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
+                      <a className="box-btn">
                         Read More <i className="far fa-plus" />
                       </a>
                     </Link>
+                    <div className="box-icon">
+                      <i className="flaticon-virus" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.7s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/virus.png" alt="Icon" />
+              <div className="col">
+                <div className="fancy-content-box mt-30">
+                  <div className="box-thumbnail">
+                    <img src="assets/img/fancy-box/05.jpg" alt="Image" />
                   </div>
-                  <h4 className="title">
+                  <div className="box-content">
+                    <h4 className="title">
+                      <Link href="/service-details">
+                        <a>Orthopedics</a>
+                      </Link>
+                    </h4>
+                    <p>
+                      Sed ut perspiciats undec omnise vluptate accusantium
+                      dolore
+                    </p>
                     <Link href="/service-details">
-                      <a>Covid - 19</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
+                      <a className="box-btn">
                         Read More <i className="far fa-plus" />
                       </a>
                     </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-8">
-                <div
-                  className="iconic-box mt-30 wow fadeInUp"
-                  data-wow-delay="0.8s"
-                >
-                  <div className="icon">
-                    <img src="assets/img/icon/bronchus.png" alt="Icon" />
-                  </div>
-                  <h4 className="title">
-                    <Link href="/service-details">
-                      <a>Orthopedics</a>
-                    </Link>
-                  </h4>
-                  <p>
-                    Dolor sit amet consectetur ascing elitsed eiusmod tempor
-                  </p>
-                  <div className="box-link-wrap">
-                    <span className="link-icon">
-                      <i className="far fa-plus" />
-                    </span>
-                    <Link href="/service-details">
-                      <a className="box-link">
-                        Read More <i className="far fa-plus" />
-                      </a>
-                    </Link>
+                    <div className="box-icon">
+                      <i className="flaticon-virus" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -369,408 +459,16 @@ const Index = () => {
           </div>
         </section>
         {/*====== Service Section End ======*/}
-        {/*====== Big Tagline Start ======*/}
-        <section className="big-tagline">
-          <div className="container-fluid">
-            <h2 className="tagline">
-              Learn better health outcomes, improve costs and increase
-              productivity for your business
-            </h2>
-          </div>
-        </section>
-        {/*====== Big Tagline End ======*/}
-        {/*====== Doctor Section Start ======*/}
-        <section className="doctors-section section-gap">
-          <div className="container">
-            <div className="row justify-content-between align-items-center mb-40">
-              <div className="col-lg-5 col-md-6">
-                <div className="section-heading">
-                  <span className="tagline">Professional Doctors</span>
-                  <h2 className="title">Meet Our Experience Doctors</h2>
-                </div>
-              </div>
-              <div className="col-auto">
-                <Link href="/doctors">
-                  <a
-                    className="template-btn template-btn-primary mt-sm-30 wow fadeInRight"
-                    data-wow-delay="0.3s"
-                  >
-                    Make An Appointment <i className="far fa-plus" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="row doctors-loop justify-content-center">
-              <div className="col-lg-3 col-md-6">
-                <div
-                  className="doctor-box-one bordered-style mt-30 wow fadeInUp"
-                  data-wow-delay="0.3s"
-                >
-                  <div className="doctor-photo">
-                    <img src="assets/img/doctors/10.jpg" alt="Image" />
-                  </div>
-                  <div className="doctor-information">
-                    <h5 className="name">
-                      <Link href="/doctor-details">
-                        <a>Lee S. Williamson</a>
-                      </Link>
-                    </h5>
-                    <span className="specialty">Cardiology</span>
-                    <ul className="social-links">
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-facebook-f" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-twitter" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-youtube" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-linkedin" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div
-                  className="doctor-box-one bordered-style mt-30 wow fadeInUp"
-                  data-wow-delay="0.4s"
-                >
-                  <div className="doctor-photo">
-                    <img src="assets/img/doctors/11.jpg" alt="Image" />
-                  </div>
-                  <div className="doctor-information">
-                    <h5 className="name">
-                      <Link href="/doctor-details">
-                        <a>Greg S. Grinstead</a>
-                      </Link>
-                    </h5>
-                    <span className="specialty">Neurology</span>
-                    <ul className="social-links">
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-facebook-f" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-twitter" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-youtube" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-linkedin" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div
-                  className="doctor-box-one bordered-style mt-30 wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
-                  <div className="doctor-photo">
-                    <img src="assets/img/doctors/12.jpg" alt="Image" />
-                  </div>
-                  <div className="doctor-information">
-                    <h5 className="name">
-                      <Link href="/doctor-details">
-                        <a>Roger K. Jackson</a>
-                      </Link>
-                    </h5>
-                    <span className="specialty">Orthopedics</span>
-                    <ul className="social-links">
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-facebook-f" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-twitter" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-youtube" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-linkedin" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div
-                  className="doctor-box-one bordered-style mt-30 wow fadeInUp"
-                  data-wow-delay="0.6s"
-                >
-                  <div className="doctor-photo">
-                    <img src="assets/img/doctors/13.jpg" alt="Image" />
-                  </div>
-                  <div className="doctor-information">
-                    <h5 className="name">
-                      <Link href="/doctor-details">
-                        <a>Raymudo M. Drake</a>
-                      </Link>
-                    </h5>
-                    <span className="specialty">Covid - 19</span>
-                    <ul className="social-links">
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-facebook-f" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-twitter" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-youtube" />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fab fa-linkedin" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/*====== Doctor Section End ======*/}
-        {/*====== Appointment Section Start ======*/}
-        <section className="appointment-section section-gap-bottom">
-          <div className="container">
-            <div className="appointment-form-two">
-              <div className="form-wrap">
-                <div className="section-heading mb-40">
-                  <span className="tagline">Make an Appointment</span>
-                  <h2 className="title">Make an Appointment to Doctor Visit</h2>
-                </div>
-                <form onSubmit={(e) => e.preventDefault()} action="#">
-                  <div className="row">
-                    <div className="col-12">
-                      <div
-                        className="input-field wow fadeInLeft"
-                        data-wow-delay="0.3s"
-                      >
-                        <input type="text" placeholder="Your Full Name" />
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div
-                        className="input-field wow fadeInLeft"
-                        data-wow-delay="0.4s"
-                      >
-                        <select>
-                          <option data-dsplay={1} selected disabled="">
-                            Services Category
-                          </option>
-                          <option value={2}>Service One</option>
-                          <option value={3}>Service Two</option>
-                          <option value={4}>Service Three</option>
-                          <option value={5}>Service Four</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div
-                        className="input-field wow fadeInLeft"
-                        data-wow-delay="0.5s"
-                      >
-                        <select>
-                          <option data-dsplay={1} selected disabled="">
-                            Choose Doctors
-                          </option>
-                          <option value={2}>Doctor One</option>
-                          <option value={3}>Doctor Two</option>
-                          <option value={4}>Doctor Three</option>
-                          <option value={5}>Doctor Four</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div
-                        className="input-field wow fadeInLeft"
-                        data-wow-delay="0.6s"
-                      >
-                        <input type="date" />
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div
-                        className="input-field wow fadeInLeft"
-                        data-wow-delay="0.7s"
-                      >
-                        <button type="submit" className="template-btn">
-                          Make an Appointment <i className="far fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div
-                className="appointment-image"
-                style={{
-                  backgroundImage: "url(assets/img/appointment/07.jpg)",
-                }}
-              ></div>
-            </div>
-          </div>
-        </section>
-        {/*====== Appointment Section End ======*/}
-        {/*====== Testimonials Section Start ======*/}
-        <section className="testimonial-section bg-color-grey section-have-half-bg">
-          <div className="container-fluid">
-            <div className="row justify-content-end">
-              <div className="col-lg-6">
-                <div className="testimonial-one-wrap">
-                  <div className="section-heading mb-50">
-                    <span className="tagline">Our Testimonials</span>
-                    <h2 className="title">
-                      What Our Patients Say About Our Medical
-                    </h2>
-                  </div>
-                  <Slider
-                    {...testimonialOne}
-                    className="testimonial-slider-one"
-                  >
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/img/testimonial/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/img/testimonial/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/img/testimonial/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/img/testimonial/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Slider>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="section-half-bg"
-            style={{
-              backgroundImage: "url(assets/img/section-bg/half-bg-img-01.jpg)",
-            }}
-          />
-        </section>
-        {/*====== Testimonials Section End ======*/}
         {/*====== Counter Section Start ======*/}
-        <section className="counter-section section-gap">
+        <section className="counter-section">
           <div className="container">
-            <div className="counter-inner">
+            <div className="counter-inner-two mb-negative">
               <div className="row justify-content-between">
                 <div className="col-lg-auto col-md-5 col-sm-6">
-                  <div className="counter-item">
+                  <div className="counter-item counter-white">
+                    <div className="icon">
+                      <i className="flaticon-stethoscope" />
+                    </div>
                     <div className="counter-wrap">
                       {/* <span className="counter">359</span> */}
                       <Counter end={359} />
@@ -780,8 +478,12 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="col-lg-auto col-md-5 col-sm-6">
-                  <div className="counter-item">
+                  <div className="counter-item counter-white">
+                    <div className="icon">
+                      <i className="flaticon-stethoscope" />
+                    </div>
                     <div className="counter-wrap">
+                      {" "}
                       <Counter end={85} />
                       {/* <span className="counter">85</span> */}
                       <span className="suffix">k+</span>
@@ -790,7 +492,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="col-lg-auto col-md-5 col-sm-6">
-                  <div className="counter-item">
+                  <div className="counter-item counter-white">
+                    <div className="icon">
+                      <i className="flaticon-stethoscope" />
+                    </div>
                     <div className="counter-wrap">
                       <Counter end={863} />
                       {/* <span className="counter">863</span> */}
@@ -800,9 +505,13 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="col-lg-auto col-md-5 col-sm-6">
-                  <div className="counter-item">
+                  <div className="counter-item counter-white">
+                    <div className="icon">
+                      <i className="flaticon-stethoscope" />
+                    </div>
                     <div className="counter-wrap">
                       <Counter end={86} />
+                      {/* <span className="counter">86</span> */}
                       <span className="suffix">k+</span>
                     </div>
                     <h6 className="title">4.9 Star Reviews</h6>
@@ -813,123 +522,479 @@ const Index = () => {
           </div>
         </section>
         {/*====== Counter Section End ======*/}
-        {/*====== Help Section Start ======*/}
-        <section className="help-section section-gap-bottom">
-          <div className="container">
-            <div className="row justify-content-center justify-content-lg-end align-items-center">
-              <div className="col-xl-5 col-lg-6 col-md-8">
-                <div className="help-text-wrapper">
-                  <div className="section-heading mb-20">
-                    <span className="tagline">How Can We Help</span>
-                    <h2 className="title">
-                      Flexible &amp; Responsive to Changing Need
-                    </h2>
+        {/*====== Video Section Start ======*/}
+        <section className="video-section">
+          <div className="video-with-content bg-color-primary">
+            <div className="seeva-video">
+              <div className="video-thumbnail">
+                <img src="assets/hero-img-2.jpeg" alt="Image" />
+              </div>
+              <a
+                href="#"
+                className="video-popup"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setVideo(true);
+                }}
+              >
+                <i className="fas fa-play" />
+              </a>
+            </div>
+            <div className="container">
+              <div className="row justify-content-lg-end justify-content-center">
+                <div className="col-lg-5 col-md-9">
+                  <div className="video-content">
+                    <div className="section-heading mb-20">
+                      <span className="tagline">How Can We Help</span>
+                      <h2 className="title">
+                        Flexible Responsive Changing Needs
+                      </h2>
+                    </div>
+                    <p>
+                      Sed ut perspiciatis unde omnis iste natus error volute
+                      accusantium doloremque laudantium totam rem aperiea queys
+                      epsa quae abillo inventore veritatis
+                    </p>
+                    <ul className="check-list mt-35 pr-xl-4">
+                      <li className="wow fadeInUp" data-wow-delay="0.3s">
+                        Estimated savings in implementation when using Mobile
+                        Health Clinics
+                      </li>
+                      <li className="wow fadeInUp" data-wow-delay="0.4s">
+                        Supports referrals to provider networks and care
+                        management pr
+                      </li>
+                    </ul>
+                    <a
+                      href="#"
+                      className="template-btn template-btn-bordered mt-40 wow fadeInUp"
+                      data-wow-delay="0.5s"
+                    >
+                      Get Appointment <i className="far fa-plus" />
+                    </a>
                   </div>
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error voluptatem
-                    accusantium doloremque laudantium totam rem aperieaqueys
-                    epsa quae abillo inventore veritatis et quase
-                  </p>
-                  <ul className="check-list mt-35 pr-xl-4">
-                    <li className="wow fadeInUp" data-wow-delay="0.3s">
-                      25-30% estimated savings in implementation when using
-                      Mobile Health Clinics
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay="0.4s">
-                      Activate Mobile Health Clinics in just weeks
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay="0.5s">
-                      Flexible, on-demand access to care services
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay="0.6s">
-                      Supports referrals to provider networks and care
-                      management programs
-                    </li>
-                  </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Video Section End ======*/}
+        {/*====== Doctor Section Start ======*/}
+        <section className="doctors-section section-gap">
+          <div className="container">
+            <div className="row justify-content-between align-items-center mb-70">
+              <div className="col-lg-5 col-md-6">
+                <div className="section-heading">
+                  <span className="tagline">Professional Doctors</span>
+                  <h2 className="title">Meet Our Experience Doctors</h2>
+                </div>
+              </div>
+              <div className="col-auto">
+                <Link href="/doctors">
+                  <a className="template-btn template-btn-primary mt-sm-30">
+                    Make An Appointment <i className="far fa=plus" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="doctor-bordered-wrapper">
+              <div className="row doctors-loop justify-content-center">
+                <div className="col-lg-3 col-sm-6">
+                  <div
+                    className="doctor-box-two mb-40 wow fadeInUp"
+                    data-wow-delay="0.3s"
+                  >
+                    <div className="doctor-photo">
+                      <img src="assets/14.jpeg" alt="Image" />
+                      <ul className="social-links">
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-facebook-f" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-twitter" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-youtube" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-linkedin" />
+                          </a>
+                        </li>
+                      </ul>
+                      <span className="plus-icon">
+                        <i className="far fa-plus" />
+                      </span>
+                    </div>
+                    <div className="doctor-information">
+                      <h5 className="name">
+                        <Link href="/doctor-details">
+                          <a>Lee S. Williamson</a>
+                        </Link>
+                      </h5>
+                      <span className="specialty">Cardiology</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6">
+                  <div
+                    className="doctor-box-two mb-40 wow fadeInUp"
+                    data-wow-delay="0.4s"
+                  >
+                    <div className="doctor-photo">
+                      <img src="assets/14.jpeg" alt="Image" />
+                      <ul className="social-links">
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-facebook-f" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-twitter" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-youtube" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-linkedin" />
+                          </a>
+                        </li>
+                      </ul>
+                      <span className="plus-icon">
+                        <i className="far fa-plus" />
+                      </span>
+                    </div>
+                    <div className="doctor-information">
+                      <h5 className="name">
+                        <Link href="/doctor-details">
+                          <a>Greg S. Grinstead </a>
+                        </Link>
+                      </h5>
+                      <span className="specialty">Neurology</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6">
+                  <div
+                    className="doctor-box-two mb-40 wow fadeInUp"
+                    data-wow-delay="0.5s"
+                  >
+                    <div className="doctor-photo">
+                      <img src="assets/14.jpeg" alt="Image" />
+                      <ul className="social-links">
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-facebook-f" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-twitter" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-youtube" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-linkedin" />
+                          </a>
+                        </li>
+                      </ul>
+                      <span className="plus-icon">
+                        <i className="far fa-plus" />
+                      </span>
+                    </div>
+                    <div className="doctor-information">
+                      <h5 className="name">
+                        <Link href="/doctor-details">Roger K. Jackson </Link>
+                      </h5>
+                      <span className="specialty">Orthopedics</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-sm-6">
+                  <div
+                    className="doctor-box-two mb-40 wow fadeInUp"
+                    data-wow-delay="0.6s"
+                  >
+                    <div className="doctor-photo">
+                      <img src="assets/14.jpeg" alt="Image" />
+                      <ul className="social-links">
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-facebook-f" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-twitter" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-youtube" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i className="fab fa-linkedin" />
+                          </a>
+                        </li>
+                      </ul>
+                      <span className="plus-icon">
+                        <i className="far fa-plus" />
+                      </span>
+                    </div>
+                    <div className="doctor-information">
+                      <h5 className="name">
+                        <Link href="/doctor-details">Ray. M. Drake </Link>
+                      </h5>
+                      <span className="specialty">Cardiology</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Doctor Section End ======*/}
+        {/*====== Appointment Section Start ======*/}
+        <section className="appointment-section">
+          <div className="container container-1500">
+            <div className="appointment-form-two style-two">
+              <div
+                className="appointment-image"
+                style={{
+                  backgroundImage: "url(assets/appoinment-pic.jpeg)",
+                }}
+              ></div>
+              <div className="form-wrap">
+                <div className="section-heading mb-50">
+                  <span className="tagline">Make an Appointment</span>
+                  <h2 className="title">
+                    Fill-up The From to Get Our Medical Services{" "}
+                  </h2>
+                </div>
+                <form onSubmit={(e) => e.preventDefault()} action="#">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInLeft"
+                        data-wow-delay="0.3s"
+                      >
+                        <input type="text" placeholder="Your Full Name" />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInRight"
+                        data-wow-delay="0.4s"
+                      >
+                        <input type="email" placeholder="Email Address" />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInLeft"
+                        data-wow-delay="0.5s"
+                      >
+                        <select>
+                          <option value={1} selected disabled>
+                            Choose Doctors
+                          </option>
+                          <option value={2}>Doctor One</option>
+                          <option value={3}>Doctor Two</option>
+                          <option value={4}>Doctor Three</option>
+                          <option value={5}>Doctor Four</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInRight"
+                        data-wow-delay="0.6s"
+                      >
+                        <input type="date" />
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInLeft"
+                        data-wow-delay="0.7s"
+                      >
+                        <select>
+                          <option value={1} selected disabled>
+                            Services Category
+                          </option>
+                          <option value={2}>Service One</option>
+                          <option value={3}>Service Two</option>
+                          <option value={4}>Service Three</option>
+                          <option value={5}>Service Four</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div
+                        className="input-field wow fadeInRight"
+                        data-wow-delay="0.8s"
+                      >
+                        <button type="submit" className="template-btn">
+                          Make an Appointment <i className="far fa-plus" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Appointment Section End ======*/}
+        {/*====== Testimonials Section Start ======*/}
+        <section className="testimonial-section testimonial-shapes section-gap bg-color-primary polygon-pattern">
+          <div className="container">
+            <div className="row justify-content-center">
               <div className="col-lg-6">
-                <div className="help-img text-center text-lg-right mt-md-50">
-                  <img
-                    src="assets/img/section-img/help-section-img.jpg"
-                    alt="Image"
-                  />
+                <div className="section-heading text-center heading-white mb-70">
+                  <span className="tagline">Our Testimonials</span>
+                  <h2 className="title">
+                    What Our Patients Say About Our Medical
+                  </h2>
                 </div>
               </div>
             </div>
+            <Slider
+              {...TestimonialsSliderTwo}
+              className="row testimonial-slider-two"
+            >
+              <div>
+                <div className="single-testimonial-slider">
+                  <p className="content">
+                    On the other hand we denounce riteous indignation and
+                    dislike men wh beguiled and demoralized by the charms of
+                    plsure of the moment, so blinded by desire that they cannot.
+                  </p>
+                  <div className="author-info-wrapper">
+                    <div className="avatar">
+                      <img src="assets/img/testimonial/01.png" alt="Image" />
+                    </div>
+                    <div className="author-info">
+                      <h5 className="name">Mark E. Kaminsky</h5>
+                      <span className="title">Web Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="single-testimonial-slider">
+                  <p className="content">
+                    On the other hand we denounce riteous indignation and
+                    dislike men wh beguiled and demoralized by the charms of
+                    plsure of the moment, so blinded by desire that they cannot.
+                  </p>
+                  <div className="author-info-wrapper">
+                    <div className="avatar">
+                      <img src="assets/img/testimonial/02.png" alt="Image" />
+                    </div>
+                    <div className="author-info">
+                      <h5 className="name">Ronald C. Kendall</h5>
+                      <span className="title">Web Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="single-testimonial-slider">
+                  <p className="content">
+                    On the other hand we denounce riteous indignation and
+                    dislike men wh beguiled and demoralized by the charms of
+                    plsure of the moment, so blinded by desire that they cannot.
+                  </p>
+                  <div className="author-info-wrapper">
+                    <div className="avatar">
+                      <img src="assets/img/testimonial/01.png" alt="Image" />
+                    </div>
+                    <div className="author-info">
+                      <h5 className="name">Mark E. Kaminsky</h5>
+                      <span className="title">Web Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="single-testimonial-slider">
+                  <p className="content">
+                    On the other hand we denounce riteous indignation and
+                    dislike men wh beguiled and demoralized by the charms of
+                    plsure of the moment, so blinded by desire that they cannot.
+                  </p>
+                  <div className="author-info-wrapper">
+                    <div className="avatar">
+                      <img src="assets/img/testimonial/02.png" alt="Image" />
+                    </div>
+                    <div className="author-info">
+                      <h5 className="name">Ronald C. Kendall</h5>
+                      <span className="title">Web Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+            <div className="testimonial-slider-arrow" />
+          </div>
+          <div className="shape-images">
+            <div
+              className="image-one animate-float-bob-y"
+              style={{
+                backgroundImage: "url(assets/bg-1.jpg)",
+              }}
+            ></div>
+            <div
+              className="image-two animate-float-bob-y"
+              style={{ backgroundImage: "url(assets/bg.jpeg)" }}
+            ></div>
           </div>
         </section>
-        {/*====== Help Section End ======*/}
-        {/*====== Partners Section Start ======*/}
-        <section className="partner-section section-gap bg-color-secondary section-map-overly">
-          <div className="container">
-            <div className="section-heading heading-white text-center mb-50">
-              <span className="span tagline">Our Trusted Partners</span>
-              <h2 className="title">We’ve 23563k+ Trusted Partners</h2>
-            </div>
-            <div className="partner-logo-grid grid-border-white">
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/01.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/02.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/03.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/04.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/05.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/06.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/07.png" alt="Partner" />
-                </a>
-              </div>
-              <div className="single-partner">
-                <a href="#">
-                  <img src="assets/img/partner-logos/08.png" alt="Partner" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/*====== Partners Section End ======*/}
+        {/*====== Testimonials Section End ======*/}
         {/*====== Latest Blog Start ======*/}
-        <section className="latest-blog-section section-gap">
+        {/* <section className="latest-blog-section section-gap">
           <div className="container">
-            <div className="row">
-              <div className="col-lg-6 col-md-8">
-                <div className="section-heading mb-40">
+            <div className="row justify-content-between align-items-center mb-40">
+              <div className="col-lg-6 col-md-7">
+                <div className="section-heading">
                   <span className="tagline">Latest News &amp; Blog</span>
                   <h2 className="title">
                     Get Every Single Updates For Medical &amp; Health
                   </h2>
                 </div>
               </div>
+              <div className="col-auto">
+                <Link href="/doctors">
+                  <a className="template-btn mt-sm-30">
+                    View More News <i className="far fa-plus" />
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className="row justify-content-center latest-blog-loop">
               <div className="col-lg-4 col-md-6 col-sm-10">
-                <div className="latest-blog-one mt-30">
-                  <div className="blog-thumb">
-                    <img src="assets/img/latest-blog/01.jpg" alt="Thumb" />
+                <div className="latest-blog-two mt-30">
+                  <div className="thumbnail">
+                    <img src="assets/img/latest-blog/04.jpg" alt="Image" />
                   </div>
                   <div className="blog-content">
                     <div className="blog-meta">
@@ -942,52 +1007,25 @@ const Index = () => {
                     </div>
                     <h4 className="blog-title">
                       <Link href="/blog-details">
-                        <a>Comprehensive Worksite Health Program Built</a>
+                        <a>Comprehensive Was Health Built Complete Guide</a>
                       </Link>
                     </h4>
-                    <div className="btn-area">
-                      <Link href="/blog-details">
-                        <a className="read-more-btn">
-                          Read More <i className="far fa-plus" />
-                        </a>
-                      </Link>
+                    <div className="blog-footer">
+                      <a href="#">
+                        <i className="far fa-user-circle" /> <span>By</span>{" "}
+                        Jose S. Mahon
+                      </a>
+                      <a href="#">
+                        <i className="far fa-heart" /> <span>Like</span>(5k)
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-6 col-sm-10">
-                <div className="latest-blog-one mt-30">
-                  <div className="blog-thumb">
-                    <img src="assets/img/latest-blog/02.jpg" alt="Thumb" />
-                  </div>
-                  <div className="blog-content">
-                    <div className="blog-meta">
-                      <a href="#" className="blog-category">
-                        Medical
-                      </a>
-                      <a href="#" className="blog-date">
-                        <i className="far fa-calendar-alt" /> 26 Aug 2021
-                      </a>
-                    </div>
-                    <h4 className="blog-title">
-                      <Link href="/blog-details">
-                        <a>Speeding Up The Return on Your Healthcare</a>
-                      </Link>
-                    </h4>
-                    <div className="btn-area">
-                      <Link href="/blog-details">
-                        <a className="read-more-btn">
-                          Read More <i className="far fa-plus" />
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 col-sm-10">
-                <div className="latest-blog-one mt-30">
-                  <div className="blog-thumb">
-                    <img src="assets/img/latest-blog/03.jpg" alt="Thumb" />
+                <div className="latest-blog-two mt-30">
+                  <div className="thumbnail">
+                    <img src="assets/img/latest-blog/05.jpg" alt="Image" />
                   </div>
                   <div className="blog-content">
                     <div className="blog-meta">
@@ -1000,25 +1038,120 @@ const Index = () => {
                     </div>
                     <h4 className="blog-title">
                       <Link href="/blog-details">
-                        <a>Comprehensive Worksite Health Program Built</a>
+                        <a>Why Content Such Fmental Design Process Compre</a>
                       </Link>
                     </h4>
-                    <div className="btn-area">
+                    <div className="blog-footer">
+                      <a href="#">
+                        <i className="far fa-user-circle" /> <span>By</span>{" "}
+                        Jose S. Mahon
+                      </a>
+                      <a href="#">
+                        <i className="far fa-heart" /> <span>Like</span>(5k)
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 col-sm-10">
+                <div className="latest-blog-two mt-30">
+                  <div className="thumbnail">
+                    <img src="assets/img/latest-blog/06.jpg" alt="Image" />
+                  </div>
+                  <div className="blog-content">
+                    <div className="blog-meta">
+                      <a href="#" className="blog-category">
+                        Health
+                      </a>
+                      <a href="#" className="blog-date">
+                        <i className="far fa-calendar-alt" /> 25 Aug 2021
+                      </a>
+                    </div>
+                    <h4 className="blog-title">
                       <Link href="/blog-details">
-                        <a className="read-more-btn">
-                          Read More <i className="far fa-plus" />
-                        </a>
+                        <a>Comprehensive Was Health Built Complete Guide</a>
                       </Link>
+                    </h4>
+                    <div className="blog-footer">
+                      <a href="#">
+                        <i className="far fa-user-circle" /> <span>By</span>{" "}
+                        Jose S. Mahon
+                      </a>
+                      <a href="#">
+                        <i className="far fa-heart" /> <span>Like</span>(5k)
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/*====== Latest Blog End ======*/}
+        {/*====== Partner Section Start ======*/}
+        <div className="partner-section section-gap-80 bg-color-grey dots-map-pattern">
+          <div className="container">
+            <div className="section-heading text-center mb-50">
+              <span className="tagline">Our Trusted Partners</span>
+              <h2 className="title">We’ve 23563k+ Trusted Partners</h2>
+            </div>
+            <Slider {...partnerSlider} className="row partner-logo-slider">
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/09.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/10.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/11.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/12.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/13.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/09.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/10.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/11.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/12.png" alt="Logo" />
+                </a>
+              </div>
+              <div className="col partner-logo-box">
+                <a href="#">
+                  <img src="assets/img/partner-logos/13.png" alt="Logo" />
+                </a>
+              </div>
+            </Slider>
+          </div>
+        </div>
+        {/*====== Partner Section End ======*/}
       </>
     </Layouts>
   );
 };
-export default Index;
+export default Index2;
