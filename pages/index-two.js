@@ -605,7 +605,7 @@ const Index2 = () => {
                     data-wow-delay="0.3s"
                   >
                     <div className="doctor-photo">
-                      <img src="assets/img/doctors/14.jpg" alt="Image" />
+                      <img src="assets/14.jpeg" alt="Image" />
                       <ul className="social-links">
                         <li>
                           <a href="#">
@@ -648,7 +648,7 @@ const Index2 = () => {
                     data-wow-delay="0.4s"
                   >
                     <div className="doctor-photo">
-                      <img src="assets/img/doctors/15.jpg" alt="Image" />
+                      <img src="assets/14.jpeg" alt="Image" />
                       <ul className="social-links">
                         <li>
                           <a href="#">
@@ -691,7 +691,7 @@ const Index2 = () => {
                     data-wow-delay="0.5s"
                   >
                     <div className="doctor-photo">
-                      <img src="assets/img/doctors/16.jpg" alt="Image" />
+                      <img src="assets/14.jpeg" alt="Image" />
                       <ul className="social-links">
                         <li>
                           <a href="#">
@@ -732,7 +732,7 @@ const Index2 = () => {
                     data-wow-delay="0.6s"
                   >
                     <div className="doctor-photo">
-                      <img src="assets/img/doctors/17.jpg" alt="Image" />
+                      <img src="assets/14.jpeg" alt="Image" />
                       <ul className="social-links">
                         <li>
                           <a href="#">
