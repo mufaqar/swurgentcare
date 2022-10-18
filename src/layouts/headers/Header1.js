@@ -77,7 +77,7 @@ const Header1 = ({ headerTopbar, position }) => {
             <nav className="site-menu menu-gap-left d-none d-xl-block">
               <ul className="primary-menu">
                 <li>
-                  <Link href="/">
+                  <Link href="/index-two">
                     <a>
                       Home
                       <span className="dd-trigger">
