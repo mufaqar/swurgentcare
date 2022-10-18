@@ -71,7 +71,7 @@ const Header1 = ({ headerTopbar, position }) => {
           <div className="header-left">
             <div className="site-logo">
               <Link href="/">
-                <img src="assets/img/logo.png" alt="Seeva" />
+                <img src="assets/img/logo.png" alt="swurgentcare" />
               </Link>
             </div>
             <nav className="site-menu menu-gap-left d-none d-xl-block">

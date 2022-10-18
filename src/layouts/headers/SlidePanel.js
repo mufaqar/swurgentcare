@@ -15,8 +15,7 @@ const SlidePanel = ({ sidebarTrigger, setSidebarTrigger }) => {
         <div className="about-us">
           <h5 className="canvas-widget-title">About Us</h5>
           <p>
-            Sed perspiciatis unde omnis iste natus error voluptatem accusantium
-            doloremque laudantium totam rem aperams eaque ipsa quae abillo.
+          We are a creative company that specializes in strategy & design. We like to create things with like – minded people who are serious about their passions
           </p>
         </div>
         <div className="contact-us">
@@ -24,18 +23,18 @@ const SlidePanel = ({ sidebarTrigger, setSidebarTrigger }) => {
           <ul>
             <li>
               <i className="far fa-map-marker-alt" />
-              354 Oakridge, Camden NJ 08102 - USA
+              5900 Chimney Rock, Suite X Houston, Texas 77081
             </li>
             <li>
               <i className="far fa-envelope-open" />
-              <a href="mailto:support@qolle.com">support@seeva.com</a>
-              <a href="mailto:info@qolle.com">info@seeva.com</a>
+              <a href="mailto:support@qolle.com">swurgentcare@outlook.com</a>
+              <a href="mailto:info@qolle.com">www.swurgentcare.com</a>
             </li>
             <li>
               <i className="far fa-phone" />
-              <a href="tel:+01234567899">+012 (345) 678 99</a>
+              <a href="tel:+01234567899">(346) 341-7573</a>
               <br />
-              <a href="tel:+8563214">+8563214</a>
+              {/* <a href="tel:+8563214">+8563214</a> */}
             </li>
           </ul>
         </div>

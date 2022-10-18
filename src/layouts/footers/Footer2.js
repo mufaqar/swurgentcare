@@ -14,29 +14,29 @@ const Footer2 = ({ noNewsletters }) => {
               <div className="col-lg-3 col-md-8">
                 <div className="widget text-widget">
                   <div className="footer-logo">
-                    <img src="assets/img/logo-white.png" alt="Medibo" />
+                    <img src="assets/img/logo.png" alt="swurgentcare" />
                   </div>
                   <p>
                     We are a creative company that specializes in strategy & design. 
                     We like to create things with like – minded people who are serious about their passions
                   </p>
                   <ul className="contact-list">
-                    <li>
+                    {/* <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
                         <i className="far fa-map-marker-alt" />
                         55 Main Road, USA
                       </a>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                       <a href="mailto:support@gmail.com">
                         <i className="far fa-envelope" />
-                        support@gmail.com
+                        swurgentcare@outlook.com
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="tel:01267899">
                         <i className="far fa-phone" />
-                        +012 (345) 678 99
+                        (346) 341-7573
                       </a>
                     </li>
                   </ul>
@@ -50,22 +50,28 @@ const Footer2 = ({ noNewsletters }) => {
                         <h4 className="widget-title">Popular Services</h4>
                         <ul className="nav-links">
                           <li>
-                            <a href="#">Orthopedic Care</a>
+                            <a href="#">Allergies</a>
                           </li>
                           <li>
-                            <a href="#">Gynecology Care</a>
+                            <a href="#">Asthma</a>
                           </li>
                           <li>
-                            <a href="#">Cardiology Care</a>
+                            <a href="#">Cold & Flu</a>
                           </li>
                           <li>
-                            <a href="#">Dentistry Care</a>
+                            <a href="#">Covid Testing</a>
                           </li>
                           <li>
-                            <a href="#">Gastroenterology</a>
+                            <a href="#">Ear Infection</a>
                           </li>
                           <li>
-                            <a href="#">Urgent Care</a>
+                            <a href="#">Flue Shot</a>
+                          </li>
+                          <li>
+                            <a href="#">Illness</a>
+                          </li>
+                          <li>
+                            <a href="#">Injury</a>
                           </li>
                         </ul>
                       </div>
@@ -74,25 +80,31 @@ const Footer2 = ({ noNewsletters }) => {
                   <div className="col-xl-5 col-sm-6">
                     <div className="d-flex justify-content-lg-center">
                       <div className="widget nav-widget">
-                        <h4 className="widget-title">About Us</h4>
+                        <h4 className="widget-title pt-4 pb-2"></h4>
                         <ul className="nav-links">
                           <li>
-                            <a href="#">Success Story</a>
+                            <a href="#">Lab</a>
                           </li>
                           <li>
-                            <a href="#">Need a Career ?</a>
+                            <a href="#">Skin Infection & Rash</a>
                           </li>
                           <li>
-                            <a href="#">Privacy Policy</a>
+                            <a href="#">Sore & Strep Throat</a>
                           </li>
                           <li>
-                            <a href="#">Need Support ?</a>
+                            <a href="#">Sports & Camps Physical</a>
                           </li>
                           <li>
-                            <a href="#">Doctors</a>
+                            <a href="#">TD Treatment & Testing</a>
                           </li>
                           <li>
-                            <a href="#">Latest News</a>
+                            <a href="#">Virtual Visit</a>
+                          </li>
+                          <li>
+                            <a href="#">Urinary Tract Infections</a>
+                          </li>
+                          <li>
+                            <a href="#">X-Rays</a>
                           </li>
                         </ul>
                       </div>
@@ -121,7 +133,7 @@ const Footer2 = ({ noNewsletters }) => {
                     <h6>
                       <i className="far fa-clock" /> Opening Hours
                     </h6>
-                    <p>Sun - Friday, 08:00 am - 05:00 pm</p>
+                    <p>Sun - Thursday, 08:00 am - 05:00 pm</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +141,7 @@ const Footer2 = ({ noNewsletters }) => {
           </div>
           <div className="copyright-area">
             <p>
-              © 2021 <a href="#">Seeva</a>. All Rights Reserved
+              © 2022 <a href="#">Southwest Urgent Care</a>. All Rights Reserved
             </p>
           </div>
         </div>
