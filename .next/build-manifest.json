@@ -25,15 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/index-four": [
+    "/contact": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index-four.js"
+      "static/chunks/pages/contact.js"
     ],
-    "/index-three": [
+    "/index-two": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index-three.js"
+      "static/chunks/pages/index-two.js"
     ]
   },
   "ampFirstPages": []
