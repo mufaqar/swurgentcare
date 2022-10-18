@@ -1,0 +1,8 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/index-three": "pages/index-three.js",
+  "/index-two": "pages/index-two.js",
+  "/index-four": "pages/index-four.js"
+}
