@@ -35,12 +35,12 @@ const Header1 = ({ headerTopbar, position }) => {
                   <li>
                     <a href="#">
                       <i className="far fa-envelope" /> Email :
-                      hotmail@gmail.com
+                      swurgentcare@outlook.com
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="far fa-phone" /> Call US : +012 (345) 6789
+                      <i className="far fa-phone" /> Call US : (346) 341-7573
                     </a>
                   </li>
                   <li>

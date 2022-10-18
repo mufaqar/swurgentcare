@@ -10,6 +10,7 @@ import {
   TestimonialsSliderTwo,
 } from "../src/sliderProps";
 
+
 const Index2 = () => {
   const [video, setVideo] = useState(false);
   return (
@@ -23,7 +24,7 @@ const Index2 = () => {
               <div
                 className="hero-slider-bg bg-size-cover"
                 style={{
-                  backgroundImage: "url(assets/img/hero-img/hero-slider-1.jpg)",
+                  backgroundImage: "url(assets/hero-slider-3.jpeg)",
                 }}
               />
               <div className="container container-1400">
@@ -37,7 +38,8 @@ const Index2 = () => {
                     data-animation="fadeInDown"
                     data-delay="0.7s"
                   >
-                    We Care Medical &amp; Health{" "}
+                    SOUTHWEST URGENT CARE
+                    &amp; FAMILY PRACTICE {" "}
                   </h1>
                   <p data-animation="fadeInLeft" data-delay="0.8s">
                     Dolor sit amet consectetur adipiscing elitsedes eiusmod
@@ -58,42 +60,7 @@ const Index2 = () => {
               <div
                 className="hero-slider-bg bg-size-cover"
                 style={{
-                  backgroundImage: "url(assets/img/hero-img/hero-slider-2.jpg)",
-                }}
-              />
-              <div className="container container-1400">
-                <div
-                  className="slider-content-box"
-                  data-animation="fadeInUp"
-                  data-delay="0.4s"
-                >
-                  <h1
-                    className="title"
-                    data-animation="fadeInDown"
-                    data-delay="0.7s"
-                  >
-                    We Care Medical &amp; Health{" "}
-                  </h1>
-                  <p data-animation="fadeInLeft" data-delay="0.8s">
-                    Dolor sit amet consectetur adipiscing elitsedes eiusmod
-                    tempor incididunt utlabore
-                  </p>
-                  <a
-                    href="#"
-                    className="template-btn"
-                    data-animation="fadeInUp"
-                    data-delay="0.9s"
-                  >
-                    Make an Appointment <i className="far fa-plus" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="single-hero-slider">
-              <div
-                className="hero-slider-bg bg-size-cover"
-                style={{
-                  backgroundImage: "url(assets/img/hero-img/hero-slider-3.jpg)",
+                  backgroundImage: "url(assets/s1bg-min.png)",
                 }}
               />
               <div className="container container-1400">

@@ -2229,7 +2229,7 @@ button {
 	z-index: 2;
 	padding: 90px 80px;
 	background-color: var(--color-white);
-	max-width: 570px;
+	max-width: 620px;
 }
 
 @media (max-width: 991px) {
@@ -2280,7 +2280,7 @@ button {
 }
 
 .hero-slider-one .single-hero-slider .slider-content-box .title {
-	font-size: 85px;
+	font-size: 65px;
 	line-height: 1;
 	color: var(--color-primary);
 	margin-bottom: 20px;

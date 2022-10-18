@@ -15,10 +15,10 @@ function MyApp({ Component, pageProps }) {
     <Fragment>
       {loader && <PreLoader />}
       <Head>
-        <title>Seeva - Medical and Dental React Nextjs Template</title>
+        <title>Urgent Medical Care in Houston, TX - SWUrgentCare</title>
         <link
           rel="shortcut icon"
-          href="assets/img/favicon.ico"
+          href="favicon.ico"
           type="img/png"
         />
       </Head>
