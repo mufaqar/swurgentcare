@@ -7,7 +7,7 @@ const Doctor = () => {
   return (
     <Layouts>
       <PageBanner title={"Meet The Doctors"} bgnone />
-      <section className="doctors-section section-gap">
+       {/* <section className="doctors-section section-gap">
         <div className="container">
           <div className="row doctors-loop justify-content-center">
             <div className="col-lg-4 col-md-6 col-sm-9">
@@ -350,11 +350,11 @@ const Doctor = () => {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!--====== Doctor Section End ======--> */}
 
       {/* <!--====== Skill Section Start ======--> */}
-      <section className="skill-section section-gap border-top-primary">
+      {/* <section className="skill-section section-gap border-top-primary">
         <div className="container">
           <div className="row justify-content-center justify-content-lg-between align-items-center">
             <div className="col-lg-6 col-md-10">
@@ -448,7 +448,7 @@ const Doctor = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layouts>
   );
 };

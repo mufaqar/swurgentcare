@@ -120,3 +120,19 @@ html {
   left: auto;
   right: 8%;
 }
+.primary-menu li a{
+  font-family: 'Lora' !important;
+  font-size: 18px !important;
+}
+span.plus_sign{
+  color: #E51F24 !important;
+}
+.form-wrap select{
+  background: white !important;
+}
+
+@media (max-width: 768px) {
+  .counter-inner-two::before{
+    left: auto !important;
+  }
+}

@@ -22,14 +22,9 @@ export const Home = () => (
 );
 export const Pages = () => (
   <Fragment>
-    <li>
-      <Link href="/pricing">Pricing Plan</Link>
-    </li>
+    
     <li>
       <Link href="/faq">Help &amp; FAQ</Link>
-    </li>
-    <li>
-      <Link href="/gallery">Our Gallery</Link>
     </li>
     <li>
       <Link href="/appointments">Appointment</Link>

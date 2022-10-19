@@ -72,15 +72,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-	--color-primary: #2e279d;
+	--color-primary: #1279AA;
 	--color-primary-07: rgba(46, 39, 157, 0.07);
 	--color-primary-10: rgba(46, 39, 157, 0.1);
 	--color-primary-20: rgba(46, 39, 157, 0.2);
-	--color-secondary: #499afa;
+	--color-secondary: #E51F24;
 	--color-secondary-10: rgba(73, 154, 250, 0.1);
 	--color-tertiary: #21cdc0;
 	--color-fourth: #213360;
-	--color-heading: #0e204d;
+	--color-heading: #1279AA;
 	--color-heading-07: rgba(14, 32, 77, 0.07);
 	--color-heading-10: rgba(14, 32, 77, 0.1);
 	--color-heading-50: rgba(14, 32, 77, 0.5);
@@ -2544,7 +2544,7 @@ button {
 	font-size: 18px;
 	font-weight: 500;
 	color: var(--color-secondary);
-	line-height: 1.2;
+	line-height: 1.6;
 	margin-bottom: 15px;
 }
 

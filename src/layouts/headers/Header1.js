@@ -19,14 +19,8 @@ const Header1 = ({ headerTopbar, position }) => {
             <div className="row align-items-center justify-content-between">
               <div className="col-lg-4">
                 <ul className="topbar-menu">
-                  <li>
-                    <Link href="/faq">Faq</Link>
-                  </li>
-                  <li>
-                    <Link href="/gallery">Gallery</Link>
-                  </li>
-                  <li>
-                    <Link href="/about">About Us</Link>
+                  <li style={{listStyle:'none'}}>
+                    5900 Chimney Rock, Suite X Houston, Texas 77081
                   </li>
                 </ul>
               </div>
@@ -78,57 +72,40 @@ const Header1 = ({ headerTopbar, position }) => {
               <ul className="primary-menu">
                 <li>
                   <Link href="/index-two">
+                    <a>Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="about">
                     <a>
-                      Home
+                      About
                       <span className="dd-trigger">
                         <i className="far fa-plus" />
                       </span>
                     </a>
                   </Link>
                   <ul className="sub-menu">
-                    <Home />
+                    <Pages />
                   </ul>
-                </li>
-                <li>
-                  <Link href="about">About</Link>
                 </li>
                 <li>
                   <a href="#">
                     Services
-                    <span className="dd-trigger">
-                      <i className="far fa-plus" />
-                    </span>
                   </a>
-                  <ul className="sub-menu">
-                    
-                    <Pages />
-                  </ul>
                 </li>
                 <li>
                   <Link href="/doctor">
                     <a>
                       Providers
-                      <span className="dd-trigger">
-                        <i className="far fa-plus" />
-                      </span>
                     </a>
                   </Link>
-                  <ul className="sub-menu">
-                    <Doctor />
-                  </ul>
                 </li>
                 <li>
                   <Link href="blog-standard">
                     <a>
                       Health Vault
-                      <span className="dd-trigger">
-                        <i className="far fa-plus" />
-                      </span>
                     </a>
                   </Link>
-                  <ul className="sub-menu">
-                    <Blog />
-                  </ul>
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>

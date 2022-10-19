@@ -15,8 +15,8 @@ const BlogStandard = () => {
   }, [active]);
   return (
     <Layouts>
-      <PageBanner title={"Blog Standard"} bgnone />
-      <section className="blog-area section-gap">
+      <PageBanner title={"Health Vault"} bgnone />
+      {/* <section className="blog-area section-gap">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -436,7 +436,7 @@ const BlogStandard = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layouts>
   );
 };

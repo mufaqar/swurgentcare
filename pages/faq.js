@@ -12,7 +12,7 @@ const Faq = () => {
     <Layouts>
       {video && <VideoPopup close={setVideo} />}
       <PageBanner title={"Help & FAQ"} bgnone />
-      <section className="faq-section section-gap">
+      {/* <section className="faq-section section-gap">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7">
@@ -343,7 +343,7 @@ const Faq = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layouts>
   );
 };
