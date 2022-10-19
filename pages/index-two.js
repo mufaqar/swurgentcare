@@ -348,12 +348,13 @@ const Index2 = () => {
                       Zeeshan Iqbal Shaikh’s Practice has been awarded as a top Family Medicine
                       practice with some of <a href="https://www.opencare.com/dentists/houston-tx/#/tc24630280585">
                         Houston’s best Family Doctors.</a> Verified by
-                      <a href="https://www.opencare.com/" target='_blank'>Opencare.com</a>
+                      <a href="https://www.opencare.com/" target='_blank' rel="noreferrer" >Opencare.com</a>
                     </p>
 
                     <a
                       href="https://www.patientfusion.com/doctor/zeeshan-shaikh-md-68968"
                       target='_blank'
+                      rel="noreferrer" 
                       className="template-btn template-btn-bordered mt-40 wow fadeInUp"
                       data-wow-delay="0.5s"
                     >
@@ -362,6 +363,7 @@ const Index2 = () => {
                     <a
                       href="https://swurgentcare.net/wp-content/uploads/2014/11/special_2014.pdf"
                       target='_blank'
+                      rel="noreferrer" 
                       className="template-btn ml-4 template-btn-bordered mt-40 wow fadeInUp"
                       data-wow-delay="0.5s"
                     >
