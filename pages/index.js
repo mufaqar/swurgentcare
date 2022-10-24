@@ -379,7 +379,7 @@ const Index = () => {
             <div className="partner-logo-grid">
               {
                 partner.map((item, i) => (
-                  <div className="single-partner p-3">
+                  <div className="single-partner p-3" key={i}>
                     <a href="#">
                       <img
                         src={`assets/partner/${item.image}`}
