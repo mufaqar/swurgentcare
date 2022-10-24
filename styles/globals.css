@@ -232,6 +232,48 @@ span.plus_sign{
 .service_card:hover .services_icon{
   scale: 1.2;
 }
+.partner-logo-grid img{
+  width:75% !important
+}
+.testimonial-section{
+  color:white;
+  background: rgba(41,169,206, 01) !important;
+}
+.testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc,
+.testimonial-section .section-heading .title{
+  color: rgb(238, 238, 238);
+}
+.testimonial-slider-one ul.slick-dots li.slick-active{
+  background-color: white
+}
+.home_contact .contact-info-wrapper, .contact-info-wrapper a,
+.home_contact .contact-info-wrapper .info-title{
+  color:black !important; 
+}
+.home_contact .contact-info-wrapper{
+  background: none !important;
+}
+.landing_contact{
+  background: rgba(11, 11, 11, .03);
+  padding: 4rem;
+}
+.landing_contact, .landing-map{
+  width: 50%;
+}
+.testimonial-slider-one .single-testimonial-slider .testimonial-inner .author-info .name{
+  color: rgb(229, 229, 229);
+}
+.landing-map .contact-map{
+height: 420px;
+}
+.landing-map .contact-map iframe {
+  height: 420px !important;
+}
+.testimonial-section .section-heading .tagline,
+.testimonial-section  .testimonial-slider-one .single-testimonial-slider .testimonial-inner .author-info .title{
+  color: rgb(79, 79, 79) !important;
+}
+
 
 
 @media (max-width: 768px) {
@@ -246,4 +288,8 @@ span.plus_sign{
     padding: 1rem;
     height: 100%;
   }
+  .landing_contact, .landing-map{
+    width: 100%;
+  }
+
 }
