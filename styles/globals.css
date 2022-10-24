@@ -130,9 +130,120 @@ span.plus_sign{
 .form-wrap select{
   background: white !important;
 }
+.hero_banner{
+  background:linear-gradient(0deg, rgba(18, 18, 18, 0.3), rgba(11, 11, 11, 0.4)), url('../public/assets/FAMILY-2.jpg');
+  width: 100%;
+  height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_wrapper>.left>h2{
+  color: white;
+  font-size: 55px;
+  max-width: 760px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.bgwhite{
+  background: rgba(41,169,206, 0.7) !important;
+  color: white;
+}
+
+.hero_wrapper .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero_wrapper .doctor-details-wrapper .working-hour-table{
+  max-width: 380px;
+}
+.hero_wrapper .underline{
+  text-decoration: underline;
+}
+._text{
+  font-size: .9rem;
+  line-height: 1.2rem;
+}
+.hero_wrapper .section-heading .title, .underline, 
+.doctor-details-wrapper .working-hour-table ul li{
+  color: white !important;
+}
+.doctor-details-wrapper .working-hour-table ul li{
+  border-bottom: .5px solid white;
+  padding-bottom: 1.2rem;
+}
+.doctor-details-wrapper .working-hour-table ul li:last-child{
+  border-bottom: none;
+}
+.con_{
+  display: flex;
+  justify-content: end !important;
+}
+.underline{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #fff !important;
+  letter-spacing: 1.2px
+}
+.mt-8{
+  margin-top: -8rem
+}
+.sas{
+  border: 2px solid transparent;
+  color: var(--color-primary);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.sas:hover{
+  background: transparent !important;
+  color: black !important;
+}
+.bg_{
+  background: rgba(11, 11, 11, 0.03) !important;
+}
+.service_card{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.services_icon{
+  width: 50px;
+  height: 50px;
+}
+.service_card h6{
+  margin-top: 1.5rem;
+  font-family: Inter
+}
+.service_card:hover{
+  background: rgba(11, 11, 11, 0.03);
+  border: 1px solid rgba(11, 11, 11, .03) !important;
+}
+.service_card:hover .services_icon{
+  scale: 1.2;
+}
+
 
 @media (max-width: 768px) {
   .counter-inner-two::before{
     left: auto !important;
+  }
+  .hero_wrapper .left h2{
+    font-size: 34px;
+    margin-top: 8rem;
+  }
+  .hero_banner{
+    padding: 1rem;
+    height: 100%;
   }
 }

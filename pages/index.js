@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Slider from "react-slick";
 import Counter from "../src/components/Counter";
+import HeroBanner from "../src/components/HeroBanner";
 import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
 import {
@@ -12,136 +13,154 @@ import {
 } from "../src/sliderProps";
 
 
+
 const Index = () => {
   const [video, setVideo] = useState(false);
   const router = useRouter();
+  const serviceData = [
+    {
+      id: 1,
+      name: "Allergies",
+      icon: 'leaf.png'
+    },
+    {
+      id: 2,
+      name: "asthma",
+      icon: 'inhalator.png'
+    },
+    {
+      id: 3,
+      name: "Cold & flu",
+      icon: 'fever.png'
+    },
+    {
+      id: 4,
+      name: "Covid-19 Testing",
+      icon: 'coronavirus.png'
+    },
+    {
+      id: 5,
+      name: "Ear infaction",
+      icon: 'ear.png'
+    },
+    {
+      id: 6,
+      name: "Flu Shot",
+      icon: 'secure-shield.png'
+    },
+    {
+      id: 7,
+      name: "Illness",
+      icon: 'stethoscope.png'
+    },
+    {
+      id: 8,
+      name: "Injury",
+      icon: 'syringe.png'
+    },
+    {
+      id: 9,
+      name: "Pediatrics",
+      icon: 'pediatrics.png'
+    },
+    {
+      id: 10,
+      name: "Lab",
+      icon: 'flask.png'
+    },
+    {
+      id: 11,
+      name: "Skin infaction & Rash",
+      icon: 'disease.png'
+    },
+    {
+      id: 12,
+      name: "Sore & strep Throat",
+      icon: 'sore-throat.png'
+    },
+    {
+      id: 13,
+      name: "Sports clearance exam",
+      icon: 'running.png'
+    },
+    {
+      id: 14,
+      name: "STD treatment & testing ",
+      icon: 'test-tubes.png'
+    },
+    {
+      id: 15,
+      name: "Telemedicine ",
+      icon: 'first-aid-kit.png'
+    },
+
+    {
+      id: 16,
+      name: "Urinary Tract Infaction ",
+      icon: 'washroom.png'
+    },
+    {
+      id: 17,
+      name: "X-Ray",
+      icon: 'x-rays.png'
+    },
+  ]
+
+  const partner = [
+    {
+      image: ''
+    }
+  ]
+
   return (
     <Layouts headerTopbar footer={2} noNewsletters>
       {video && <VideoPopup close={setVideo} />}
       <>
         {/*====== Hero Slider Start ======*/}
-        <section className="hero-slider hero-slider-one">
-          <Slider {...heroSlider} className="hero-slider-active">
-            <div className="single-hero-slider">
-              <div
-                className="hero-slider-bg bg-size-cover"
-                style={{
-                  backgroundImage: "url(assets/hero-slider-3.jpeg)",
-                }}
-              />
-              <div className="container container-1400">
-                <div
-                  className="slider-content-box"
-                  data-animation="fadeInUp"
-                  data-delay="0.4s"
-                >
-                  <h1
-                    className="title"
-                    data-animation="fadeInDown"
-                    data-delay="0.7s"
-                  >
-                    SOUTHWEST URGENT CARE
-                    &amp; FAMILY PRACTICE {" "}
-                  </h1>
-                  <p data-animation="fadeInLeft" data-delay="0.8s">
-                    Dolor sit amet consectetur adipiscing elitsedes eiusmod
-                    tempor incididunt utlabore
-                  </p>
-                  <a
-                    href="#"
-                    className="template-btn"
-                    data-animation="fadeInUp"
-                    data-delay="0.9s"
-                  >
-                    Make an Appointment <i className="far fa-plus" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="single-hero-slider">
-              <div
-                className="hero-slider-bg bg-size-cover"
-                style={{
-                  backgroundImage: "url(assets/s1bg-min.png)",
-                }}
-              />
-              <div className="container container-1400">
-                <div
-                  className="slider-content-box"
-                  data-animation="fadeInUp"
-                  data-delay="0.4s"
-                >
-                  <h1
-                    className="title"
-                    data-animation="fadeInDown"
-                    data-delay="0.7s"
-                  >
-                    We Care Medical &amp; Health{" "}
-                  </h1>
-                  <p data-animation="fadeInLeft" data-delay="0.8s">
-                    Dolor sit amet consectetur adipiscing elitsedes eiusmod
-                    tempor incididunt utlabore
-                  </p>
-                  <a
-                    href="#"
-                    className="template-btn"
-                    data-animation="fadeInUp"
-                    data-delay="0.9s"
-                  >
-                    Make an Appointment <i className="far fa-plus" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Slider>
-          <div className="hero-slider-arrow" />
-        </section>
+
+        <HeroBanner />
         {/*====== Hero Slider End ======*/}
         {/*====== About Section Start ======*/}
         <section className="about-section section-gap">
           <div className="container">
             <div className="row align-items-center justify-content-center">
-              <div className="col-xl-7 col-lg-9 col-md-11">
-                <div className="tile-gallery mb-xl-50">
-                  <div
-                    className="image-one wow fadeInLeft"
-                    data-wow-delay="0.3s"
-                  >
-                    <img
-                      className="animate-float-bob-x"
-                      src="assets/01.jpeg"
-                      alt="Image"
-                    />
-                  </div>
+              <div className="col-md-5">
+                <div className=" mb-xl-50">
+
                   <div
                     className="image-two wow fadeInDown"
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/02.jpeg" alt="Image" />
+                    <img src="assets/family.jpg" alt="Image" style={{ borderRadius: '18px' }} />
                   </div>
-                  <div
-                    className="image-three wow fadeInUp"
-                    data-wow-delay="0.5s"
-                  >
-                    <img src="assets/03.png" alt="Image" />
-                  </div>
+
                 </div>
               </div>
-              <div className="col-xl-5 col-lg-8 col-md-9">
+              <div className="col-md-7">
                 <div className="about-text">
                   <div className="section-heading mb-30">
-                    <span className="tagline">About Swurgentcare</span>
+                    {/* <span className="tagline">About Swurgentcare</span> */}
                     <h2 className="title">
-                      Welcome To Southwest Urgent Care And Family Practice!
+                      Southwest Urgent Care Bringing Forth Quality On-Demand Care
                     </h2>
                   </div>
                   <p>
-                    We are a team of family practice doctors able to provide ongoing medical care for your whole family.
-                    As board certified family doctors, our team can handle any medical issues you may have.
-                    Combining the comprehensive care, trust and confidence you build with your local family practice physician, with a dependable Urgent Care Service,
-                    Southwest Urgent Care and Family Practice is the best and most affordable option for your family’s medical care
+                    Southwest Urgent care providing care for patients of all ages. From infants to older adults, optimal
+                    medical care for your whole family. If you are in need of medical assistance regarding
+                    illness or injury which is not life threatening, our physicians are capable of treating
+                    your sickness in the most professional manner. Southwest Urgent Care provides a wide range of services
+                    to help patients get well faster.
                   </p>
-                  <div className="mt-3">
+
+                  <a
+                    onClick={() => router.push('/appointments')}
+                    className="template-btn sas mt-4"
+                    data-wow-delay="0.5s"
+                  >
+                    See All Services <i className="far fa-plus" />
+                  </a>
+
+                  {/* <div className="mt-3">
                     <div className="d-flex item-center">
                       <span className="mr-2 plus_sign">+</span>
                       <h6 className="pt-2">Affordable Rates ($50 doctor’s consultation fee)</h6>
@@ -168,13 +187,189 @@ const Index = () => {
                       <h6 className="pt-2">
                         Serve Non-insured Patients. (Insurance is not required to be our patient)</h6>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </section>
         {/*====== About Section End ======*/}
+
+        {/*====== Pediatric Care Start ======*/}
+        <section className="about-section section-gap bg_">
+          <div className="container">
+            <div className="row align-items-center justify-content-center">
+              <div className="col-md-7">
+                <div className="about-text">
+                  <div className="section-heading mb-30">
+                    <span className="tagline">Pediatric Care</span>
+                    <h2 className="title">
+                      Are you looking for quality pediatric care? Well, your search ends at Southwest Urgent Care!
+                    </h2>
+                  </div>
+                  <p>
+                    Our Pediatric services are backed by outstanding expertise and advanced diagnostic
+                    services to ensure effective treatment and a streamlned care experience for kids.
+                    Available 7 days a week, so you and your child don’t have to spend hours in an emergency room.
+                    Southwest Urgent Care provides a wide range of services for your Child's health.
+                  </p>
+
+                  <a
+                    onClick={() => router.push('/appointments')}
+                    className="template-btn sas mt-4"
+                    data-wow-delay="0.5s"
+                  >
+                    Learn More About Our Pediatric Care <i className="far fa-plus" />
+                  </a>
+                </div>
+              </div>
+              <div className="col-md-5">
+                <div className=" mb-xl-50">
+
+                  <div
+                    className="image-two wow fadeInDown"
+                    data-wow-delay="0.4s"
+                  >
+                    <img src="assets/PEDIATRIC-CARE.jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== Pediatric Care End ======*/}
+
+        {/*====== Virtual Urgent Care Start ======*/}
+        <section className="about-section section-gap ">
+          <div className="container">
+            <div className="row align-items-center justify-content-center">
+              <div className="col-md-6">
+                <div className=" mb-xl-50">
+
+                  <div
+                    className="image-two wow fadeInDown"
+                    data-wow-delay="0.4s"
+                  >
+                    <img src="assets/TELEMEDICINE-(Without-Green-Background).jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                  </div>
+
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="about-text">
+                  <div className="section-heading mb-30">
+                    {/* <span className="tagline">Virtual Urgent Care</span> */}
+                    <h2 className="title">
+                      Virtual Urgent Care
+                    </h2>
+                    <div className="mt-3">
+                      <div className="d-flex item-center">
+                        <span className="mr-2 plus_sign">+</span>
+                        <h6 className="pt-2">Get face to face consultation from the comfort of your home.</h6>
+                      </div>
+                      <div className="d-flex item-center">
+                        <span className="mr-2 plus_sign">+</span>
+                        <h6 className="pt-2">See a healthcare provider from anywhere at any time.</h6>
+                      </div>
+                      <div className="d-flex item-center">
+                        <span className="mr-2 plus_sign">+</span>
+                        <h6 className="pt-2">Real time conversation with your provider</h6>
+                      </div>
+                      <div className="d-flex item-center">
+                        <span className="mr-2 plus_sign">+</span>
+                        <h6 className="pt-2">We Accept Most Insurance</h6>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        {/*====== Virtual Urgent Care End ======*/}
+
+        {/*====== Services ======*/}
+        <section className="container mx-auto section-gap services pt-0">
+          <h2 className="title text-center"> Virtual Urgent Care </h2>
+          <div className="row mt-5">
+            {
+              serviceData.map((service, index) => (
+                <div className="col-md-3 col-6 service_card" key={index}>
+                  <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
+                  <h6 className="text-center">{service.name}</h6>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+        {/*====== Services End ======*/}
+
+        {/*====== esting or COVID-19 PCR Start ======*/}
+        <section className="about-section section-gap bg_">
+          <div className="container">
+            <div className="row align-items-center justify-content-center">
+              <div className="col-md-7">
+                <div className="about-text">
+                  <div className="section-heading mb-30">
+                    <h2 className="title">
+                      Are you not feeling well ? We offer rapid COVID-19 antigen testing or COVID-19 PCR testing
+                      for your travel requirement 7 days a week. Call today to book an appointment,
+                      set up a telemedicine appointment or just  simply walk-in at our  urgent care.
+                    </h2>
+                  </div>
+
+                </div>
+              </div>
+              <div className="col-md-5">
+                <div className=" mb-xl-50">
+
+                  <div
+                    className="image-two wow fadeInDown"
+                    data-wow-delay="0.4s"
+                  >
+                    <img src="assets/covid-testing.jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*====== esting or COVID-19 PCR End ======*/}
+
+        {/*====== Partners Section Start ======*/}
+        <section className="partner-section pt-5 pb-5 bg-color-grey section-map-overly-2">
+          <div className="container">
+            <div className="section-heading text-center mb-50">
+              <h2 className="title">WE ACCEPT MOST INSURANCE PLANS </h2>
+              <span className="span tagline">Traditional Medicare & most commercial and local marketplace plans are accepted.</span>
+              <p>WE ACCEPT MOST INSURANCE PLANE</p>
+              <span>Tradional Medicare, most commercial and local marketplace plans are accepted.</span>
+            </div>
+            <div className="partner-logo-grid">
+              <div className="single-partner">
+                <a href="#">
+                  <img
+                    src="assets/img/partner-logos/01-dark.png"
+                    alt="Partner"
+                  />
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        {/*====== Partners Section End ======*/}
+
+
+
+
+
+
+
         {/*====== Call to Action Start ======*/}
         <section
           className="cta-section bg-size-cover section-gap-100 bg-color-primary blend-mode-multiply"
@@ -354,7 +549,7 @@ const Index = () => {
                     <a
                       href="https://www.patientfusion.com/doctor/zeeshan-shaikh-md-68968"
                       target='_blank'
-                      rel="noreferrer" 
+                      rel="noreferrer"
                       className="template-btn template-btn-bordered mt-40 wow fadeInUp"
                       data-wow-delay="0.5s"
                     >
@@ -363,7 +558,7 @@ const Index = () => {
                     <a
                       href="https://swurgentcare.net/wp-content/uploads/2014/11/special_2014.pdf"
                       target='_blank'
-                      rel="noreferrer" 
+                      rel="noreferrer"
                       className="template-btn ml-4 template-btn-bordered mt-40 wow fadeInUp"
                       data-wow-delay="0.5s"
                     >

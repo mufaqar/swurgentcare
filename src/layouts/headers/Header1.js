@@ -115,16 +115,7 @@ const Header1 = ({ headerTopbar, position }) => {
           </div>
           <div className="header-right">
             <ul className="extra-icons">
-              <li className="d-none d-sm-block">
-                <div className="header-search-area">
-                  <form onSubmit={(e) => e.preventDefault()} action="#">
-                    <input type="search" placeholder="Search Here" />
-                    <button type="submit">
-                      <i className="far fa-search" />
-                    </button>
-                  </form>
-                </div>
-              </li>
+             
               <li className="d-none d-xl-block">
                 <div
                   className="off-canvas-btn style-two"
