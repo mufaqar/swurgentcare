@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import PageBanner from "../../src/components/PageBanner";
-import Layouts from "../../src/layouts/Layouts";
+import PageBanner from "../src/components/PageBanner";
+import Layouts from "../src/layouts/Layouts";
 import { useRouter } from 'next/router'
-import { sanityClient } from "../../lib/studio";
+import { sanityClient } from "../lib/studio";
 import PortableText from "react-portable-text"
 
 
@@ -36,7 +36,7 @@ const ServiceDetails = ({ service, services }) => {
     <Layouts footer={2}>
       <PageBanner title={service.title} />
       <>
-        <section className="services-area section-gap">
+        {/* <section className="services-area section-gap">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8 order-lg-last">
@@ -69,7 +69,7 @@ const ServiceDetails = ({ service, services }) => {
                       {
                         services.map((service, i) => (
                           <li key={i}>
-                            <a className="cap" onClick={() => router.push(`/services/${service?.slug.current}`)}>
+                            <a className="cap" onClick={() => router.push(`/${service?.slug.current}`)}>
                               <i className="far fa-angle-right" />
                               {service.title}
                             </a>
@@ -162,7 +162,7 @@ const ServiceDetails = ({ service, services }) => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/*====== Service Area End ======*/}
         {/*====== Related Services Start ======*/}
 
