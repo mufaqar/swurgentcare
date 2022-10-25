@@ -65,9 +65,13 @@ const Header1 = ({ headerTopbar, position }) => {
           <div className="header-left">
             <div className="site-logo">
               <Link href="/">
-                <img src="assets/img/logo.png" alt="swurgentcare" />
+                <img src="assets/site-logo.png" alt="swurgentcare" />
               </Link>
             </div>
+            
+          </div>
+          <div className="header-right">
+            <ul className="extra-icons">
             <nav className="site-menu menu-gap-left d-none d-xl-block">
               <ul className="primary-menu">
                 <li>
@@ -76,7 +80,7 @@ const Header1 = ({ headerTopbar, position }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="about">
+                  <Link href="/about">
                     <a>
                       About
                       <span className="dd-trigger">
@@ -112,18 +116,7 @@ const Header1 = ({ headerTopbar, position }) => {
                 </li>
               </ul>
             </nav>
-          </div>
-          <div className="header-right">
-            <ul className="extra-icons">
-             
-              <li className="d-none d-xl-block">
-                <div
-                  className="off-canvas-btn style-two"
-                  onClick={() => setSidebarTrigger(true)}
-                >
-                  <span />
-                </div>
-              </li>
+              
               <li className="d-xl-none">
                 <a
                   href="#"

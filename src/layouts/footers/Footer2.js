@@ -14,7 +14,7 @@ const Footer2 = ({ noNewsletters }) => {
               <div className="col-lg-3 col-md-8">
                 <div className="widget text-widget">
                   <div className="footer-logo">
-                    <img src="assets/img/logo.png" alt="swurgentcare" />
+                    <img src="assets/site-logo.png" alt="swurgentcare" />
                   </div>
                   <p>
                     We are a creative company that specializes in strategy & design. 

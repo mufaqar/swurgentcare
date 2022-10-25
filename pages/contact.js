@@ -131,7 +131,7 @@ const Contact = () => {
       <section className="contact-form-area">
         <div className="contact-map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.0698715806884!2d-95.48070708527048!3d29.717735240887784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c22a14ce8355%3A0x35bc1bec9466aac4!2s5900%20Chimney%20Rock%20Rd%2C%20Houston%2C%20TX%2077081%2C%20USA!5e0!3m2!1sen!2s!4v1666086007916!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d444003.0914019853!2d-95.649555!3d29.610251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0xe0b4d8112d2afe65!2s400%20Promenade%20Wy%20%231500%2C%20Sugar%20Land%2C%20TX%2077478!5e0!3m2!1sen!2sus!4v1666682796648!5m2!1sen!2sus"
             loading="lazy"
           />
         </div>

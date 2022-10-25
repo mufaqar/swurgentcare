@@ -151,7 +151,7 @@ span.plus_sign{
 }
 
 .bgwhite{
-  background: rgba(41,169,206, 0.7) !important;
+  background: rgb(24,40,69, 0.7) !important;
   color: white;
 }
 
@@ -205,6 +205,7 @@ span.plus_sign{
   background: transparent !important;
   color: black !important;
 }
+
 .bg_{
   background: rgba(11, 11, 11, 0.03) !important;
 }
@@ -215,6 +216,7 @@ span.plus_sign{
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  border-radius: 12px;
   border: 1px solid transparent;
 }
 .services_icon{
@@ -223,10 +225,13 @@ span.plus_sign{
 }
 .service_card h6{
   margin-top: 1.5rem;
-  font-family: Inter
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #073046;
 }
 .service_card:hover{
-  background: rgba(11, 11, 11, 0.03);
+  background: #fff;
   border: 1px solid rgba(11, 11, 11, .03) !important;
 }
 .service_card:hover .services_icon{
@@ -237,15 +242,13 @@ span.plus_sign{
 }
 .testimonial-section{
   color:white;
-  background: rgba(41,169,206, 01) !important;
+  background: var(--color-primary)!important;
 }
 .testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc,
 .testimonial-section .section-heading .title{
   color: rgb(238, 238, 238);
 }
-.testimonial-slider-one ul.slick-dots li.slick-active{
-  background-color: white
-}
+
 .home_contact .contact-info-wrapper, .contact-info-wrapper a,
 .home_contact .contact-info-wrapper .info-title{
   color:black !important; 
@@ -271,9 +274,52 @@ height: 420px;
 }
 .testimonial-section .section-heading .tagline,
 .testimonial-section  .testimonial-slider-one .single-testimonial-slider .testimonial-inner .author-info .title{
-  color: rgb(79, 79, 79) !important;
+  color: var(--color-heading)!important;
 }
-
+.testimonial-section .testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc{
+  font-family: var(--font-inter);
+  font-size: 18px;
+  font-weight: 400;
+}
+.primary-menu li a{
+  font-family: var(--font-inter) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #073046 !important;
+}
+.sas:hover{
+	color: var(--color-heading) !important;
+}
+.tagline{
+  color: var(--color-primary) !important;
+}
+.covid19{
+  background: var(--color-primary);
+}
+.covid19 .section-heading .title{
+  color: #fff !important;
+}
+.testimonial-slider-one ul.slick-dots li{
+  background-color: var(--color-heading)!important;
+}
+.testimonial-slider-one .section-heading .title{
+  color: white !important;
+}
+.testimonial-slider-one ul.slick-dots li.slick-active{
+  background-color: white !important;
+}
+.testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc, .testimonial-section .section-heading .title{
+  color: white !important;
+}
+.site-logo{
+  width: 110px;
+}
+.template-header .site-menu ul li a:hover{
+  color: var(--color-heading) !important;
+}
+.footer-logo{
+  width: 150px;
+}
 
 
 @media (max-width: 768px) {
@@ -290,6 +336,9 @@ height: 420px;
   }
   .landing_contact, .landing-map{
     width: 100%;
+  }
+  .hero_wrapper .doctor-details-wrapper .working-hour-table{
+    max-width:100%
   }
 
 }

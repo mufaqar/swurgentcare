@@ -319,23 +319,25 @@ const Index = () => {
         {/*====== Virtual Urgent Care End ======*/}
 
         {/*====== Services ======*/}
-        <section className="container mx-auto section-gap services pt-0">
-          <h2 className="title text-center"> Virtual Urgent Care </h2>
-          <div className="row mt-5">
-            {
-              serviceData.map((service, index) => (
-                <div className="col-md-3 col-6 service_card" key={index}>
-                  <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
-                  <h6 className="text-center">{service.name}</h6>
-                </div>
-              ))
-            }
+        <section className="section-gap services bg_">
+          <div className="container mx-auto">
+            <h2 className="title text-center"> Virtual Urgent Care </h2>
+            <div className="row mt-5">
+              {
+                serviceData.map((service, index) => (
+                  <div className="col-md-3 col-6 service_card" key={index}>
+                    <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
+                    <h6 className="text-center">{service.name}</h6>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </section>
         {/*====== Services End ======*/}
 
         {/*====== esting or COVID-19 PCR Start ======*/}
-        <section className="about-section section-gap bg_">
+        <section className="about-section section-gap covid19">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-md-7">
@@ -515,8 +517,8 @@ const Index = () => {
           <div className="row">
             <div className="landing_contact ">
               <h1 className="title">Contact Us</h1>
-              <p className="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quia voluptatum deleniti culpa harum quos veniam ex eius, eligendi accusamus aliquam!</p>
+              <p className="mt-3">We believe that the experience you receive at Southwest Urgent Care Center matters. 
+              We listen to your concerns and help you resolve them in the best possible manner.</p>
               <div className="single-contact-info mt-4">
                 <h3 className="info-title mb-2">
                   <i className="fal fa-coffee" /> Get In Touch
@@ -540,7 +542,7 @@ const Index = () => {
             <div className="contact-form-area landing-map ">
               <div className="contact-map">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.0698715806884!2d-95.48070708527048!3d29.717735240887784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c22a14ce8355%3A0x35bc1bec9466aac4!2s5900%20Chimney%20Rock%20Rd%2C%20Houston%2C%20TX%2077081%2C%20USA!5e0!3m2!1sen!2s!4v1666086007916!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d444003.0914019853!2d-95.649555!3d29.610251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0xe0b4d8112d2afe65!2s400%20Promenade%20Wy%20%231500%2C%20Sugar%20Land%2C%20TX%2077478!5e0!3m2!1sen!2sus!4v1666682796648!5m2!1sen!2sus"
                   loading="lazy"
                 />
               </div>
