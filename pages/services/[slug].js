@@ -3,8 +3,12 @@ import React from "react";
 import { serviceData } from "../../public/assets/data/servicesData";
 import PageBanner from "../../src/components/PageBanner";
 import Layouts from "../../src/layouts/Layouts";
+import { useRouter } from 'next/router'
+
 
 const ServiceDetails = () => {
+  const router = useRouter()
+
   return (
     <Layouts footer={2}>
       <PageBanner title={"SKIN INFACTION"} />
@@ -87,7 +91,7 @@ const ServiceDetails = () => {
                     {
                       serviceData.map((service, i) => (
                         <li key={i}>
-                          <a href="#">
+                          <a onClick={()=>router.push('/services/12')}>
                             <i className="far fa-angle-right" />
                             {service.name}
                           </a>
