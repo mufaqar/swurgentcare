@@ -7,9 +7,9 @@ import { sanityClient } from "../lib/studio";
 import PortableText from "react-portable-text"
 
 
-{/* <QUERY> */}
 
-const ServicesQuery =` *[_type == "services"]{
+
+const ServicesQuery =`*[_type == "services"]{
   title,
   icon{
     asset->{
@@ -25,7 +25,7 @@ const ServicesQuery =` *[_type == "services"]{
   content,
 }`
 
-// </QUERY>
+
 
 
 
@@ -176,44 +176,44 @@ export default ServiceDetails;
 
 
 
-const projectSlugQuery = `*[_type == "services" && slug.current == $slug][0]{
-  title,
-  icon{
-    asset->{
-      url
-    },
-  },
-  slug,
-  poster{
-    asset->{
-      url
-    },
-  },
-  content,
-}`
+// const projectSlugQuery = `*[_type == "services" && slug.current == $slug][0]{
+//   title,
+//   icon{
+//     asset->{
+//       url
+//     },
+//   },
+//   slug,
+//   poster{
+//     asset->{
+//       url
+//     },
+//   },
+//   content,
+// }`
 
-export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(`
-  *[_type == "services" && defined(slug.current)]{
-       "params": {
-         "slug" : slug.current
-       }
-     }
-  `);
-  return {
-    paths,
-    fallback: true,
-  }
-}
+// export async function getStaticPaths() {
+//   const paths = await sanityClient.fetch(`
+//   *[_type == "services" && defined(slug.current)]{
+//        "params": {
+//          "slug" : slug.current
+//        }
+//      }
+//   `);
+//   return {
+//     paths,
+//     fallback: true,
+//   }
+// }
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const service = await sanityClient.fetch(projectSlugQuery, { slug });
-  const services = await sanityClient.fetch(ServicesQuery);
-  return {
-    props: {
-      service,
-      services
-    }
-  };
-}
+// export async function getStaticProps({ params }) {
+//   const { slug } = params;
+//   const service = await sanityClient.fetch(projectSlugQuery, { slug });
+//   const services = await sanityClient.fetch(ServicesQuery);
+//   return {
+//     props: {
+//       service,
+//       services
+//     }
+//   };
+// }
