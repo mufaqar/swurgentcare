@@ -44,7 +44,7 @@ const ServiceDetails = ({ service, services }) => {
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
                   <figure className="mt-b">
-                    <img src={service?.poster.asset.url} alt="skin-infection" layout="fill" />
+                    <img src={service?.poster.asset.url} alt="skin-infection" />
                   </figure>
                   <div className="content_wrapper">
                     <PortableText
