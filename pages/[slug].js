@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { serviceData } from "../public/assets/data/servicesData";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 import { useRouter } from 'next/router'
@@ -31,7 +30,6 @@ const ServicesQuery =` *[_type == "services"]{
 
 
 const ServiceDetails = ({ service, services }) => {
-  console.log("🚀 ~ file: [slug].js ~ line 30 ~ ServiceDetails ~ data", service)
   const router = useRouter()
 
   return (
@@ -55,7 +53,6 @@ const ServiceDetails = ({ service, services }) => {
                       serializers={{
                         h1: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
                         h2: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
-
                         li: ({ children }) => <li className="special-list-item">{children}</li>
                       }}
                     />
