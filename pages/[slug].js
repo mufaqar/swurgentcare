@@ -36,7 +36,7 @@ const Slug = ({ service, services }) => {
     <Layouts footer={2}>
       {/* <PageBanner title={service.title} /> */}
       <>
-        {/* <section className="services-area section-gap">
+        <section className="services-area section-gap">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8 order-lg-last">
@@ -162,7 +162,7 @@ const Slug = ({ service, services }) => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
         {/*====== Service Area End ======*/}
         {/*====== Related Services Start ======*/}
 
@@ -176,44 +176,44 @@ export default Slug;
 
 
 
-// const projectSlugQuery = `*[_type == "services" && slug.current == $slug][0]{
-//   title,
-//   icon{
-//     asset->{
-//       url
-//     },
-//   },
-//   slug,
-//   poster{
-//     asset->{
-//       url
-//     },
-//   },
-//   content,
-// }`
+const projectSlugQuery = `*[_type == "services" && slug.current == $slug][0]{
+  title,
+  icon{
+    asset->{
+      url
+    },
+  },
+  slug,
+  poster{
+    asset->{
+      url
+    },
+  },
+  content,
+}`
 
-// export async function getStaticPaths() {
-//   const paths = await sanityClient.fetch(`
-//   *[_type == "services" && defined(slug.current)]{
-//        "params": {
-//          "slug" : slug.current
-//        }
-//      }
-//   `);
-//   return {
-//     paths,
-//     fallback: true,
-//   }
-// }
+export async function getStaticPaths() {
+  const paths = await sanityClient.fetch(`
+  *[_type == "services" && defined(slug.current)]{
+       "params": {
+         "slug" : slug.current
+       }
+     }
+  `);
+  return {
+    paths,
+    fallback: true,
+  }
+}
 
-// export async function getStaticProps({ params }) {
-//   const { slug } = params;
-//   const service = await sanityClient.fetch(projectSlugQuery, { slug });
-//   const services = await sanityClient.fetch(ServicesQuery);
-//   return {
-//     props: {
-//       service,
-//       services
-//     }
-//   };
-// }
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const service = await sanityClient.fetch(projectSlugQuery, { slug });
+  const services = await sanityClient.fetch(ServicesQuery);
+  return {
+    props: {
+      service,
+      services
+    }
+  };
+}
