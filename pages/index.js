@@ -180,9 +180,9 @@ const Index = () => {
                   </p>
 
                   <a
-                    onClick={() => router.push('/appointments')}
                     className="template-btn sas mt-4"
                     data-wow-delay="0.5s"
+                    href="#services"
                   >
                     See All Services <i className="far fa-plus" />
                   </a>
@@ -223,7 +223,7 @@ const Index = () => {
         {/*====== About Section End ======*/}
 
         {/*====== Pediatric Care Start ======*/}
-        <section className="about-section section-gap bg_">
+        <section className="about-section Pediatric section-gap bg_">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-md-7">
@@ -268,7 +268,7 @@ const Index = () => {
         {/*====== Pediatric Care End ======*/}
 
         {/*====== Virtual Urgent Care Start ======*/}
-        <section className="about-section section-gap ">
+        <section className="about-section  section-gap ">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-md-6">
@@ -319,7 +319,7 @@ const Index = () => {
         {/*====== Virtual Urgent Care End ======*/}
 
         {/*====== Services ======*/}
-        <section className="section-gap services bg_">
+        <section id='services' className="section-gap services bg_">
           <div className="container mx-auto">
             <h2 className="title text-center"> Virtual Urgent Care </h2>
             <div className="row mt-5">
@@ -513,7 +513,7 @@ const Index = () => {
 
         {/* contect us  */}
 
-        <section className="container  mx-auto section-gap">
+        <section className="container landind_contact_wrapper  mx-auto section-gap">
           <div className="row">
             <div className="landing_contact ">
               <h1 className="title">Contact Us</h1>

@@ -1,17 +1,19 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { Blog, Doctor, Home, Pages, Services, Shop } from "./Menu";
+import {Pages} from "./Menu";
 import MobileMenu from "./MobileMenu";
 import SlidePanel from "./SlidePanel";
 
 const Header1 = ({ headerTopbar, position }) => {
   const [sidebarTrigger, setSidebarTrigger] = useState(false);
   const [mobileTrigger, setMobileTrigger] = useState(false);
+
+  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+  const URL = `${origin}`;
+
   return (
     <header
-      className={`template-header sticky-header header-one ${
-        position ? position + "-header" : ""
-      }`}
+      className={`template-header sticky-header header-one ${position ? position + "-header" : "" }`}
     >
       {headerTopbar && (
         <div className="header-topbar d-none d-md-block">
@@ -19,7 +21,7 @@ const Header1 = ({ headerTopbar, position }) => {
             <div className="row align-items-center justify-content-between">
               <div className="col-lg-4">
                 <ul className="topbar-menu">
-                  <li style={{listStyle:'none'}}>
+                  <li style={{ listStyle: 'none' }}>
                     5900 Chimney Rock, Suite X Houston, Texas 77081
                   </li>
                 </ul>
@@ -68,55 +70,55 @@ const Header1 = ({ headerTopbar, position }) => {
                 <img src="assets/site-logo.png" alt="swurgentcare" />
               </Link>
             </div>
-            
+
           </div>
           <div className="header-right">
             <ul className="extra-icons">
-            <nav className="site-menu menu-gap-left d-none d-xl-block">
-              <ul className="primary-menu">
-                <li>
-                  <Link href="/index-two">
-                    <a>Home</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <a>
-                      About
-                      <span className="dd-trigger">
-                        <i className="far fa-plus" />
-                      </span>
+              <nav className="site-menu menu-gap-left d-none d-xl-block">
+                <ul className="primary-menu">
+                  <li>
+                    <Link href="/index-two">
+                      <a>Home</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about">
+                      <a>
+                        About
+                        <span className="dd-trigger">
+                          <i className="far fa-plus" />
+                        </span>
+                      </a>
+                    </Link>
+                    <ul className="sub-menu">
+                      <Pages />
+                    </ul>
+                  </li>
+                  <li>
+                    <a href={`${URL}/#services`}>
+                      Services
                     </a>
-                  </Link>
-                  <ul className="sub-menu">
-                    <Pages />
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <Link href="/doctor">
-                    <a>
-                      Providers
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="blog-standard">
-                    <a>
-                      Health Vault
-                    </a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact Us</Link>
-                </li>
-              </ul>
-            </nav>
-              
+                  </li>
+                  <li>
+                    <Link href="/doctor">
+                      <a>
+                        Providers
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="blog-standard">
+                      <a>
+                        Health Vault
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Contact Us</Link>
+                  </li>
+                </ul>
+              </nav>
+
               <li className="d-xl-none">
                 <a
                   href="#"

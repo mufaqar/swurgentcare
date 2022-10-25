@@ -340,5 +340,32 @@ height: 420px;
   .hero_wrapper .doctor-details-wrapper .working-hour-table{
     max-width:100%
   }
+  .landing_contact{
+    padding: 2rem;
+  }
+  .landing-map{
+    padding: 0;
+  }
+  .landind_contact_wrapper {
+    padding-top:0px !important;
+    padding-bottom: 0px !important;
+  }
+  .landind_contact_wrapper.row{
+    margin-right: 0; 
+    margin-left: 0;
+  }
+  .about-section img{
+    margin-top: 2rem;
+  }
+  .section-gap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .Pediatric .mb-xl-50{
+    margin-bottom: 0;
+  }
+  .partner-logo-grid .single-partner img {
+    max-width: 50%;
+  }
 
 }
