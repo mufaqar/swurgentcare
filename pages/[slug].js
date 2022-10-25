@@ -30,11 +30,12 @@ const ServicesQuery =`*[_type == "services"]{
 
 
 const Slug = ({ service, services }) => {
+
   const router = useRouter()
 
   return (
     <Layouts footer={2}>
-      {/* <PageBanner title={service.title} /> */}
+      <PageBanner title={service.title} />
       <>
         <section className="services-area section-gap">
           <div className="container">
@@ -45,7 +46,7 @@ const Slug = ({ service, services }) => {
                     <img src={service?.poster.asset.url} alt="skin-infection" />
                   </figure>
                   <div className="content_wrapper">
-                    {/* <PortableText
+                    <PortableText
                       // Pass in block content straight from Sanity.io
                       content={service.content}
                       // Optionally override marks, decorators, blocks, etc. in a flat
@@ -55,7 +56,7 @@ const Slug = ({ service, services }) => {
                         h2: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
                         li: ({ children }) => <li className="special-list-item">{children}</li>
                       }}
-                    /> */}
+                    />
                   </div>
 
 
@@ -175,45 +176,30 @@ export default Slug;
 
 
 
-
-const projectSlugQuery = `*[_type == "services" && slug.current == $slug][0]{
-  title,
-  icon{
-    asset->{
-      url
+export const getServerSideProps = async (pageContext) => {
+  const pageSlug = pageContext.query.slug;
+  const query = `*[ _type == "services" && slug.current == $pageSlug ][0]{
+    title,
+    icon{
+      asset->{
+        url
+      },
     },
-  },
-  slug,
-  poster{
-    asset->{
-      url
+    slug,
+    poster{
+      asset->{
+        url
+      },
     },
-  },
-  content,
-}`
+    content,
+  }`;
 
-export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(`
-  *[_type == "services" && defined(slug.current)]{
-       "params": {
-         "slug" : slug.current
-       }
-     }
-  `);
-  return {
-    paths,
-    fallback: true,
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const service = await sanityClient.fetch(projectSlugQuery, { slug });
+  const service = await sanityClient.fetch(query, {pageSlug});
   const services = await sanityClient.fetch(ServicesQuery);
   return {
     props: {
-      service,
-      services
-    }
-  };
-}
+      services,
+        service
+    }, // will be passed to the page component as props
+  }
+}; 
