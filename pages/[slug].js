@@ -7,8 +7,6 @@ import { sanityClient } from "../lib/studio";
 import PortableText from "react-portable-text"
 
 
-
-
 const ServicesQuery =`*[_type == "services"]{
   title,
   icon{
@@ -24,8 +22,6 @@ const ServicesQuery =`*[_type == "services"]{
   },
   content,
 }`
-
-
 
 
 
@@ -200,6 +196,6 @@ export const getServerSideProps = async (pageContext) => {
     props: {
       services,
         service
-    }, // will be passed to the page component as props
+    },
   }
 }; 
