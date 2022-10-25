@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import PageBanner from "../src/components/PageBanner";
-import Layouts from "../src/layouts/Layouts";
+import PageBanner from "../../src/components/PageBanner";
+import Layouts from "../../src/layouts/Layouts";
 import { useRouter } from 'next/router'
-import { sanityClient } from "../lib/studio";
+import { sanityClient } from "../../lib/studio";
 import PortableText from "react-portable-text"
 
 
@@ -69,7 +69,7 @@ const ServiceDetails = ({ service, services }) => {
                       {
                         services.map((service, i) => (
                           <li key={i}>
-                            <a className="cap" onClick={() => router.push(`/${service?.slug.current}`)}>
+                            <a className="cap" onClick={() => router.push(`/services/${service?.slug.current}`)}>
                               <i className="far fa-angle-right" />
                               {service.title}
                             </a>
