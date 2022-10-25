@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Slider from "react-slick";
+import { serviceData } from "../public/assets/data/servicesData";
 import Counter from "../src/components/Counter";
 import HeroBanner from "../src/components/HeroBanner";
 import VideoPopup from "../src/components/VideoPopup";
@@ -17,94 +18,7 @@ import { testimonialOne } from "../src/sliderProps";
 const Index = () => {
   const [video, setVideo] = useState(false);
   const router = useRouter();
-  const serviceData = [
-    {
-      id: 1,
-      name: "Allergies",
-      icon: 'leaf.png'
-    },
-    {
-      id: 2,
-      name: "asthma",
-      icon: 'inhalator.png'
-    },
-    {
-      id: 3,
-      name: "Cold & flu",
-      icon: 'fever.png'
-    },
-    {
-      id: 4,
-      name: "Covid-19 Testing",
-      icon: 'coronavirus.png'
-    },
-    {
-      id: 5,
-      name: "Ear infaction",
-      icon: 'ear.png'
-    },
-    {
-      id: 6,
-      name: "Flu Shot",
-      icon: 'secure-shield.png'
-    },
-    {
-      id: 7,
-      name: "Illness",
-      icon: 'stethoscope.png'
-    },
-    {
-      id: 8,
-      name: "Injury",
-      icon: 'syringe.png'
-    },
-    {
-      id: 9,
-      name: "Pediatrics",
-      icon: 'pediatrics.png'
-    },
-    {
-      id: 10,
-      name: "Lab",
-      icon: 'flask.png'
-    },
-    {
-      id: 11,
-      name: "Skin infaction & Rash",
-      icon: 'disease.png'
-    },
-    {
-      id: 12,
-      name: "Sore & strep Throat",
-      icon: 'sore-throat.png'
-    },
-    {
-      id: 13,
-      name: "Sports clearance exam",
-      icon: 'running.png'
-    },
-    {
-      id: 14,
-      name: "STD treatment & testing ",
-      icon: 'test-tubes.png'
-    },
-    {
-      id: 15,
-      name: "Telemedicine ",
-      icon: 'first-aid-kit.png'
-    },
 
-    {
-      id: 16,
-      name: "Urinary Tract Infaction ",
-      icon: 'washroom.png'
-    },
-    {
-      id: 17,
-      name: "X-Ray",
-      icon: 'x-rays.png'
-    },
-  ]
 
   const partner = [
     {
@@ -325,10 +239,12 @@ const Index = () => {
             <div className="row mt-5">
               {
                 serviceData.map((service, index) => (
-                  <div className="col-md-3 col-6 service_card" key={index}>
-                    <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
-                    <h6 className="text-center">{service.name}</h6>
-                  </div>
+                  <Link href='services/12'>
+                    <div className="col-md-3 col-6 service_card" key={index}>
+                      <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
+                      <h6 className="text-center">{service.name}</h6>
+                    </div>
+                  </Link>
                 ))
               }
             </div>
@@ -517,8 +433,8 @@ const Index = () => {
           <div className="row">
             <div className="landing_contact ">
               <h1 className="title">Contact Us</h1>
-              <p className="mt-3">We believe that the experience you receive at Southwest Urgent Care Center matters. 
-              We listen to your concerns and help you resolve them in the best possible manner.</p>
+              <p className="mt-3">We believe that the experience you receive at Southwest Urgent Care Center matters.
+                We listen to your concerns and help you resolve them in the best possible manner.</p>
               <div className="single-contact-info mt-4">
                 <h3 className="info-title mb-2">
                   <i className="fal fa-coffee" /> Get In Touch

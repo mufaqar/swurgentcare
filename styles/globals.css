@@ -217,6 +217,7 @@ span.plus_sign{
   justify-content: center;
   text-transform: uppercase;
   border-radius: 12px;
+  cursor: pointer;
   border: 1px solid transparent;
 }
 .services_icon{

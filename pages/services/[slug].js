@@ -1,315 +1,193 @@
 import Link from "next/link";
 import React from "react";
+import { serviceData } from "../../public/assets/data/servicesData";
 import PageBanner from "../../src/components/PageBanner";
 import Layouts from "../../src/layouts/Layouts";
 
-const DoctorDetails = () => {
+const ServiceDetails = () => {
   return (
-    <Layouts>
-      <PageBanner
-        title={"Michael l. Johnson"}
-        pageName={"Doctor Details"}
-        bgnone
-      />
-      {/* <!--====== Doctor Section Start ======--> */}
-      <section className="doctors-section section-gap">
-        <div className="container">
-          <div className="doctor-details-wrapper">
+    <Layouts footer={2}>
+      <PageBanner title={"SKIN INFACTION"} />
+      <>
+        <section className="services-area section-gap">
+          <div className="container">
             <div className="row justify-content-center">
-              <div className="working-hour-table mt-md-50">
-                <div className="section-heading mb-30">
-                  <h2 className="title">Make an a appointment</h2>
-                </div>
-                <ul>
-                  <li>
-                    <span>Sunday</span>
-                    <span>02 pm to 06 pm</span>
-                  </li>
-                  <li>
-                    <span>Monday</span>
-                    <span>03 pm to 07 pm</span>
-                  </li>
-                  <li>
-                    <span>Tuesday</span>
-                    <span>02 pm to 06 pm</span>
-                  </li>
-                  <li>
-                    <span>Wednesday</span>
-                    <span>02 pm to 06 pm</span>
-                  </li>
-                  <li>
-                    <span>Thursday</span>
-                    <span>04 pm to 06 pm</span>
-                  </li>
-                  <li>
-                    <span>Friday</span>
-                    <span>03 pm to 08 pm</span>
-                  </li>
-                  <li>
-                    <span>Saturday</span>
-                    <span className="closed">Closed</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!--====== Doctor Section End ======--> */}
+              <div className="col-lg-8 order-lg-last">
+                <div className="service-details-wrapper">
+                  <h2 className="service-title">Treatments for Skin Rashes and Infections</h2>
+                  <p>
+                    No one likes having an itchy rash on their skin, or even worse,
+                    a painful skin infection that can spread and get worse over time.
+                    Besides feeling horrible, you may be worried about people seeing the rash or infection,
+                    which could cause your skin to get bumpy, red, or worse.
+                    Getting the right treatment is essential when your skin is plagued by one of these conditions.
+                    Keep reading to find out what kinds of treatment you should seek.
+                  </p>
+                  <h2 className="mt-3 mb-3">Seek Immediate Care for Skin Conditions</h2>
+                  <p>Because skin infections and rashes can be so common, it’s important to identify the cause of the irritation fast.
+                    This process is sped up considerably when working with a healthcare provider that knows what they’re doing and have been
+                    working in healthcare for long enough to have gained valuable experience.
+                    If you have a skin rash, infection, or other form of irritation, you should seek immediate help from a healthcare professional.
+                  </p>
+                  <h2 className="mt-3 mb-3">What Are the Symptoms of Skin Rash and Infection? </h2>
+                  <p>Our skin is the only layer of defense between our bodies and the germs and contaminants of the world.
+                    It comes into contact with thousands of potential contaminants every single day, and most of the time, it’s able to protect us.
+                    But when your skin becomes infected or irritated, its ability to protect us can be compromised.
+                    That’s why it’s important to watch for telltale signs and symptoms that a skin infection or rash has occurred.
+                    These include but are not limited to:
+                  </p>
 
-      {/* <!--====== Skill Section Start ======--> */}
-      <section className="skill-section section-gap border-top-primary">
-        <div className="container">
-          <div className="row justify-content-center justify-content-lg-between align-items-center">
-            <div className="col-lg-6 col-md-10">
-              <div className="tile-gallery-two pr-lg-3">
-                <div className="image-one">
-                  <img src="assets/img/tile-gallery/04.jpg" alt="Image" />
-                </div>
-                <div
-                  className="image-two text-right wow fadeInUp"
-                  data-wow-delay="0.3s"
-                >
-                  <img src="assets/img/tile-gallery/05.jpg" alt="Image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-9">
-              <div className="skill-content pl-xl-5 mt-md-50">
-                <div className="section-heading mb-20">
-                  <span className="tagline">Professional Skills</span>
-                  <h2 className="title">
-                    25 Years Of Experience In Medical Services
-                  </h2>
-                </div>
-                <p>
-                  Sed ut perspiciatis unde omnis natus error voluptatem santium
-                  doloremque laudantium totam rem aperieaque ipsa quae abillo
-                  ven veritatis et quasi architecto beatae vitae dicta.
+                  <ul className="check-list mt-4 mb-4">
+                    <li>
+                      Aches and Fever
+                    </li>
+                    <li>Irritation, swelling, or pain</li>
+                    <li>Scaly, red, and itchy skin</li>
+                    <li>
+                      Sores, blisters, and bumps on the skin
+                    </li>
+                  </ul>
+
+                  <p className="mt-3">If you notice one of these common symptoms somewhere on your skin, chances are you’ve contracted 
+                  some kind of skin rash or infection and should seek medical help as soon as you can. </p>
+                
+                <h2 className="mt-3 mb-3">What Are the Causes? </h2>
+                <p>As we mentioned briefly earlier in the article, there are any number of potential underlying causes
+                  for skin rashes and infections. Some of these include clogged pores, allergic reactions,
+                  disease of the autoimmune system, contact with fungus or virus, friction irritation,
+                  insect bites or parasite bites, or reactions to medications.
+                  These are not the only possible causes but are some of the most common we’ve seen.<br />
+                  As it can be difficult to know exactly which one of these might be causing your symptoms,
+                  it’s important to see an experienced healthcare provider as soon as possible.
+                  They’ll be able to diagnose the issue and tell you how to prevent it from happening again.
                 </p>
-                <div
-                  className="skills-items mt-50 wow fadeInUp"
-                  data-wow-delay="0.4s"
-                >
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="89"
-                    data-line-color="#499afa"
-                    data-line-bg="#e4f0fe"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Medical Care</h5>
-                      <span className="progress-percentage">89%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="64"
-                    data-line-color="#ffae00"
-                    data-line-bg="#fff3d9"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Family Care</h5>
-                      <span className="progress-percentage">64%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="78"
-                    data-line-color="#b505ff"
-                    data-line-bg="#f4daff"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Child Care</h5>
-                      <span className="progress-percentage">78%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="85"
-                    data-line-color="#ff3000"
-                    data-line-bg="#ffe0d9"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Senior Care</h5>
-                      <span className="progress-percentage">85%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!--====== Skill Section End ======--> */}
+                <h2 className="mt-3 mb-3">How To Diagnose and Treat</h2>
+                <p>A healthcare provider at Southwest Urgent Care will be able to set you up with an appointment
+                  to see a trained medical professional who has seen these types of issues before in many patients.
+                  They’ll start by digging into your medical history to see if the cause could come from a
+                  pre-existing condition or allergy. They’ll then do testing on the sight of the rash or infection to
+                  determine what is the cause and what treatment should be used.
+                  Please call today at Soutwest Urgent Care at 346-341-7573 to book an appointment to be checked for skin infection.
+                </p>
 
-      {/* <!--====== Appointment Section Start ======--> */}
-      <section className="appointment-section">
-        <div className="appointment-form-three style-two bg-color-primary">
-          <div className="form-wrap">
-            <div className="section-heading text-center heading-white mb-60">
-              <span className="tagline">Make an Appointment</span>
-              <h2 className="title">
-                Fill-up The From to Get Our Medical Services{" "}
-              </h2>
-            </div>
-            <form onSubmit={(e) => e.preventDefault()} action="#">
-              <div className="row">
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <input type="text" placeholder="Your Full Name" />
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <input type="email" placeholder="Email Address" />
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <select>
-                      <option value="1" selected disabled>
-                        Choose Doctors
-                      </option>
-                      <option value="2">Doctor One</option>
-                      <option value="3">Doctor Two</option>
-                      <option value="4">Doctor Three</option>
-                      <option value="5">Doctor Four</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <select>
-                      <option value="1" selected disabled>
-                        Services Category
-                      </option>
-                      <option value="2">Service One</option>
-                      <option value="3">Service Two</option>
-                      <option value="4">Service Three</option>
-                      <option value="5">Service Four</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <input type="date" />
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="input-field">
-                    <input type="text" placeholder="Phone Number" />
-                  </div>
-                </div>
-                <div className="col-sm-12">
-                  <div className="input-field">
-                    <button type="submit" className="template-btn">
-                      Make an Appointment <i className="far fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div
-            className="appointment-image"
-            style={{ backgroundImage: `url(assets/img/appointment/06.jpg)` }}
-          ></div>
-        </div>
-      </section>
-      {/* <!--====== Appointment Section End ======--> */}
+                {/* <blockquote className="mt-30">
+                    Quis autem vel eum iure reprehenderit qui in voluptate velit
+                    esse quam nihil molestiae consequatur, vel illum qui dolorem
+                    eum fugiat quo voluptas nulla pariatur
+                  </blockquote> */}
 
-      {/* <!--====== Service Section Start ======--> */}
-      <section className="services-section section-gap">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-7">
-              <div className="section-heading text-center mb-30">
-                <span className="tagline">Popular Medical Services</span>
-                <h2 className="title">
-                  Benefit For Physical Mental and Virtual Care
-                </h2>
+
               </div>
             </div>
-          </div>
-          <div className="row service-loop justify-content-center">
-            <div className="col-lg-4 col-md-6 col-sm-10">
-              <div className="fancy-content-box-two mt-40">
-                <div className="thumbnail">
-                  <img src="assets/img/iconic-box/01.jpg" alt="Image" />
+            <div className="col-lg-4 col-md-10 order-lg-first">
+              <div className="service-sidebar">
+                <div className="widget departments-list">
+                  <h3 className="widget-title">Departments</h3>
+                  <ul>
+                    {
+                      serviceData.map((service, i) => (
+                        <li key={i}>
+                          <a href="#">
+                            <i className="far fa-angle-right" />
+                            {service.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+
+
+                  </ul>
                 </div>
-                <div className="box-content">
-                  <div className="icon">
-                    <img src="assets/img/icon/heart-2.png" alt="" />
-                  </div>
-                  <div className="content">
-                    <h4 className="title">
-                      <Link href="/service-details">
-                        <a>Cardiology</a>
-                      </Link>
-                    </h4>
-                    <p>Amet consect ascnge eiusmod tempors</p>
-                  </div>
+                <div className="widget appointment-form">
+                  <h3 className="widget-title">Appointment</h3>
+                  <p>
+                    Consectetur adipiscing elit sed do eiusmod tempor
+                    incididunt
+                  </p>
+                  <form onSubmit={(e) => e.preventDefault()} action="#">
+                    <div className="input-field">
+                      <input type="text" placeholder="Full Name" />
+                    </div>
+                    <div className="input-field">
+                      <input type="text" placeholder="Departments" />
+                    </div>
+                    <div className="input-field">
+                      <input type="text" placeholder="Choose Doctors" />
+                    </div>
+                    <div className="input-field">
+                      <input type="text" placeholder="Date & Time" />
+                    </div>
+                    <div className="input-field">
+                      <button type="submit" className="template-btn">
+                        Appointment Now <i className="far fa-plus" />
+                      </button>
+                    </div>
+                  </form>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-10">
-              <div className="fancy-content-box-two mt-40">
-                <div className="thumbnail">
-                  <img src="assets/img/iconic-box/02.jpg" alt="Image" />
-                </div>
-                <div className="box-content">
-                  <div className="icon">
-                    <img src="assets/img/icon/brain-2.png" alt="" />
-                  </div>
-                  <div className="content">
-                    <h4 className="title">
-                      <Link href="/service-details">
-                        <a>Neurology</a>
-                      </Link>
-                    </h4>
-                    <p>Quis autem reprehe nderit voluptate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-10">
-              <div className="fancy-content-box-two mt-40">
-                <div className="thumbnail">
-                  <img src="assets/img/iconic-box/03.jpg" alt="Image" />
-                </div>
-                <div className="box-content">
-                  <div className="icon">
-                    <img src="assets/img/icon/stomach-2.png" alt="" />
-                  </div>
-                  <div className="content">
-                    <h4 className="title">
-                      <Link href="/service-details">
-                        <a>Orthopedics</a>
-                      </Link>
-                    </h4>
-                    <p>Amet consect ascnge eiusmod tempors</p>
-                  </div>
+                <div className="widget working-schedule">
+                  <h3 className="widget-title">Working Hour</h3>
+                  <ul>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Monday
+                      </span>
+                      <span>0 8.00 – 21.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Tuesday
+                      </span>
+                      <span>0 8.00 – 21.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Wednesday
+                      </span>
+                      <span>0 8.00 – 21.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Thursday
+                      </span>
+                      <span>0 8.00 – 21.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Friday
+                      </span>
+                      <span>08.00 – 17.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Saturday
+                      </span>
+                      <span>08.00 – 17.00</span>
+                    </li>
+                    <li>
+                      <span>
+                        <i className="far fa-angle-right" />
+                        Sunday
+                      </span>
+                      <span>08.00 – 17.00</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* <!--====== Service Section End ======--> */}
-    </Layouts>
+      {/*====== Service Area End ======*/}
+      {/*====== Related Services Start ======*/}
+
+    </>
+    </Layouts >
   );
 };
-export default DoctorDetails;
+export default ServiceDetails;
