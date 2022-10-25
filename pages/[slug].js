@@ -29,12 +29,12 @@ const ServicesQuery =`*[_type == "services"]{
 
 
 
-const ServiceDetails = ({ service, services }) => {
+const Slug = ({ service, services }) => {
   const router = useRouter()
 
   return (
     <Layouts footer={2}>
-      <PageBanner title={service.title} />
+      {/* <PageBanner title={service.title} /> */}
       <>
         {/* <section className="services-area section-gap">
           <div className="container">
@@ -170,7 +170,7 @@ const ServiceDetails = ({ service, services }) => {
     </Layouts >
   );
 };
-export default ServiceDetails;
+export default Slug;
 
 
 
