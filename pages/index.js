@@ -37,7 +37,7 @@ const ServicesQuery =` *[_type == "services"]{
 // </QUERY>
 
 const Index = ({ services }) => {
-  console.log("🚀 ~ file: index.js ~ line 20 ~ Index ~ services", services)
+
   const [video, setVideo] = useState(false);
   const router = useRouter();
 
@@ -260,11 +260,11 @@ const Index = ({ services }) => {
             <h2 className="title text-center"> Virtual Urgent Care </h2>
             <div className="row mt-5">
               {
-                serviceData.map((service, index) => (
-                  <Link href='services/12'>
+                services.map((service, index) => (
+                  <Link href={service.slug?.current}>
                     <div className="col-md-3 col-6 service_card" key={index}>
-                      <img src={`/assets/services/${service.icon}`} alt={service.name} className="services_icon" />
-                      <h6 className="text-center">{service.name}</h6>
+                      <img src={service.icon?.asset?.url} alt={service.title} className="services_icon" />
+                      <h6 className="text-center">{service.title}</h6>
                     </div>
                   </Link>
                 ))

@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import PreLoader from "../src/components/PreLoader";
 import "../styles/globals.css";
+import NextNProgress from 'nextjs-progressbar';
+
 
 function MyApp({ Component, pageProps }) {
   const [loader, setLoader] = useState(true);
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }) {
           type="img/png"
         />
       </Head>
+      <NextNProgress />
       <Component {...pageProps} />
     </Fragment>
   );
