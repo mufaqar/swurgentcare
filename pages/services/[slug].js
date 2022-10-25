@@ -6,6 +6,7 @@ import Layouts from "../../src/layouts/Layouts";
 import { useRouter } from 'next/router'
 
 
+
 const ServiceDetails = () => {
   const router = useRouter()
 
@@ -18,6 +19,9 @@ const ServiceDetails = () => {
             <div className="row justify-content-center">
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
+                  <figure className="mt-b">
+                    <img src='/assets/skin-infection.jpg' alt="skin-infection" layout="fill" />
+                  </figure>
                   <h2 className="service-title">Treatments for Skin Rashes and Infections</h2>
                   <p>
                     No one likes having an itchy rash on their skin, or even worse,

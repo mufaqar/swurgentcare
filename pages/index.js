@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Slider from "react-slick";
+import { sanityClient } from "../lib/studio";
 import { serviceData } from "../public/assets/data/servicesData";
 import Counter from "../src/components/Counter";
 import HeroBanner from "../src/components/HeroBanner";
@@ -15,7 +16,28 @@ import {
 import { testimonialOne } from "../src/sliderProps";
 
 
-const Index = () => {
+{/* <QUERY> */}
+
+const ServicesQuery =` *[_type == "services"]{
+  title,
+  icon{
+    asset->{
+      url
+    },
+  },
+  slug,
+  poster{
+    asset->{
+      url
+    },
+  },
+  content,
+}`
+
+// </QUERY>
+
+const Index = ({ services }) => {
+  console.log("🚀 ~ file: index.js ~ line 20 ~ Index ~ services", services)
   const [video, setVideo] = useState(false);
   const router = useRouter();
 
@@ -471,3 +493,15 @@ const Index = () => {
   );
 };
 export default Index;
+
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(ServicesQuery);
+
+  return {
+    props: {
+      services
+    }
+  };
+}
