@@ -45,7 +45,7 @@ const Slug = ({ service, services }) => {
                     <img src={service?.poster.asset.url} alt="skin-infection" />
                   </figure>
                   <div className="content_wrapper">
-                    <PortableText
+                    {/* <PortableText
                       // Pass in block content straight from Sanity.io
                       content={service.content}
                       // Optionally override marks, decorators, blocks, etc. in a flat
@@ -55,7 +55,7 @@ const Slug = ({ service, services }) => {
                         h2: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
                         li: ({ children }) => <li className="special-list-item">{children}</li>
                       }}
-                    />
+                    /> */}
                   </div>
 
 
