@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { testimonialOne } from "../sliderProps";
 // import { connect } from 'react-redux'
 // import {valueChange} from '../../lib/TestimonialSlice'
-import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
+// import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 class Testimonial extends React.Component {
 
@@ -86,10 +86,10 @@ class Testimonial extends React.Component {
                                 <div className="nav_btn">
                                     <div style={{ textAlign: "center" }}>
                                         <button className="button" onClick={this.previous}>
-                                            <BiLeftArrow />
+                                            {/* <BiLeftArrow /> */} Previous
                                         </button>
                                         <button className="button" onClick={this.next}>
-                                            <BiRightArrow />
+                                            {/* <BiRightArrow /> */} Next
                                         </button>
                                     </div>
                                 </div>

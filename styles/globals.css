@@ -383,9 +383,14 @@ height: 420px;
   align-items: center;
 }
 .nav_btn button{
-  padding: 4px .8rem;
+  padding: 1px .8rem;
   background: rgb(203, 203, 203);
   margin-left: 1rem;
+  font-size:14px;
+  transition: .4s ease-in-out;
+}
+.nav_btn button:hover{
+  scale: 1.1;
 }
 
 
