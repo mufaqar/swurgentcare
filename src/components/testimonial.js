@@ -7,7 +7,6 @@ import { BiLeftArrow, BiRightArrow } from 'react-icons/bi'
 
 class Testimonial extends React.Component {
 
-
     constructor(props) {
         super(props);
         this.next = this.next.bind(this);
