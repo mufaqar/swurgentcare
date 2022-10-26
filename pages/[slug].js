@@ -26,7 +26,7 @@ const ServicesQuery =`*[_type == "services"]{
 
 
 const Slug = ({ service, services }) => {
-
+  
   const router = useRouter()
 
   return (
