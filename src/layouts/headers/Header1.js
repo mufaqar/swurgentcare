@@ -77,7 +77,7 @@ const Header1 = ({ headerTopbar, position }) => {
               <nav className="site-menu menu-gap-left d-none d-xl-block">
                 <ul className="primary-menu">
                   <li>
-                    <Link href="/index-two">
+                    <Link href="/">
                       <a>Home</a>
                     </Link>
                   </li>
