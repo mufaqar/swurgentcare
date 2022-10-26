@@ -1,11 +1,16 @@
+import Link from "next/link";
 import React from "react";
+import { sanityClient } from "../../../lib/studio";
 
-const Footer2 = ({ noNewsletters }) => {
+
+
+
+const Footer2 = ({ noNewsletters, services }) => {
+  console.log("🚀 ~ file: Footer2.js ~ line 13 ~ Footer2 ~ services", services)
   return (
     <footer
-      className={`template-footer template-footer-white ${
-        noNewsletters ? "" : "have-cta-boxes-two"
-      }`}
+      className={`template-footer template-footer-white ${noNewsletters ? "" : "have-cta-boxes-two"
+        }`}
     >
       <div className="footer-inner bg-color-primary">
         <div className="container">
@@ -17,7 +22,7 @@ const Footer2 = ({ noNewsletters }) => {
                     <img src="assets/site-logo.png" alt="swurgentcare" />
                   </div>
                   <p>
-                    We are a creative company that specializes in strategy & design. 
+                    We are a creative company that specializes in strategy & design.
                     We like to create things with like – minded people who are serious about their passions
                   </p>
                   <ul className="contact-list">
@@ -49,30 +54,13 @@ const Footer2 = ({ noNewsletters }) => {
                       <div className="widget nav-widget">
                         <h4 className="widget-title">Popular Services</h4>
                         <ul className="nav-links">
-                          <li>
-                            <a href="#">Allergies</a>
-                          </li>
-                          <li>
-                            <a href="#">Asthma</a>
-                          </li>
-                          <li>
-                            <a href="#">Cold & Flu</a>
-                          </li>
-                          <li>
-                            <a href="#">Covid Testing</a>
-                          </li>
-                          <li>
-                            <a href="#">Ear Infection</a>
-                          </li>
-                          <li>
-                            <a href="#">Flue Shot</a>
-                          </li>
-                          <li>
-                            <a href="#">Illness</a>
-                          </li>
-                          <li>
-                            <a href="#">Injury</a>
-                          </li>
+                          {
+                            services?.slice(0, 7).map((item, i) => (
+                              <li key={i}>
+                                <Link href={item.slug.current}>{item.title}</Link>
+                              </li>
+                            ))
+                          }
                         </ul>
                       </div>
                     </div>
@@ -82,30 +70,14 @@ const Footer2 = ({ noNewsletters }) => {
                       <div className="widget nav-widget">
                         <h4 className="widget-title pt-4 pb-2"></h4>
                         <ul className="nav-links">
-                          <li>
-                            <a href="#">Lab</a>
-                          </li>
-                          <li>
-                            <a href="#">Skin Infection & Rash</a>
-                          </li>
-                          <li>
-                            <a href="#">Sore & Strep Throat</a>
-                          </li>
-                          <li>
-                            <a href="#">Sports & Camps Physical</a>
-                          </li>
-                          <li>
-                            <a href="#">TD Treatment & Testing</a>
-                          </li>
-                          <li>
-                            <a href="#">Virtual Visit</a>
-                          </li>
-                          <li>
-                            <a href="#">Urinary Tract Infections</a>
-                          </li>
-                          <li>
-                            <a href="#">X-Rays</a>
-                          </li>
+                          {
+                            services?.slice(7, services.length).map((item, i) => (
+                              <li key={i}>
+                                <Link href={item.slug.current}>{item.title}</Link>
+                              </li>
+                            ))
+                          }
+                          
                         </ul>
                       </div>
                     </div>
@@ -150,3 +122,6 @@ const Footer2 = ({ noNewsletters }) => {
   );
 };
 export default Footer2;
+
+
+

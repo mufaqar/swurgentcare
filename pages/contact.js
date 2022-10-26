@@ -1,10 +1,11 @@
 import React from "react";
+import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const Contact = () => {
+const Contact = ({services}) => {
   return (
-    <Layouts footer={2}>
+    <Layouts footer={2} services={services}>
       <PageBanner title={"Contact Us"} />
       {/*====== Page Title End ======*/}
       {/*====== Contact Info Section Start ======*/}
@@ -217,3 +218,17 @@ const Contact = () => {
   );
 };
 export default Contact;
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(`*[_type == "services"]{
+    title,
+    slug,
+  }`);
+
+  return {
+    props: {
+      services,
+    }
+  };
+}

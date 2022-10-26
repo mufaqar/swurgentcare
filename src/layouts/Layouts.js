@@ -12,6 +12,7 @@ const Layouts = ({
   position,
   noheader,
   noFooter,
+  services
 }) => {
   useEffect(() => {
     animation();
@@ -26,7 +27,7 @@ const Layouts = ({
         <HeadersLayouts headerTopbar={headerTopbar} position={position} />
       )}
       {children}
-      {!noFooter && <Footer footer={footer} noNewsletters={noNewsletters} />}
+      {!noFooter && <Footer footer={footer} noNewsletters={noNewsletters} services={services} />}
       <ScrollTop />
     </Fragment>
   );

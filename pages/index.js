@@ -92,8 +92,8 @@ const Index = ({ services, testimonials }) => {
   ]
 
   return (
-    <Layouts headerTopbar footer={2} noNewsletters>
-      {video && <VideoPopup close={setVideo} />}
+    <Layouts headerTopbar footer={2} noNewsletters services={services}>
+      {video && <VideoPopup close={setVideo}  />}
       <>
         {/*====== Hero Slider Start ======*/}
 

@@ -1,10 +1,11 @@
 import React from "react";
+import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const Appointments = () => {
+const Appointments = ({services}) => {
   return (
-    <Layouts footer={2}>
+    <Layouts footer={2} services={services}>
       <PageBanner title={"Appointment"} />
       <section className="appointment-section section-gap">
         <div className="container container-1500">
@@ -83,3 +84,17 @@ const Appointments = () => {
   );
 };
 export default Appointments;
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(`*[_type == "services"]{
+    title,
+    slug,
+  }`);
+
+  return {
+    props: {
+      services,
+    }
+  };
+}

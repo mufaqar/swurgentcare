@@ -30,7 +30,7 @@ const Slug = ({ service, services }) => {
   const router = useRouter()
 
   return (
-    <Layouts footer={2}>
+    <Layouts footer={2} services={services}>
       <PageBanner title={service.title} />
       <>
         <section className="services-area section-gap">

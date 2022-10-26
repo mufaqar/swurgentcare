@@ -1,13 +1,18 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
+import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const About = () => {
+
+
+
+
+const About = ({services}) => {
   const [toggle, setToggle] = useState(1);
   return (
-    <Layouts footer={2}>
+    <Layouts footer={2} services={services}>
       <PageBanner title={"About"} />
       <section className="about-section section-gap">
         <div className="container">
@@ -88,3 +93,18 @@ const About = () => {
   );
 };
 export default About;
+
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(`*[_type == "services"]{
+    title,
+    slug,
+  }`);
+
+  return {
+    props: {
+      services,
+    }
+  };
+}

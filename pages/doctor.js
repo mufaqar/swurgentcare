@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const Doctor = () => {
+const Doctor = ({services}) => {
   return (
-    <Layouts>
+    <Layouts services={services}>
       <PageBanner title={"Meet The Doctors"} bgnone />
        {/* <section className="doctors-section section-gap">
         <div className="container">
@@ -453,3 +454,17 @@ const Doctor = () => {
   );
 };
 export default Doctor;
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(`*[_type == "services"]{
+    title,
+    slug,
+  }`);
+
+  return {
+    props: {
+      services,
+    }
+  };
+}

@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
+import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
 
-const Faq = () => {
+const Faq = ({services}) => {
   const [active, setActive] = useState("collapse1");
   const active_ = (value) => (value === active ? "active-accordion" : "");
   const [video, setVideo] = useState(false);
   return (
-    <Layouts>
+    <Layouts services={services}>
       {video && <VideoPopup close={setVideo} />}
       <PageBanner title={"Help & FAQ"} bgnone />
       {/* <section className="faq-section section-gap">
@@ -348,3 +349,17 @@ const Faq = () => {
   );
 };
 export default Faq;
+
+
+export async function getStaticProps() {
+  const services = await sanityClient.fetch(`*[_type == "services"]{
+    title,
+    slug,
+  }`);
+
+  return {
+    props: {
+      services,
+    }
+  };
+}
