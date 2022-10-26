@@ -3,7 +3,8 @@ import { Fragment, useEffect, useState } from "react";
 import PreLoader from "../src/components/PreLoader";
 import "../styles/globals.css";
 import NextNProgress from 'nextjs-progressbar';
-
+import { store } from '../lib/store'
+import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
   const [loader, setLoader] = useState(true);
@@ -25,7 +26,9 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <NextNProgress />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </Fragment>
   );
 }

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
     "isotope-layout": "^3.0.6",
     "next": "^12.1.0",
     "next-sanity": "^1.0.0",
@@ -18,6 +19,7 @@
     "react-countup": "^6.1.1",
     "react-dom": "17.0.2",
     "react-portable-text": "^0.5.1",
+    "react-redux": "^8.0.4",
     "react-slick": "^0.28.1",
     "react-visibility-sensor": "^5.1.1",
     "wowjs": "^1.1.3"

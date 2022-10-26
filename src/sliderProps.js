@@ -1,3 +1,6 @@
+
+
+
 function PrevArrow({ className, onClick, icon, extraClass }) {
   return (
     <button
@@ -19,16 +22,18 @@ function NextArrow({ className, onClick, icon, extraClass }) {
     </button>
   );
 }
+
 export const testimonialOne = {
   infinite: true,
-  dots: true,
+  dots: false,
   arrows: false,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   autoplaySpeed: 5000,
 };
+
 export const heroSlider = {
   infinite: true,
   slidesToShow: 1,

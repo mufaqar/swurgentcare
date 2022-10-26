@@ -243,7 +243,8 @@ span.plus_sign{
 }
 .testimonial-section{
   color:white;
-  background: var(--color-primary)!important;
+  transition: .3s ease-in-out;
+  
 }
 .testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc,
 .testimonial-section .section-heading .title{
@@ -362,7 +363,30 @@ height: 420px;
 .page-title-area{
   text-transform: capitalize !important;
 }
+.bg0{
+  background: var(--color-primary)!important;
+}
+.bg1{
+  background: #5059ce !important;
+}
+.bg2{
+  background: #2B8FBD !important;
+}
+.bg3{
+  background: #1a6385 !important;
+}
 
+.nav_btn{
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+  align-items: center;
+}
+.nav_btn button{
+  padding: 4px .8rem;
+  background: rgb(203, 203, 203);
+  margin-left: 1rem;
+}
 
 
 

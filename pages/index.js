@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { sanityClient } from "../lib/studio";
 import { serviceData } from "../public/assets/data/servicesData";
@@ -13,12 +13,11 @@ import {
   partnerSlider,
   TestimonialsSliderTwo,
 } from "../src/sliderProps";
-import { testimonialOne } from "../src/sliderProps";
+import Testimonial from "../src/components/testimonial";
 
+{/* <QUERY> */ }
 
-{/* <QUERY> */}
-
-const ServicesQuery =` *[_type == "services"]{
+const ServicesQuery = ` *[_type == "services"]{
   title,
   icon{
     asset->{
@@ -36,11 +35,17 @@ const ServicesQuery =` *[_type == "services"]{
 
 // </QUERY>
 
+
+
+
+
+
 const Index = ({ services }) => {
 
   const [video, setVideo] = useState(false);
   const router = useRouter();
-
+  const [slideIndex, setSlideIndex] = useState();
+ 
 
   const partner = [
     {
@@ -337,159 +342,51 @@ const Index = ({ services }) => {
         {/*====== Partners Section End ======*/}
 
         {/*====== Testimonials Section Start ======*/}
-        <section className="testimonial-section bg-color-grey section-have-half-bg">
-          <div className="container-fluid">
-            <div className="row justify-content-end">
-              <div className="col-lg-12">
-                <div className="testimonial-one-wrap">
-                  <div className="section-heading mb-50">
-                    <span className="tagline">Our Testimonials</span>
-                    <h2 className="title">
-                      What Our Patients Say About Our Medical
-                    </h2>
-                  </div>
-                  <Slider
-                    {...testimonialOne}
-                    className="testimonial-slider-one"
-                  >
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="single-testimonial-slider">
-                      <div className="testimonial-inner">
-                        <div className="avatar">
-                          <img
-                            src="assets/01.png"
-                            alt="Avatar"
-                          />
-                        </div>
-                        <div className="content-wrap">
-                          <p className="testimonial-desc">
-                            Sed ut perspiciatis unde omnis natusy error
-                            voluptatem accusantium doloreue laudan totam rem
-                            aperiam eaquip quae abillo inventore veritatis quasi
-                            architecto beatae vitae dicta sunt explicabo
-                          </p>
-                          <div className="author-info">
-                            <h5 className="name">Mark E. Kaminsky</h5>
-                            <span className="title">Web Designer</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Slider>
-                </div>
-              </div>
-            </div>
-          </div>
 
-        </section>
-        {/*====== Testimonials Section End ======*/}
+        <Testimonial/>
+        {/*====== Testimonials Section End ======*/ }
 
-        {/* contect us  */}
+  {/* contect us  */ }
 
-        <section className="container landind_contact_wrapper  mx-auto section-gap">
-          <div className="row">
-            <div className="landing_contact ">
-              <h1 className="title">Contact Us</h1>
-              <p className="mt-3">We believe that the experience you receive at Southwest Urgent Care Center matters.
-                We listen to your concerns and help you resolve them in the best possible manner.</p>
-              <div className="single-contact-info mt-4">
-                <h3 className="info-title mb-2">
-                  <i className="fal fa-coffee" /> Get In Touch
-                </h3>
-                <ul>
-                  <li>
-                    <strong>Phone Number:</strong>
-                    <a href="tel:+012020200"> (346) 341-7573</a>
-                  </li>
-                  <li>
-                    <strong>Email Address: </strong>
-                    <a href="mailto:support@gmail.com"> swurgentcare@outlook.com</a>
-                  </li>
-                  {/* <li>
+  <section className="container landind_contact_wrapper  mx-auto section-gap">
+    <div className="row">
+      <div className="landing_contact ">
+        <h1 className="title">Contact Us</h1>
+        <p className="mt-3">We believe that the experience you receive at Southwest Urgent Care Center matters.
+          We listen to your concerns and help you resolve them in the best possible manner.</p>
+        <div className="single-contact-info mt-4">
+          <h3 className="info-title mb-2">
+            <i className="fal fa-coffee" /> Get In Touch
+          </h3>
+          <ul>
+            <li>
+              <strong>Phone Number:</strong>
+              <a href="tel:+012020200"> (346) 341-7573</a>
+            </li>
+            <li>
+              <strong>Email Address: </strong>
+              <a href="mailto:support@gmail.com"> swurgentcare@outlook.com</a>
+            </li>
+            {/* <li>
                         <span>Hotline</span>
                         <a href="tel:+12345678">12345678</a>
                       </li> */}
-                </ul>
-              </div>
-            </div>
-            <div className="contact-form-area landing-map ">
-              <div className="contact-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d444003.0914019853!2d-95.649555!3d29.610251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0xe0b4d8112d2afe65!2s400%20Promenade%20Wy%20%231500%2C%20Sugar%20Land%2C%20TX%2077478!5e0!3m2!1sen!2sus!4v1666682796648!5m2!1sen!2sus"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+          </ul>
+        </div>
+      </div>
+      <div className="contact-form-area landing-map ">
+        <div className="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d444003.0914019853!2d-95.649555!3d29.610251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0xe0b4d8112d2afe65!2s400%20Promenade%20Wy%20%231500%2C%20Sugar%20Land%2C%20TX%2077478!5e0!3m2!1sen!2sus!4v1666682796648!5m2!1sen!2sus"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
       </>
-    </Layouts>
+    </Layouts >
   );
 };
 export default Index;
