@@ -57,7 +57,7 @@ class Testimonial extends React.Component {
                                     {
                                         [1, 2, 3, 4].map((testimonial, i) => {
                                             return (
-                                                <div className="single-testimonial-slider">
+                                                <div className="single-testimonial-slider" key={i}>
                                                     <div className="testimonial-inner">
                                                         <div className="avatar">
                                                             <img
