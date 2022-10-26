@@ -409,7 +409,12 @@ height: 420px;
   line-height: 2.5rem;
     margin-bottom: 2rem;
 }
-
+ul.sub-menu>li{
+  margin-left: 0 !important;
+}
+.template-header .site-menu ul li .sub-menu li a:hover{
+  color:white !important
+}
 
 
 @media (max-width: 768px) {
