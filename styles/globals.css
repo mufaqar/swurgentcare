@@ -359,7 +359,9 @@ height: 420px;
   transform: translateY(-50%);
   margin-left: -1em;
 }
-
+.page-title-area{
+  text-transform: capitalize !important;
+}
 
 
 
