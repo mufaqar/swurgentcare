@@ -364,16 +364,28 @@ height: 420px;
   text-transform: capitalize !important;
 }
 .bg0{
-  background: var(--color-primary)!important;
+  background: #182845 !important;
 }
 .bg1{
-  background: #0D1117 !important;
+  background: #21375f !important;
 }
 .bg2{
-  background: #2B8FBD !important;
+  background: #335491 !important;
 }
 .bg3{
-  background: #1a6385 !important;
+  background: #385da1 !important;
+}
+.bg4{
+  background: #4069b5 !important;
+}
+.bg5{
+  background: #385da1 !important;
+}
+.bg6{
+  background: #335491 !important;
+}
+.bg7{
+  background: #21375f !important;
 }
 
 .nav_btn{
@@ -391,6 +403,11 @@ height: 420px;
 }
 .nav_btn button:hover{
   scale: 1.1;
+}
+.hero_banner h2.title{
+  font-size: 2.6rem;
+  line-height: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 

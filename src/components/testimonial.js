@@ -13,7 +13,7 @@ class Testimonial extends React.Component {
         this.previous = this.previous.bind(this);
         this.state = {
             'value': 0,
-            'color': 'bg1'
+            'color': 'bg0'
         };
     }
 
@@ -35,8 +35,9 @@ class Testimonial extends React.Component {
 
 
 
-    render() {
 
+    render() {
+        const testimonial  = this.props
         return (
             <section id='testimonial-section' className={`testimonial-section bg-color-grey section-have-half-bg ${this.state.color}`}>
                 <div className="container-fluid">
@@ -54,26 +55,23 @@ class Testimonial extends React.Component {
                                     className="testimonial-slider-one"
                                 >
                                     {
-                                        [1, 2, 3, 4].map((testimonial, i) => {
+                                        testimonial.testimonials.map((testimonial, i) => {
                                             return (
                                                 <div className="single-testimonial-slider" key={i}>
                                                     <div className="testimonial-inner">
                                                         <div className="avatar">
                                                             <img
-                                                                src="assets/01.png"
+                                                                src={testimonial?.profile.asset.url}
                                                                 alt="Avatar"
                                                             />
                                                         </div>
                                                         <div className="content-wrap">
                                                             <p className="testimonial-desc">
-                                                                Sed ut perspiciatis unde omnis natusy error
-                                                                voluptatem accusantium doloreue laudan totam rem
-                                                                aperiam eaquip quae abillo inventore veritatis quasi
-                                                                architecto beatae vitae dicta sunt explicabo
+                                                                {testimonial.review}
                                                             </p>
                                                             <div className="author-info">
-                                                                <h5 className="name">Mark E. Kaminsky</h5>
-                                                                <span className="title">Web Designer</span>
+                                                                <h5 className="name">{testimonial.name}</h5>
+                                                                <span className="title">{testimonial.designation}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -107,3 +105,6 @@ class Testimonial extends React.Component {
 //     testimonialSlice: state.testimonialSlice.value
 // });
 export default (Testimonial);
+
+
+

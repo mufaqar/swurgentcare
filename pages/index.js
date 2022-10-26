@@ -33,6 +33,16 @@ const ServicesQuery = ` *[_type == "services"]{
   content,
 }`
 
+const testimonial = `*[_type == "testimonial"]{
+  review,
+  name,
+  designation,
+  profile{
+    asset->{
+      url
+    },
+  },
+}`
 // </QUERY>
 
 
@@ -40,7 +50,8 @@ const ServicesQuery = ` *[_type == "services"]{
 
 
 
-const Index = ({ services }) => {
+const Index = ({ services, testimonials }) => {
+
 
   const [video, setVideo] = useState(false);
   const router = useRouter();
@@ -343,7 +354,7 @@ const Index = ({ services }) => {
 
         {/*====== Testimonials Section Start ======*/}
 
-        <Testimonial/>
+        <Testimonial testimonials={testimonials} />
         {/*====== Testimonials Section End ======*/ }
 
   {/* contect us  */ }
@@ -395,10 +406,12 @@ export default Index;
 
 export async function getStaticProps() {
   const services = await sanityClient.fetch(ServicesQuery);
+  const testimonials = await sanityClient.fetch(testimonial);
 
   return {
     props: {
-      services
+      services,
+      testimonials
     }
   };
 }
