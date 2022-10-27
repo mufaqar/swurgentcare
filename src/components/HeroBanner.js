@@ -14,9 +14,8 @@ export default function HeroBanner() {
                                 <div className="working-hour-table mt-md-50 bgwhite">
                                     <div className="section-heading mb-30">
                                         <h2 className="title">Make an a appointment</h2>
-                                        <h6 className='underline mt-2 mb-3'>(346) 341-7573</h6>
-                                        <span className='_text'>Lorem ipsum dolor sit amet error soluta consectetur, adipisicing elit. 
-                                            Quibusdam error soluta </span>
+                                        <h6 className='underline mb-3'>(346) 341-7573</h6>
+                                        <span className='_text'>We believe that the experience you receive at Southwest Urgent Care Center matters. </span>
                                     </div>
                                     <ul>
                                         <li>

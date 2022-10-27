@@ -415,6 +415,10 @@ ul.sub-menu>li{
 .template-header .site-menu ul li .sub-menu li a:hover{
   color:white !important
 }
+.working-hour-table h6{
+  font-size: 1.3rem !important;
+  margin-top: -6px;
+}
 
 
 @media (max-width: 768px) {
