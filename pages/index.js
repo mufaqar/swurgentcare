@@ -1,18 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
+import { useState } from "react";
 import { sanityClient } from "../lib/studio";
-import { serviceData } from "../public/assets/data/servicesData";
-import Counter from "../src/components/Counter";
 import HeroBanner from "../src/components/HeroBanner";
 import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
-import {
-  heroSlider,
-  partnerSlider,
-  TestimonialsSliderTwo,
-} from "../src/sliderProps";
 import Testimonial from "../src/components/testimonial";
 import Image from "next/image";
 
@@ -56,7 +48,6 @@ const Index = ({ services, testimonials }) => {
 
   const [video, setVideo] = useState(false);
   const router = useRouter();
-  const [slideIndex, setSlideIndex] = useState();
  
 
   const partner = [
