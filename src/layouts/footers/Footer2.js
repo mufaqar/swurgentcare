@@ -56,7 +56,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                         <ul className="nav-links">
                           {
                             services?.slice(0, 7).map((item, i) => (
-                              <li key={i}>
+                              <li key={i} className="capatalize">
                                 <Link href={item.slug.current}>{item.title}</Link>
                               </li>
                             ))
@@ -72,7 +72,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                         <ul className="nav-links">
                           {
                             services?.slice(7, services.length).map((item, i) => (
-                              <li key={i}>
+                              <li key={i} className="capatalize">
                                 <Link href={item.slug.current}>{item.title}</Link>
                               </li>
                             ))
@@ -88,8 +88,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                 <div className="widget newsletters-widget">
                   <h4 className="widget-title">Newsletters</h4>
                   <p>
-                    Sed ut perspiciatis unde omniste <br /> natus error sit
-                    voluptatem
+                    Join Our Newsletter
                   </p>
                   <form
                     onSubmit={(e) => e.preventDefault()}

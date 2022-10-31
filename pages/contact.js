@@ -27,14 +27,14 @@ const Contact = ({services}) => {
                     <h3 className="info-title">
                       <i className="fal fa-coffee" /> Get In Touch
                     </h3>
-                    <ul>
+                    <ul className="contect_info">
                       <li>
                         <span>Phone Number</span>
-                        <a href="tel:+012020200">(346) 341-7573</a>
+                        <a className="text-white" href="tel:+012020200">(346) 341-7573</a>
                       </li>
                       <li>
                         <span>Email Address</span>
-                        <a href="mailto:support@gmail.com">swurgentcare@outlook.com</a>
+                        <a className="text-white" href="mailto:support@gmail.com">swurgentcare@outlook.com</a>
                       </li>
                       {/* <li>
                         <span>Hotline</span>
@@ -51,16 +51,16 @@ const Contact = ({services}) => {
                       incididunt ut labore
                     </p>
                     <p className="social-icon">
-                      <a href="#">
+                      <a href="#" className="p-2 rounded social_icon " >
                         <i className="fab fa-facebook" />
                       </a>
-                      <a href="#">
+                      <a href="#" className="p-2 rounded social_icon ">
                         <i className="fab fa-twitter-square" />
                       </a>
-                      <a href="#">
+                      <a href="#" className="p-2 rounded social_icon ">
                         <i className="fab fa-linkedin" />
                       </a>
-                      <a href="#">
+                      <a href="#" className="p-2 rounded social_icon ">
                         <i className="fab fa-youtube-square" />
                       </a>
                     </p>
@@ -132,8 +132,9 @@ const Contact = ({services}) => {
       <section className="contact-form-area">
         <div className="contact-map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d444003.0914019853!2d-95.649555!3d29.610251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0xe0b4d8112d2afe65!2s400%20Promenade%20Wy%20%231500%2C%20Sugar%20Land%2C%20TX%2077478!5e0!3m2!1sen!2sus!4v1666682796648!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920898.2645108468!2d-96.82088754803496!3d29.30509874673538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0x647e15d838d4da0a!2s400%20Promenade%20Wy%2C%20Sugar%20Land%2C%20TX%2077478%2C%20USA!5e0!3m2!1sen!2s!4v1667198890592!5m2!1sen!2s"
             loading="lazy"
+            zoom="15"
           />
         </div>
         <div className="section-gap">

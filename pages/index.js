@@ -313,7 +313,7 @@ const Index = ({ services, testimonials }) => {
                     className="image-two wow fadeInDown"
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/covid-testing.jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                    {/* <img src="assets/covid-testing.jpg" alt="Image" style={{ borderRadius: '18px' }} /> */}
                   </div>
 
                 </div>
@@ -329,8 +329,7 @@ const Index = ({ services, testimonials }) => {
             <div className="section-heading text-center mb-50">
               <h2 className="title">WE ACCEPT MOST INSURANCE PLANS </h2>
               <span className="span tagline">Traditional Medicare & most commercial and local marketplace plans are accepted.</span>
-              <p>WE ACCEPT MOST INSURANCE PLANE</p>
-              <span>Tradional Medicare, most commercial and local marketplace plans are accepted.</span>
+             
             </div>
             <div className="partner-logo-grid">
               {

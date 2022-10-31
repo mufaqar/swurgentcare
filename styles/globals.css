@@ -296,7 +296,10 @@ height: 420px;
   color: var(--color-primary) !important;
 }
 .covid19{
-  background: var(--color-primary);
+  background: linear-gradient(to bottom, rgba(24,40,69,0.8), rgba(24,40,69,0.8)), url('../public/assets/covid-testing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .covid19 .section-heading .title{
   color: #fff !important;
@@ -387,7 +390,19 @@ height: 420px;
 .bg7{
   background: #21375f !important;
 }
-
+ul.contect_info li>a{
+  color:white !important;
+}
+.social_icon i{
+  color: #fff;
+  font-size: 1.8rem !important;
+}
+.social-icon a:hover{
+  scale: 1.1;
+}
+.capatalize{
+  text-transform: capitalize;
+}
 .nav_btn{
   display: flex;
   justify-content: end;
