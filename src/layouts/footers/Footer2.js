@@ -6,7 +6,7 @@ import { sanityClient } from "../../../lib/studio";
 
 
 const Footer2 = ({ noNewsletters, services }) => {
-  console.log("🚀 ~ file: Footer2.js ~ line 13 ~ Footer2 ~ services", services)
+  
   return (
     <footer
       className={`template-footer template-footer-white ${noNewsletters ? "" : "have-cta-boxes-two"

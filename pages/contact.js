@@ -1,11 +1,50 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
+import Script from 'next/script'
 
-const Contact = ({services}) => {
+const Contact = ({ services }) => {
+
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => {
+    // const config = {
+    //   Host: "smtp.elasticemail.com",
+    //   Username: "gillanix007@gmail.com",
+    //   Password: "93B321429C0FC634776FF154C0E0172F5A7A",
+    //   Port: 2525,
+    //   SecureToken: 'ef957250-43e3-4a05-bc45-f4e95c33b573', // for secure connection
+    //   To: `mufaqar@gmail.com, ${data.email}`,
+    //   From: "gillanix007@gmail.com",
+    //   Subject: "This is the subject",
+    //   Body: `<h1>${data.email}<h1>`,
+    //   Attachments : [
+    //     {
+    //       name : "smtpjs.png",
+    //       path:"https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+    //     }]
+    // }
+
+    // Email.send(config).then(
+    //   message => alert(message)
+    // );
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+
+  };
+
   return (
     <Layouts footer={2} services={services}>
+      <script src="https://smtpjs.com/v3/smtp.js" />  {/* smtp js script */}
+
       <PageBanner title={"Contact Us"} />
       {/*====== Page Title End ======*/}
       {/*====== Contact Info Section Start ======*/}
@@ -20,7 +59,7 @@ const Contact = ({services}) => {
                       <i className="fal fa-map-marker-alt" /> Address
                     </h3>
                     <p>
-                    5900 Chimney Rock, Suite X Houston,<br/> Texas 77081
+                      5900 Chimney Rock, Suite X Houston,<br /> Texas 77081
                     </p>
                   </div>
                   <div className="single-contact-info">
@@ -146,9 +185,10 @@ const Contact = ({services}) => {
                   <h2 className="title">Leave a Message</h2>
                 </div>
                 <form
-                  onSubmit={(e) => e.preventDefault()}
-                  action="#"
+                  // onSubmit={handleSubmit(onSubmit)}
                   className="contact-form"
+                  
+
                 >
                   <div className="row">
                     <div className="col-md-6">
@@ -158,7 +198,10 @@ const Contact = ({services}) => {
                           type="text"
                           placeholder="Michael M. Smith"
                           id="name"
+                          name="name"
+                          {...register("name", { required: true })}
                         />
+                        {errors.name && <span className="text-red-600">This field is required</span>}
                       </div>
                     </div>
                     <div className="col-md-6">
@@ -168,7 +211,10 @@ const Contact = ({services}) => {
                           type="email"
                           placeholder="support@gmail.com"
                           id="email"
+                          name="email"
+                          {...register("email", { required: true })}
                         />
+                        {errors.email && <span className="text-red-600">This field is required</span>}
                       </div>
                     </div>
                     <div className="col-md-6">
@@ -178,6 +224,8 @@ const Contact = ({services}) => {
                           type="text"
                           placeholder="+012 (345) 678 99"
                           id="number"
+                          name="number"
+                          {...register("number")}
                         />
                       </div>
                     </div>
@@ -188,6 +236,8 @@ const Contact = ({services}) => {
                           type="url"
                           placeholder="www.swurgentcare.com"
                           id="website"
+                          name="website"
+                          {...register("website")}
                         />
                       </div>
                     </div>
@@ -196,14 +246,16 @@ const Contact = ({services}) => {
                         <label htmlFor="message">Write Message</label>
                         <textarea
                           id="message"
+                          name="message"
                           placeholder="Write Message...."
                           defaultValue={""}
+                          {...register("message")}
                         />
                       </div>
                     </div>
                     <div className="col-12">
                       <div className="text-center">
-                        <button className="template-btn">
+                        <button className="template-btn" onClick={handleSubmit(onSubmit)}>
                           Send Us Message <i className="far fa-plus" />
                         </button>
                       </div>
