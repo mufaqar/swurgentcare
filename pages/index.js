@@ -14,6 +14,7 @@ import {
   TestimonialsSliderTwo,
 } from "../src/sliderProps";
 import Testimonial from "../src/components/testimonial";
+import Image from "next/image";
 
 {/* <QUERY> */ }
 
@@ -107,10 +108,10 @@ const Index = ({ services, testimonials }) => {
                 <div className=" mb-xl-50">
 
                   <div
-                    className="image-two wow fadeInDown"
+                    className="image-two wow fadeInDown "
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/family.jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                    <Image src="/assets/family.jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={400}  />
                   </div>
 
                 </div>
@@ -138,35 +139,6 @@ const Index = ({ services, testimonials }) => {
                   >
                     See All Services <i className="far fa-plus" />
                   </a>
-
-                  {/* <div className="mt-3">
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">Affordable Rates ($50 doctor’s consultation fee)</h6>
-                    </div>
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">Open 7 Days a Week.</h6>
-                    </div>
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">Walk-in Clinic. No Waiting / Overcrowding.</h6>
-                    </div>
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">Medicaid & Medicare Accepted.</h6>
-                    </div>
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">
-                        Accept Most Insurance Plans.</h6>
-                    </div>
-                    <div className="d-flex item-center">
-                      <span className="mr-2 plus_sign">+</span>
-                      <h6 className="pt-2">
-                        Serve Non-insured Patients. (Insurance is not required to be our patient)</h6>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -209,7 +181,7 @@ const Index = ({ services, testimonials }) => {
                     className="image-two wow fadeInDown"
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/PEDIATRIC-CARE.jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                    <Image src="/assets/PEDIATRIC-CARE.jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={400}/>
                   </div>
 
                 </div>
@@ -227,10 +199,10 @@ const Index = ({ services, testimonials }) => {
                 <div className=" mb-xl-50">
 
                   <div
-                    className="image-two wow fadeInDown"
+                    className="image-two wow fadeInDown "
                     data-wow-delay="0.4s"
                   >
-                    <img src="assets/TELEMEDICINE-(Without-Green-Background).jpg" alt="Image" style={{ borderRadius: '18px' }} />
+                    <img src="/assets/TELEMEDICINE-(Without-Green-Background).jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={600}/>
                   </div>
 
                 </div>

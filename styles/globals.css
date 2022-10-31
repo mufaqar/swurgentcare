@@ -434,6 +434,9 @@ ul.sub-menu>li{
   font-size: 1.3rem !important;
   margin-top: -6px;
 }
+.image-two {
+  margin-top: 1.5rem;
+}
 
 
 @media (max-width: 768px) {
@@ -481,5 +484,8 @@ ul.sub-menu>li{
   .partner-logo-grid .single-partner img {
     max-width: 50%;
   }
+  .about-section img{
+    height: 500px;
+  }  
 
 }
