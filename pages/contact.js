@@ -10,26 +10,9 @@ const Contact = ({ services }) => {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => {
-    // const config = {
-    //   Host: "smtp.elasticemail.com",
-    //   Username: "gillanix007@gmail.com",
-    //   Password: "93B321429C0FC634776FF154C0E0172F5A7A",
-    //   Port: 2525,
-    //   SecureToken: 'ef957250-43e3-4a05-bc45-f4e95c33b573', // for secure connection
-    //   To: `mufaqar@gmail.com, ${data.email}`,
-    //   From: "gillanix007@gmail.com",
-    //   Subject: "This is the subject",
-    //   Body: `<h1>${data.email}<h1>`,
-    //   Attachments : [
-    //     {
-    //       name : "smtpjs.png",
-    //       path:"https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
-    //     }]
-    // }
 
-    // Email.send(config).then(
-    //   message => alert(message)
-    // );
+    
+
     fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -37,13 +20,18 @@ const Contact = ({ services }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        alert("Message Successfully send.!")
+      }
     })
 
   };
 
   return (
     <Layouts footer={2} services={services}>
-      <script src="https://smtpjs.com/v3/smtp.js" />  {/* smtp js script */}
 
       <PageBanner title={"Contact Us"} />
       {/*====== Page Title End ======*/}
@@ -173,7 +161,6 @@ const Contact = ({ services }) => {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920898.2645108468!2d-96.82088754803496!3d29.30509874673538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640e1326d9c9c9b%3A0x647e15d838d4da0a!2s400%20Promenade%20Wy%2C%20Sugar%20Land%2C%20TX%2077478%2C%20USA!5e0!3m2!1sen!2s!4v1667198890592!5m2!1sen!2s"
             loading="lazy"
-            zoom="15"
           />
         </div>
         <div className="section-gap">
@@ -187,7 +174,7 @@ const Contact = ({ services }) => {
                 <form
                   // onSubmit={handleSubmit(onSubmit)}
                   className="contact-form"
-                  
+
 
                 >
                   <div className="row">

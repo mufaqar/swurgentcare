@@ -1,29 +1,35 @@
-export default function (req, res) {
-    // require('dotenv').config()
-    
-    let nodemailer = require('nodemailer')
-    const transporter = nodemailer.createTransport({
-      port: 465,
-      host: "smtp.gmail.com",
-      auth: {
-        user: 'gillanix007@gmail.com',
-        pass: 'ewktztcrvvcudufm',
-      },
-      secure: true,
-    })
-    const mailData = {
-      from: 'xunair',
-      to: 'zunairgillani54@gmail.com',
-      subject: `Message From ${req.body.name}`,
-      text: req.body.message + " | Sent from: " + req.body.email,
-      html: `<div>${req.body.message}</div><p>Sent from:
-      ${req.body.email}</p>`
+
+
+
+
+import nodemailer from "nodemailer";
+
+// /api/filename
+
+export default async (req, res) => {
+  const { name, email, message } = req.body;
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'zunairgillani54@gmail.com',
+      pass: 'ihtgccruyornevlv',
     }
-    transporter.sendMail(mailData, function (err, info) {
-      if(err)
-        console.log(err)
-      else
-        console.log(info)
-    })
-    res.status(200)
+  });
+
+  try {
+    await transporter.sendMail({
+      from: email,
+      to: "zunairgillani14@gmail.com",
+      subject: `Contact form submission from ${name}`,
+      html: `<p>You have a contact form submission</p><br>
+        <p><strong>Email: </strong> ${email}</p><br>
+        <p><strong>Message: </strong> ${message}</p><br>
+      `
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message || error.toString() });
   }
+  return res.status(200).json({ error: "" });
+};

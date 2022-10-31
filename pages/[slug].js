@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
@@ -38,8 +39,8 @@ const Slug = ({ service, services }) => {
             <div className="row justify-content-center">
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
-                  <figure className="mt-b">
-                    <img src={service?.poster.asset.url} alt="skin-infection" />
+                  <figure className="mt-b relative">
+                    <img src={service?.poster.asset.url} alt="skin-infection"  />
                   </figure>
                   <div className="content_wrapper">
                     <PortableText
