@@ -110,49 +110,49 @@ const Slug = ({ service, services }) => {
                           <i className="far fa-angle-right" />
                           Monday
                         </span>
-                        <span>0 8.00 – 21.00</span>
+                        <span>09.00 – 08.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Tuesday
                         </span>
-                        <span>0 8.00 – 21.00</span>
+                        <span>09.00 – 08.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Wednesday
                         </span>
-                        <span>0 8.00 – 21.00</span>
+                        <span>09.00 – 08.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Thursday
                         </span>
-                        <span>0 8.00 – 21.00</span>
+                        <span>09.00 – 08.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Friday
                         </span>
-                        <span>08.00 – 17.00</span>
+                        <span>09.00 – 08.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Saturday
                         </span>
-                        <span>08.00 – 17.00</span>
+                        <span>09.00 – 03.00</span>
                       </li>
                       <li>
                         <span>
                           <i className="far fa-angle-right" />
                           Sunday
                         </span>
-                        <span>08.00 – 17.00</span>
+                        <span>09.00 – 01.00</span>
                       </li>
                     </ul>
                   </div>
