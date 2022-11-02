@@ -76,6 +76,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
 
 
+@font-face {
+	font-family: campton;
+	src: url(../../fonts/CamptonBold.otf);
+  }
+
+
 :root {
 	--color-primary: #182845;
 	--color-primary-07: rgba(46, 39, 157, 0.07);
@@ -94,7 +100,7 @@
 	--color-white: #fff;
 	--color-black: #000000;
 	--font-inter: 'Montserrat', sans-serif;
-	--font-lora: 'Fira Sans', sans-serif;
+	--font-lora: campton, sans-serif;
 
 }
 
