@@ -121,7 +121,7 @@ html {
   right: 8%;
 }
 .primary-menu li a {
-  font-family: "Lora" !important;
+  font-family: var(--font-lora) !important;
   font-size: 18px !important;
 }
 span.plus_sign {
