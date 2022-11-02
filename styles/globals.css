@@ -331,9 +331,9 @@ span.plus_sign {
 .sub-menu li a {
   color: var(--color-primary) !important;
 }
-.sas:hover {
+/* .sas:hover {
   color: var(--color-heading) !important;
-}
+} */
 .tagline {
   color: var(--color-primary) !important;
 }
@@ -510,6 +510,7 @@ ul.contect_info li > a {
   scale: 1.1;
   box-shadow: none;
 }
+
 .hero_banner h2.title {
   font-size: 2.4rem;
   line-height: 2.5rem;
@@ -588,8 +589,43 @@ ul.sub-menu > li {
   background: rgba(33,205,192,0.38);
   border-radius: 20px;
 }
+.about-section.Pediatric{
+  background: linear-gradient( 32deg, rgba(80,213,203,1) 0%, rgba(17,17,17,0.41222426470588236) 55%), url('../public/assets/PEDIATRIC-CARE.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.button{
+  margin-top: 1rem;
+  padding: .7rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid white;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: -6px 6px 0px 0px rgba(33,205,192,0.38);
+  transition: .3s ease-in-out;
+}
+.btn_padding{
+  padding: 1rem 1.5rem;
+}
+.Pediatric p{
+  color: white;
+}
+.about-section.Pediatric button:hover{
+  background: #fff !important;
+  color: var(--color-tertiary) !important;
 
-
+}
+.about-text a{
+  color: var(--color-tertiary) !important;
+}
+.about-text a.button:hover{
+  background: var(--color-tertiary) !important;
+  box-shadow: none;
+  border: 1px solid var(--color-tertiary) !important;
+  color:white !important
+}
 
 @media (max-width: 768px) {
   .counter-inner-two::before {

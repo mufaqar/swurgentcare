@@ -127,7 +127,7 @@ const Index = ({ services, testimonials }) => {
                   </p>
 
                   <a
-                    className="template-btn sas mt-4"
+                    className="template-btn sas mt-4 button"
                     data-wow-delay="0.5s"
                     href="#services"
                   >
@@ -141,7 +141,7 @@ const Index = ({ services, testimonials }) => {
         {/*====== About Section End ======*/}
 
         {/*====== Pediatric Care Start ======*/}
-        <section className="about-section Pediatric section-gap bg_">
+        <section className="about-section Pediatric section-gap ">
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-md-6">
@@ -159,17 +159,17 @@ const Index = ({ services, testimonials }) => {
                     Southwest Urgent Care provides a wide range of services for your Child's health.
                   </p>
 
-                  <a
+                  <button
                     onClick={() => router.push('/appointments')}
-                    className="template-btn sas mt-4"
+                    className="template-btn sas mt-4 button btn_padding"
                     data-wow-delay="0.5s"
                   >
                     Learn More About Our Pediatric Care <i className="far fa-plus" />
-                  </a>
+                  </button>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className=" mb-xl-50">
+                {/* <div className=" mb-xl-50">
 
                   <div
                     className="image-two wow fadeInDown _image"
@@ -178,7 +178,7 @@ const Index = ({ services, testimonials }) => {
                     <OwnImage path="/assets/PEDIATRIC-CARE.jpg" radius="18px" />
                   </div>
 
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
