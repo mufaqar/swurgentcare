@@ -21,23 +21,18 @@ const Footer2 = ({ noNewsletters, services }) => {
                   <div className="footer-logo">
                     <img src="assets/site-logo.png" alt="swurgentcare" />
                   </div>
-                  <p>
+                  {/* <p>
                     We are a creative company that specializes in strategy & design.
                     We like to create things with like – minded people who are serious about their passions
-                  </p>
+                  </p> */}
                   <ul className="contact-list">
-                    {/* <li>
+                    <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
                         <i className="far fa-map-marker-alt" />
-                        55 Main Road, USA
+                          5400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States
                       </a>
-                    </li> */}
-                    {/* <li>
-                      <a href="mailto:support@gmail.com">
-                        <i className="far fa-envelope" />
-                        swurgentcare@outlook.com
-                      </a>
-                    </li> */}
+                    </li> 
+                    
                     <li>
                       <a href="tel:01267899">
                         <i className="far fa-phone" />
@@ -86,8 +81,8 @@ const Footer2 = ({ noNewsletters, services }) => {
               </div>
               <div className="col-lg-3 col-md-10">
                 <div className="widget newsletters-widget">
-                  <h4 className="widget-title">Newsletters</h4>
-                  <p>
+                  <h4 className="widget-title"><i className="far fa-clock" /> Opening Hours</h4>
+                  {/* <p>
                     Join Our Newsletter
                   </p>
                   <form
@@ -99,13 +94,16 @@ const Footer2 = ({ noNewsletters, services }) => {
                     <button type="submit">
                       <i className="far fa-arrow-right" />
                     </button>
-                  </form>
-                  <div className="opening-notice mt-30">
-                    <h6>
-                      <i className="far fa-clock" /> Opening Hours
-                    </h6>
-                    <p>Sun - Thursday, 08:00 am - 05:00 pm</p>
-                  </div>
+                  </form> */}
+                  <ul className="opening-notice mt-30 nav-links">
+                    <li className="capatalize">Monday, <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Tuesday, <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Wednesday, <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Thursday, <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Friday, <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Saturday, <span className="last">9:00 am to 3:00 pm</span></li>
+                    <li className="capatalize">Sunday, <span className="last">9:00 am to 1:00 pm</span></li>
+                  </ul>
                 </div>
               </div>
             </div>

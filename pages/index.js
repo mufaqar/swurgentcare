@@ -239,7 +239,7 @@ const Index = ({ services, testimonials }) => {
         {/*====== Services ======*/}
         <section id='services' className="section-gap services bg_">
           <div className="container mx-auto">
-            <h2 className="title text-center"> <span className="last">Virtual</span> Urgent Care </h2>
+            <h2 className="title text-center"> <span className="last">S</span>ervices</h2>
             <div className="row mt-5">
               {
                 services.map((service, index) => (
