@@ -47,7 +47,7 @@ const Contact = ({ services }) => {
                       <i className="fal fa-map-marker-alt" /> Address
                     </h3>
                     <p>
-                      5900 Chimney Rock, Suite X Houston,<br /> Texas 77081
+                      400 Promenade Wy Ste 1500, Sugar Land, TX 77478, <span className="last">United States</span>
                     </p>
                   </div>
                   <div className="single-contact-info">
@@ -104,49 +104,49 @@ const Contact = ({ services }) => {
                       <i className="far fa-angle-right" />
                       Monday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">9:00 am to 8:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Tuesday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">9:00 am to 8:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Wednesday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">9:00 am to 8:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Thursday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">9:00 am to 8:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Friday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">9:00 am to 8:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Saturday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">09:00 am to 03:00 pm</span>
                   </li>
                   <li>
                     <span>
                       <i className="far fa-angle-right" />
                       Sunday
                     </span>
-                    <span>9:00-19:00</span>
+                    <span className="last">09:00 am to 01:00 pm</span>
                   </li>
                 </ul>
               </div>
@@ -169,7 +169,7 @@ const Contact = ({ services }) => {
               <div className="col-lg-10">
                 <div className="section-heading mb-60 text-center">
                   <span className="tagline">{`We're Ready To Help You`}</span>
-                  <h2 className="title">Leave a Message</h2>
+                  <h2 className="title">Leave a <span className="last">Message</span></h2>
                 </div>
                 <form
                   // onSubmit={handleSubmit(onSubmit)}

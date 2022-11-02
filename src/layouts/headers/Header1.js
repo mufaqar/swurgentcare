@@ -16,24 +16,20 @@ const Header1 = ({ headerTopbar, position }) => {
       className={`template-header sticky-header header-one ${position ? position + "-header" : "" }`}
     >
       {headerTopbar && (
+        <>
         <div className="header-topbar d-none d-md-block">
           <div className="container-fluid container-1400">
             <div className="row align-items-center justify-content-between">
-              <div className="col-lg-4">
-                <ul className="topbar-menu">
-                  <li style={{ listStyle: 'none' }}>
-                    5900 Chimney Rock, Suite X Houston, Texas 77081
-                  </li>
-                </ul>
+              <div className="col-lg-6">
+                <div className="topbar-menu">
+                  <span style={{ listStyle: 'none' }} >
+                    400 Promenade Wy Ste 1500, Sugar Land, TX 77478, <span className="last">United States</span>
+                  </span>
+                </div>
               </div>
-              <div className="col-lg-8">
+              <div className="col-lg-6">
                 <ul className="contact-info">
-                  <li>
-                    <a href="#">
-                      <i className="far fa-envelope" /> Email :
-                      swurgentcare@outlook.com
-                    </a>
-                  </li>
+                 
                   <li>
                     <a href="#">
                       <i className="far fa-phone" /> Call US : (346) 341-7573
@@ -60,6 +56,7 @@ const Header1 = ({ headerTopbar, position }) => {
             </div>
           </div>
         </div>
+        </>
       )}
 
       <div className="container-fluid container-1400">

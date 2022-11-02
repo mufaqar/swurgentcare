@@ -73,6 +73,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
 
 
 :root {
@@ -93,7 +94,7 @@
 	--color-white: #fff;
 	--color-black: #000000;
 	--font-inter: 'Montserrat', sans-serif;
-	--font-lora: 'Prata', serif;
+	--font-lora: 'Fira Sans', sans-serif;
 
 }
 
@@ -2558,7 +2559,7 @@ button {
 .section-heading .title {
 	font-size: 28px;
 	line-height: 1.35;
-	color: var(--color-heading) !important;
+	color: var(--color-primary) !important;
 }
 
 @media (max-width: 1199px) {

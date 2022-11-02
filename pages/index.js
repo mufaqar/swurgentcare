@@ -7,6 +7,8 @@ import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
 import Testimonial from "../src/components/testimonial";
 import Image from "next/image";
+import OwnImage from "../src/components/OwnImage";
+import Appoinment from "../src/components/appoinment";
 
 {/* <QUERY> */ }
 
@@ -90,29 +92,30 @@ const Index = ({ services, testimonials }) => {
         {/*====== Hero Slider Start ======*/}
 
         <HeroBanner />
+        <Appoinment/>
         {/*====== Hero Slider End ======*/}
         {/*====== About Section Start ======*/}
         <section className="about-section section-gap">
           <div className="container">
             <div className="row align-items-center justify-content-center">
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div className=" mb-xl-50">
 
                   <div
-                    className="image-two wow fadeInDown "
+                    className="image-two wow fadeInDown _image"
                     data-wow-delay="0.4s"
                   >
-                    <Image src="/assets/family.jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={400}  />
+                    <OwnImage path="/assets/family.jpg" radius="18px" />
                   </div>
 
                 </div>
               </div>
-              <div className="col-md-7">
+              <div className="col-md-6">
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">About Swurgentcare</span> */}
                     <h2 className="title">
-                      Southwest Urgent Care Bringing Forth Quality On-Demand Care
+                      Southwest Urgent Care Bringing Forth Quality <span className="last2">On-Demand</span> Care
                     </h2>
                   </div>
                   <p>
@@ -141,12 +144,12 @@ const Index = ({ services, testimonials }) => {
         <section className="about-section Pediatric section-gap bg_">
           <div className="container">
             <div className="row align-items-center justify-content-center">
-              <div className="col-md-7">
+              <div className="col-md-6">
                 <div className="about-text">
                   <div className="section-heading mb-30">
-                    <span className="tagline">Pediatric Care</span>
+                    {/* <span className="tagline">Pediatric Care</span> */}
                     <h2 className="title">
-                      Are you looking for quality pediatric care? Well, your search ends at Southwest Urgent Care!
+                      Are you looking for <span className="last"> quality pediatric care?</span> Well, your search ends at Southwest Urgent Care!
                     </h2>
                   </div>
                   <p>
@@ -165,14 +168,14 @@ const Index = ({ services, testimonials }) => {
                   </a>
                 </div>
               </div>
-              <div className="col-md-5">
+              <div className="col-md-6">
                 <div className=" mb-xl-50">
 
                   <div
-                    className="image-two wow fadeInDown"
+                    className="image-two wow fadeInDown _image"
                     data-wow-delay="0.4s"
                   >
-                    <Image src="/assets/PEDIATRIC-CARE.jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={400}/>
+                    <OwnImage path="/assets/PEDIATRIC-CARE.jpg" radius="18px" />
                   </div>
 
                 </div>
@@ -193,7 +196,7 @@ const Index = ({ services, testimonials }) => {
                     className="image-two wow fadeInDown "
                     data-wow-delay="0.4s"
                   >
-                    <img src="/assets/TELEMEDICINE-(Without-Green-Background).jpg" alt="Image" style={{ borderRadius: '18px' }} width={520} height={600}/>
+                    <OwnImage path="/assets/TELEMEDICINE-(Without-Green-Background).jpg" radius="0px" />
                   </div>
 
                 </div>
@@ -203,7 +206,7 @@ const Index = ({ services, testimonials }) => {
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">Virtual Urgent Care</span> */}
                     <h2 className="title">
-                      Virtual Urgent Care
+                      <span className="last">Virtual</span> Urgent Care
                     </h2>
                     <div className="mt-3">
                       <div className="d-flex item-center">
@@ -236,7 +239,7 @@ const Index = ({ services, testimonials }) => {
         {/*====== Services ======*/}
         <section id='services' className="section-gap services bg_">
           <div className="container mx-auto">
-            <h2 className="title text-center"> Virtual Urgent Care </h2>
+            <h2 className="title text-center"> <span className="last">Virtual</span> Urgent Care </h2>
             <div className="row mt-5">
               {
                 services.map((service, index) => (
@@ -261,10 +264,11 @@ const Index = ({ services, testimonials }) => {
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     <h2 className="title">
-                      Are you not feeling well ? We offer rapid COVID-19 antigen testing or COVID-19 PCR testing
+                      <span className="last">Are you not feeling well ?</span> We offer rapid COVID-19 antigen testing or COVID-19 PCR testing
                       for your travel requirement 7 days a week. Call today to book an appointment,
                       set up a telemedicine appointment or just  simply walk-in at our  urgent care.
                     </h2>
+                    <button>See all COVID-19 Initiatives</button>
                   </div>
 
                 </div>
@@ -290,7 +294,7 @@ const Index = ({ services, testimonials }) => {
         <section className="partner-section section-gap">
           <div className="container">
             <div className="section-heading text-center mb-50">
-              <h2 className="title">WE ACCEPT MOST INSURANCE PLANS </h2>
+              <h2 className="title">We accept most <span className="last">insurance plan </span></h2>
               <span className="span tagline">Traditional Medicare & most commercial and local marketplace plans are accepted.</span>
              
             </div>
