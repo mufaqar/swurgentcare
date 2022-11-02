@@ -380,10 +380,13 @@ span.plus_sign {
   background: transparent;
   color: #fff;
   font-size: 14px;
+  box-shadow: -6px 6px 0px 0px rgba(33,205,192,0.38);
+  transition: .3s ease-in-out;
 }
 .covid19 button:hover{
   background: white;
   color: var(--color-primary);
+  box-shadow: none;
 }
 .testimonial-slider-one ul.slick-dots li {
   background-color: var(--color-heading) !important;
