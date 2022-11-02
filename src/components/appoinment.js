@@ -3,7 +3,7 @@ import React from 'react'
 export default function Appoinment() {
     return (
         <>
-            <section className='container mx-auto d-flex appoinment_section'>
+            <section className='container mx-auto d-flex row appoinment_section'>
                 <div className='col-md-3 _card'>
                     <div className="section-heading">
                         <h2 className="title">Make an a <span className='last'>appointment</span></h2>
