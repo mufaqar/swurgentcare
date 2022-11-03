@@ -37,7 +37,7 @@ class Testimonial extends React.Component {
 
 
     render() {
-        const testimonial  = this.props
+        const testimonial = this.props
         return (
             <section id='testimonial-section' className={`testimonial-section bg-color-grey section-have-half-bg ${this.state.color}`}>
                 <div className="container-fluid">
@@ -60,10 +60,14 @@ class Testimonial extends React.Component {
                                                 <div className="single-testimonial-slider" key={i}>
                                                     <div className="testimonial-inner">
                                                         <div className="avatar">
-                                                            <img
-                                                                src={testimonial?.profile.asset.url}
-                                                                alt="Avatar"
-                                                            />
+                                                            {
+                                                                testimonial.profile?.asset.url ? <img
+                                                                    src={testimonial.profile?.asset.url}
+                                                                    alt="Avatar"
+                                                                /> : <div className="testimonial_name"> {testimonial.name.charAt(0) } </div>
+                                    
+                                                            }
+                                                            
                                                         </div>
                                                         <div className="content-wrap">
                                                             <p className="testimonial-desc">
@@ -71,7 +75,7 @@ class Testimonial extends React.Component {
                                                             </p>
                                                             <div className="author-info">
                                                                 <h5 className="name">{testimonial.name}</h5>
-                                                                <span className="mt-2 last">{testimonial.designation}</span>
+                                                                <span className="mt-2 last">{testimonial?.designation}</span>
                                                             </div>
                                                         </div>
                                                     </div>

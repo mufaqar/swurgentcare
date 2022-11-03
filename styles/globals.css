@@ -366,7 +366,7 @@ span.plus_sign {
   font-weight: 700;
   font-family: var(--font-lora);
   letter-spacing: 1px;
-  font-size: 30px;
+  font-size: 32px;
 }
 .covid19 .last{
   font-weight: 700;
@@ -458,6 +458,7 @@ span.plus_sign {
   transform: translateY(-50%);
   margin-left: -1em;
 }
+
 .page-title-area {
   text-transform: capitalize !important;
 }
@@ -483,6 +484,18 @@ span.plus_sign {
   background: #408FAD !important;
 }
 .bg7 {
+  background: #338272 !important;
+}
+.bg8 {
+  background: #9877A4 !important;
+}
+.bg9 {
+  background: #88690C !important;
+}
+.bg10 {
+  background: #408FAD !important;
+}
+.bg11 {
   background: #338272 !important;
 }
 ul.contect_info li > a {
@@ -555,6 +568,7 @@ ul.sub-menu > li {
 .services .title {
   font-family: var(--font-lora);
   font-weight: 600;
+  font-size: 42px;
   color: var(--color-primary);
 }
 
@@ -568,9 +582,17 @@ ul.sub-menu > li {
   flex-direction: column;
   text-align: center;
 }
+.testimonial-section .testimonial-slider-one .single-testimonial-slider .testimonial-inner .testimonial-desc {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 22px;
+  color: #e6e6e6 !important;
+}
 ._card .section-heading .title {
   color: white !important;
-  line-height: 30px;
+  line-height: 30x !important;
+  font-size: 30px !important;
 }
 .appoinment_section {
   margin-top: -70px;
@@ -640,6 +662,22 @@ ul.sub-menu > li {
  .partner-logo-grid img:hover{
   width: 80% !important;
 }
+.testimonial_name{
+  background: white;
+  padding: 1rem;
+  padding-bottom: .4rem;
+  color: var(--color-tertiary);
+  font-family: var(--font-lora);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+
+
+
 
 @media (max-width: 768px) {
   .counter-inner-two::before {

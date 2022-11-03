@@ -43,8 +43,6 @@ const testimonial = `*[_type == "testimonial"]{
 
 
 
-
-
 const Index = ({ services, testimonials }) => {
 
 
@@ -264,7 +262,7 @@ const Index = ({ services, testimonials }) => {
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     <h2 className="title">
-                      <span className="last">Are you not feeling well ?</span> We offer rapid COVID-19 antigen testing or COVID-19 PCR testing
+                      <span className="last" style={{fontSize: '42px'}}>Are you not feeling well ?</span><br/> We offer rapid <span className="last">COVID-19</span> antigen testing or <span className="last">COVID-19</span> PCR testing
                       for your travel requirement 7 days a week. Call today to book an appointment,
                       set up a telemedicine appointment or just  simply walk-in at our  urgent care.
                     </h2>
