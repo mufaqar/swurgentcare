@@ -45,7 +45,7 @@ class Testimonial extends React.Component {
                         <div className="col-lg-12">
                             <div className="testimonial-one-wrap">
                                 <div className="section-heading mb-50">
-                                    <span className="mb-3">Our Testimonials</span>
+                                    <span className="mb-3 ot">Our Testimonials</span>
                                     <h2 className="title">
                                         What Our <span className="last">Patients</span> Say About Our Medical
                                     </h2>

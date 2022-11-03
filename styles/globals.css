@@ -674,7 +674,13 @@ ul.sub-menu > li {
   align-items: center;
   border-radius: 50px;
 }
+.ot{
+  font-size: 2rem;
+  font-family: var(--font-lora);
+  text-transform: capitalize;
+  color: var(--color-tertiary);
 
+}
 
 
 
