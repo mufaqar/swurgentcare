@@ -76,13 +76,13 @@ const Footer2 = ({ noNewsletters, services }) => {
                   <h4 className="widget-title"><i className="far fa-clock" /> Opening Hours</h4>
                   
                   <ul className="opening-notice mt-30 nav-links">
-                    <li className="capatalize">Monday: <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Tuesday: <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Wednesday: <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Thursday: <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Friday: <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Saturday: <span className="last">9:00 am to 3:00 pm</span></li>
-                    <li className="capatalize">Sunday: <span className="last">9:00 am to 1:00 pm</span></li>
+                    <li className="">Monday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="">Tuesday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="">Wednesday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="">Thursday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="">Friday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="">Saturday: <span className="last">9:00 am to 3:00 pm</span></li>
+                    <li className="">Sunday: <span className="last">9:00 am to 1:00 pm</span></li>
                   </ul>
                 </div>
               </div>
