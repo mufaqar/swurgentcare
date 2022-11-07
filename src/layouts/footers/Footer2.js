@@ -1,9 +1,4 @@
 import Link from "next/link";
-import React from "react";
-import { sanityClient } from "../../../lib/studio";
-
-
-
 
 const Footer2 = ({ noNewsletters, services }) => {
   
@@ -21,10 +16,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                   <div className="footer-logo">
                     <img src="assets/site-logo.png" alt="swurgentcare" />
                   </div>
-                  {/* <p>
-                    We are a creative company that specializes in strategy & design.
-                    We like to create things with like – minded people who are serious about their passions
-                  </p> */}
+                 
                   <ul className="content__list">
                     <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
@@ -82,19 +74,7 @@ const Footer2 = ({ noNewsletters, services }) => {
               <div className="col-lg-3 col-md-10">
                 <div className="widget newsletters-widget">
                   <h4 className="widget-title"><i className="far fa-clock" /> Opening Hours</h4>
-                  {/* <p>
-                    Join Our Newsletter
-                  </p>
-                  <form
-                    onSubmit={(e) => e.preventDefault()}
-                    action="#"
-                    className="newsletters-form"
-                  >
-                    <input type="email" placeholder="Email Address" />
-                    <button type="submit">
-                      <i className="far fa-arrow-right" />
-                    </button>
-                  </form> */}
+                  
                   <ul className="opening-notice mt-30 nav-links">
                     <li className="capatalize">Monday: <span className="last">9:00 am to 8:00 pm</span></li>
                     <li className="capatalize">Tuesday: <span className="last">9:00 am to 8:00 pm</span></li>

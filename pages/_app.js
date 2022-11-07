@@ -7,16 +7,16 @@ import { store } from '../lib/store'
 import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
-  const [loader, setLoader] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(false);
-    }, 2000);
-  }, []);
+  // const [loader, setLoader] = useState(true);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoader(false);
+  //   }, 2000);
+  // }, []);
 
   return (
     <Fragment>
-      {loader && <PreLoader />}
+      {/* {loader && <PreLoader />} */}
       <Head>
         <title>Urgent Medical Care in Houston, TX - SWUrgentCare</title>
         <link
