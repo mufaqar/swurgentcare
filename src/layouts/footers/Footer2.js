@@ -25,18 +25,18 @@ const Footer2 = ({ noNewsletters, services }) => {
                     We are a creative company that specializes in strategy & design.
                     We like to create things with like – minded people who are serious about their passions
                   </p> */}
-                  <ul className="contact-list">
+                  <ul className="content__list">
                     <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
                         <i className="far fa-map-marker-alt" />
-                          5400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States
+                          <p>5400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States</p>
                       </a>
                     </li> 
                     
                     <li>
                       <a href="tel:01267899">
                         <i className="far fa-phone" />
-                        (346) 341-7573
+                        <p>(346) 341-7573</p>
                       </a>
                     </li>
                   </ul>
@@ -96,13 +96,13 @@ const Footer2 = ({ noNewsletters, services }) => {
                     </button>
                   </form> */}
                   <ul className="opening-notice mt-30 nav-links">
-                    <li className="capatalize">Monday, <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Tuesday, <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Wednesday, <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Thursday, <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Friday, <span className="last">9:00 am to 8:00 pm</span></li>
-                    <li className="capatalize">Saturday, <span className="last">9:00 am to 3:00 pm</span></li>
-                    <li className="capatalize">Sunday, <span className="last">9:00 am to 1:00 pm</span></li>
+                    <li className="capatalize">Monday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Tuesday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Wednesday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Thursday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Friday: <span className="last">9:00 am to 8:00 pm</span></li>
+                    <li className="capatalize">Saturday: <span className="last">9:00 am to 3:00 pm</span></li>
+                    <li className="capatalize">Sunday: <span className="last">9:00 am to 1:00 pm</span></li>
                   </ul>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const Footer2 = ({ noNewsletters, services }) => {
           </div>
           <div className="copyright-area">
             <p>
-              © 2022 <a href="#">Southwest Urgent Care</a>. All Rights Reserved
+              © 2022 <Link href="/appointments">Southwest Urgent Care</Link>. All Rights Reserved
             </p>
           </div>
         </div>

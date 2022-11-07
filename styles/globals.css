@@ -186,8 +186,8 @@ span.plus_sign {
   text-decoration: underline;
 }
 ._text {
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   color: rgb(177, 177, 177);
 }
 .hero_wrapper .section-heading .title,
@@ -681,9 +681,27 @@ ul.sub-menu > li {
   color: var(--color-tertiary);
 
 }
-
-
-
+p{
+  font-size: 18px !important;
+}
+.about-text h6{
+  font-size: 18px !important;
+}
+.content__list li a p{
+  font-size: 18px !important;
+  margin-top: -5px;
+  margin-left:10px;
+  line-height: 25px
+}
+.content__list li:nth-child(2){
+  margin-top: 1.2rem;
+}
+.content__list i{
+  color: #338272;
+}
+.content__list li a{
+  display: flex;
+}
 
 @media (max-width: 768px) {
   .counter-inner-two::before {
@@ -740,5 +758,14 @@ ul.sub-menu > li {
   ._card{
     border-right: none;
     border-bottom: 1px solid #1f355e;
+  }
+  .covid19 .section-heading .title{
+    font-size: 22px;
+  }
+  .covid19 .section-heading .title span:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  .testimonial_name{
+    padding: 1rem 2rem -0.5rem;
   }
 }

@@ -1,6 +1,12 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 export default function Appoinment() {
+    const router = useRouter();
+    console.log("🚀 ~ file: appoinment.js ~ line 6 ~ Appoinment ~ router", router)
+    const ChangeRouter = () => {
+        router.push('/appointments')
+    }
     return (
         <>
             <section className='container mx-auto d-flex row appoinment_section'>
@@ -14,17 +20,17 @@ export default function Appoinment() {
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Monday - Friday</span></h5>
                     <p>9:00 am to 8:00 pm</p>
-                    <button>Get an appoinment</button>
+                    <button onClick={ChangeRouter}>Get an appoinment</button>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Saturday</span></h5>
                     <p>09:00 am to 03:00 pm</p>
-                    <button>Get an appoinment</button>
+                    <button onClick={ChangeRouter}>Get an appoinment</button>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Sunday</span></h5>
                     <p>09:00 am to 01:00 pm</p>
-                    <button>Get an appoinment</button>
+                    <button onClick={ChangeRouter}>Get an appoinment</button>
                 </div>
 
             </section>

@@ -244,7 +244,7 @@ const Index = ({ services, testimonials }) => {
                   <Link href={`${service.slug?.current}`} key={index}>
                     <div className="col-md-3 col-6 service_card">
                       <img src={service.icon?.asset?.url} alt={service.title} className="services_icon" />
-                      <h6 className="text-center">{service.title}</h6>
+                      <h6 className="text-center ">{service.title}</h6>
                     </div>
                   </Link>
                 ))
