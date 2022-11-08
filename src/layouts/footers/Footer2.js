@@ -21,7 +21,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                     <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
                         <i className="far fa-map-marker-alt" />
-                          <p>5400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States</p>
+                          <p>400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States</p>
                       </a>
                     </li> 
                     
@@ -52,7 +52,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-xl-5 col-sm-6">
+                  <div className="col-xl-5 col-sm-6 w-2">
                     <div className="d-flex justify-content-lg-center">
                       <div className="widget nav-widget">
                         <h4 className="widget-title pt-4 pb-2"></h4>
