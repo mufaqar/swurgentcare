@@ -5,7 +5,7 @@ import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 import { getPagination, pagination } from "../src/utils";
 
-const BlogStandard = ({services}) => {
+const  BlogStandard = ({services}) => {
   let sort = 2;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
@@ -21,7 +21,7 @@ const BlogStandard = ({services}) => {
     </Layouts>
   );
 };
-export default BlogStandard;
+export default  BlogStandard;
 
 
 export async function getStaticProps() {
