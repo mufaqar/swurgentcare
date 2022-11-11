@@ -712,7 +712,9 @@ p{
 .mobile-slide-panel .mobile-menu li.active > a{
 color: var(--color-tertiary);
 }
-
+.testimonial-inner h5{
+  margin-top: 1rem;
+}
 
 
 

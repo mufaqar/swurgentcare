@@ -251,8 +251,8 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
         {/*====== esting or COVID-19 PCR Start ======*/}
         <section className="about-section section-gap covid19">
           <div className="container">
-            <div className="row align-items-center justify-content-center">
-              <div className="col-md-7">
+            <div className="row align-items-center justify-content-center p-2">
+              <div className="lg:col-md-7">
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     <h2 className="title">
