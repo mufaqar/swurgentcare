@@ -9,30 +9,22 @@ import PortableText from "react-portable-text";
 import { client } from "../lib/client";
 import { gql } from "@apollo/client";
 import { GetAllServices } from "../lib/queries";
-
-const ServicesQuery = `*[_type == "services"]{
-  title,
-  icon{
-    asset->{
-      url
-    },
-  },
-  slug,
-  poster{
-    asset->{
-      url
-    },
-  },
-  content,
-}`;
+import Head from "next/head";
 
 const Slug = ({ service, all_services }) => {
-  console.log("🚀 ~ file: [slug].js ~ line 34 ~ Slug ~ service", service);
-
   const router = useRouter();
-
+  const { seo } = service;
+  
   return (
     <Layouts footer={2} services={all_services}>
+      <Head>
+        <title>{seo?.title}</title>
+        <meta name="description" content={seo?.metaDesc} />
+        <meta property="og:image" content={service?.servicesFields.featureImage.mediaItemUrl} />
+        <meta property="og:description" content={seo?.metaDesc} />
+        <meta property="og:title" content={seo?.title} />
+        <meta name="keywords" content={seo?.metaKeywords}></meta>
+      </Head>
       <PageBanner title={service.title} />
       <>
         <section className="services-area section-gap">
@@ -53,7 +45,6 @@ const Slug = ({ service, all_services }) => {
                         __html: service.content,
                       }}
                     ></div>
-                    
                   </div>
                 </div>
               </div>
@@ -215,6 +206,7 @@ const GET_POST = gql`
         metaDesc
         metaKeywords
         title
+        fullHead
       }
     }
   }

@@ -11,25 +11,11 @@ import OwnImage from "../src/components/OwnImage";
 import Appoinment from "../src/components/appoinment";
 import { client } from "../lib/client";
 import { gql } from '@apollo/client';
-import { GetAllServices } from "../lib/queries";
+import { GetAllServices, homePage, testimonials } from "../lib/queries";
+import Head from "next/head";
 
-{
-  /* <QUERY> */
-}
 
-const testimonial = `*[_type == "testimonial"]{
-  review,
-  name,
-  designation,
-  profile{
-    asset->{
-      url
-    },
-  },
-}`;
-// </QUERY>
-
-const Index = ({ testimonials, all_services }) => {
+const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
   
   const [video, setVideo] = useState(false);
   const router = useRouter();
@@ -66,9 +52,17 @@ const Index = ({ testimonials, all_services }) => {
       image: "We-Accept_wellcare-health-plans-logo-1200x481.png",
     },
   ];
+  const {seo} = homePageResponse 
 
   return (
     <Layouts headerTopbar footer={2} noNewsletters services={all_services}>
+       <Head>
+        <title>{seo?.title}</title>
+        <meta name="description" content={seo?.metaDesc} />
+        <meta property="og:description" content={seo?.metaDesc} />
+        <meta property="og:title" content={seo?.title} />
+        <meta name="keywords" content={seo?.metaKeywords}></meta>
+      </Head>
       {video && <VideoPopup close={setVideo} />}
       <>
         {/*====== Hero Slider Start ======*/}
@@ -318,7 +312,7 @@ const Index = ({ testimonials, all_services }) => {
 
         {/*====== Testimonials Section Start ======*/}
 
-        <Testimonial testimonials={testimonials} />
+        <Testimonial testimonials={AllTestimonials} />
         {/*====== Testimonials Section End ======*/}
 
         {/* contact us  */}
@@ -371,18 +365,31 @@ const Index = ({ testimonials, all_services }) => {
 export default Index;
 
 export async function getStaticProps() {
-  const testimonials = await sanityClient.fetch(testimonial);
   const GET_SERVICES = gql`${GetAllServices}`;
-
+  const GET_HOMEPAGE_DATA = gql`${homePage}`;
+  const GET_TESTIMONIALS = gql`${testimonials}`;
+  // HOMEPAGE QUERY 
+  const res = await client.query({
+    query: GET_HOMEPAGE_DATA,
+  });
+  // SERVICES QUERY 
   const response = await client.query({
     query: GET_SERVICES,
   });
+  // TESTIMONIALS QUERY
+  const t_response = await client.query({
+    query: GET_TESTIMONIALS,
+  });
+
   const all_services = response?.data?.services?.nodes;
+  const homePageResponse = res.data?.page
+  const AllTestimonials = t_response.data?.testimonials?.nodes
 
   return {
     props: {
-      testimonials,
+      AllTestimonials,
       all_services,
+      homePageResponse
     },
   };
 }
