@@ -3,12 +3,14 @@ import Image from "next/image";
 import React from "react";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { sanityClient } from "../lib/studio";
-import PortableText from "react-portable-text"
+import PortableText from "react-portable-text";
+import { client } from "../lib/client";
+import { gql } from "@apollo/client";
+import { GetAllServices } from "../lib/queries";
 
-
-const ServicesQuery =`*[_type == "services"]{
+const ServicesQuery = `*[_type == "services"]{
   title,
   icon{
     asset->{
@@ -22,16 +24,15 @@ const ServicesQuery =`*[_type == "services"]{
     },
   },
   content,
-}`
+}`;
 
+const Slug = ({ service, all_services }) => {
+  console.log("🚀 ~ file: [slug].js ~ line 34 ~ Slug ~ service", service);
 
-
-const Slug = ({ service, services }) => {
-  
-  const router = useRouter()
+  const router = useRouter();
 
   return (
-    <Layouts footer={2} services={services}>
+    <Layouts footer={2} services={all_services}>
       <PageBanner title={service.title} />
       <>
         <section className="services-area section-gap">
@@ -40,23 +41,20 @@ const Slug = ({ service, services }) => {
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
                   <figure className="mt-b relative">
-                    <img src={service?.poster.asset.url} alt="skin-infection"  />
+                    <img
+                      src={service?.servicesFields.featureImage.mediaItemUrl}
+                      alt="skin-infection"
+                    />
                   </figure>
                   <div className="content_wrapper">
-                    <PortableText
-                      // Pass in block content straight from Sanity.io
-                      content={service.content}
-                      // Optionally override marks, decorators, blocks, etc. in a flat
-                      // structure without doing any gymnastics
-                      serializers={{
-                        h1: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
-                        h2: props => <h1 style={{ color: "#D31F2C" }} {...props} />,
-                        li: ({ children }) => <li className="special-list-item">{children}</li>
+                    <div
+                      className=""
+                      dangerouslySetInnerHTML={{
+                        __html: service.content,
                       }}
-                    />
+                    ></div>
+                    
                   </div>
-
-
                 </div>
               </div>
               <div className="col-lg-4 col-md-10 order-lg-first">
@@ -64,16 +62,17 @@ const Slug = ({ service, services }) => {
                   <div className="widget departments-list">
                     <h3 className="widget-title">Departments</h3>
                     <ul>
-                      {
-                        services.map((service, i) => (
-                          <li key={i}>
-                            <a className="cap" onClick={() => router.push(`/${service?.slug.current}`)}>
-                              <i className="far fa-angle-right" />
-                              {service.title}
-                            </a>
-                          </li>
-                        ))
-                      }
+                      {all_services.map((service, i) => (
+                        <li key={i}>
+                          <a
+                            className="cap"
+                            onClick={() => router.push(`/${service?.slug}`)}
+                          >
+                            <i className="far fa-angle-right" />
+                            {service.title}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div className="widget appointment-form">
@@ -163,40 +162,98 @@ const Slug = ({ service, services }) => {
         </section>
         {/*====== Service Area End ======*/}
         {/*====== Related Services Start ======*/}
-
       </>
-    </Layouts >
+    </Layouts>
   );
 };
 export default Slug;
 
+// export const getServerSideProps = async (pageContext) => {
+//   const pageSlug = pageContext.query.slug;
+//   const query = `*[ _type == "services" && slug.current == $pageSlug ][0]{
+//     title,
+//     icon{
+//       asset->{
+//         url
+//       },
+//     },
+//     slug,
+//     poster{
+//       asset->{
+//         url
+//       },
+//     },
+//     content,
+//   }`;
 
+//   const service = await sanityClient.fetch(query, {pageSlug});
+//   const services = await sanityClient.fetch(ServicesQuery);
+//   return {
+//     props: {
+//       services,
+//         service
+//     },
+//   }
+// };
 
+const GET_POST = gql`
+  query getSingleService($id: ID!) {
+    service(id: $id, idType: URI) {
+      id
+      servicesFields {
+        featureImage {
+          mediaItemUrl
+        }
+        icon {
+          mediaItemUrl
+        }
+      }
+      content
+      title
+      slug
+      seo {
+        metaDesc
+        metaKeywords
+        title
+      }
+    }
+  }
+`;
 
-export const getServerSideProps = async (pageContext) => {
-  const pageSlug = pageContext.query.slug;
-  const query = `*[ _type == "services" && slug.current == $pageSlug ][0]{
-    title,
-    icon{
-      asset->{
-        url
-      },
+export async function getStaticProps({ params }) {
+  console.log(
+    "🚀 ~ file: [slug].js ~ line 242 ~ getStaticProps ~ params",
+    params
+  );
+  const response = await client.query({
+    query: GET_POST,
+    variables: {
+      id: params.slug,
     },
-    slug,
-    poster{
-      asset->{
-        url
-      },
-    },
-    content,
-  }`;
+  });
 
-  const service = await sanityClient.fetch(query, {pageSlug});
-  const services = await sanityClient.fetch(ServicesQuery);
+  const GET_SERVICES = gql`
+    ${GetAllServices}
+  `;
+  const res = await client.query({
+    query: GET_SERVICES,
+  });
+  // const response = await getPostByUri(params.uri)
+  const service = response.data?.service;
+  const all_services = res?.data?.services?.nodes;
+
   return {
     props: {
-      services,
-        service
+      service,
+      all_services,
     },
-  }
-}; 
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = [];
+  return {
+    paths,
+    fallback: "blocking",
+  };
+}

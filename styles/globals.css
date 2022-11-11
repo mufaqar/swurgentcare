@@ -416,6 +416,10 @@ span.plus_sign {
 .content_wrapper strong{
   color: var(--color-tertiary);
 }
+.content_wrapper h1 {
+  font-size: 1.5em;
+  margin: 0.6rem 0;
+}
 .content_wrapper h1 strong{
   font-family: var(--font-lora);
   font-weight: 600;

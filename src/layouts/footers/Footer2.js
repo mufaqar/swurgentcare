@@ -44,7 +44,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                           {
                             services?.slice(0, 7).map((item, i) => (
                               <li key={i} className="capatalize">
-                                <Link href={item.slug.current}>{item.title}</Link>
+                                <Link href={item.slug}>{item.title}</Link>
                               </li>
                             ))
                           }
@@ -60,7 +60,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                           {
                             services?.slice(7, services.length).map((item, i) => (
                               <li key={i} className="capatalize">
-                                <Link href={item.slug.current}>{item.title}</Link>
+                                <Link href={item.slug}>{item.title}</Link>
                               </li>
                             ))
                           }

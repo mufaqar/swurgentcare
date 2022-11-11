@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.1",
     "@reduxjs/toolkit": "^1.8.6",
+    "graphql-request": "^5.0.0",
     "i": "^0.3.7",
     "isotope-layout": "^3.0.6",
     "next": "^12.1.0",
