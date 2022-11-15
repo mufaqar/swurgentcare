@@ -69,7 +69,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
               <div className="col-md-6">
                 <div className="about-text">
                   <div className="section-heading mb-30">
-                    {/* <span className="tagline">About Swurgentcare</span> */}
+                    
                     <h2 className="title">
                       {
                         <div

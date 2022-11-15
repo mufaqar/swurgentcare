@@ -7,7 +7,6 @@ export default function HeroBanner({text}) {
     return (
         <main className='hero_banner'>
             <div className='container mx-auto hero_wrapper row'>
-            {text}
                 <div className='left '>
                     <h2>{<div dangerouslySetInnerHTML={{ __html: bannerHeading}}></div>}</h2>
                 </div>
