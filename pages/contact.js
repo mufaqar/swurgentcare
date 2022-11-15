@@ -8,7 +8,7 @@ import { gql } from "@apollo/client";
 import { client } from "../lib/client";
 import Head from "next/head";
 
-const Contact = ({ all_ContactUs, all_services }) => {
+export default function contact({ all_ContactUs, all_services }) {
   const { seo } = all_ContactUs;
   const {
     register,
@@ -35,15 +35,8 @@ const Contact = ({ all_ContactUs, all_services }) => {
   };
 
   return (
-    <>
+    <div>
       <Layouts footer={2} services={all_services}>
-        <Head>
-          <title>{seo?.title}</title>
-          <meta name="description" content={seo?.metaDesc} />
-          <meta property="og:description" content={seo?.metaDesc} />
-          <meta property="og:title" content={seo?.title} />
-          <meta name="keywords" content={seo?.metaKeywords}></meta>
-        </Head>
         <PageBanner title={"Contact Us"} />
         {/*====== Page Title End ======*/}
         {/*====== Contact Info Section Start ======*/}
@@ -83,9 +76,9 @@ const Contact = ({ all_ContactUs, all_services }) => {
                           </a>
                         </li>
                         {/* <li>
-                       <span>Hotline</span>
-                       <a href="tel:+12345678">12345678</a>
-                     </li> */}
+               <span>Hotline</span>
+               <a href="tel:+12345678">12345678</a>
+             </li> */}
                       </ul>
                     </div>
                     <div className="single-contact-info">
@@ -282,10 +275,9 @@ const Contact = ({ all_ContactUs, all_services }) => {
           </div>
         </section>
       </Layouts>
-    </>
+    </div>
   );
-};
-export default Contact;
+}
 
 export async function getStaticProps() {
   const GET_ContactUs = gql`

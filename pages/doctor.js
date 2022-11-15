@@ -7,23 +7,14 @@ import { GetAllServices, Providers } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-export default function Doctor({ all_providers, all_services }) {
+export default function doctor({ all_providers, all_services }) {
   const { seo } = all_providers;
   return (
-    <>
+    <div>
       <Layouts footer={2} services={all_services}>
-        <Head>
-          <title>{seo?.title}</title>
-          <meta name="description" content={seo?.metaDesc} />
-          <meta property="og:description" content={seo?.metaDesc} />
-          <meta property="og:title" content={seo?.title} />
-          <meta name="keywords" content={seo?.metaKeywords}></meta>
-        </Head>
         <PageBanner title={"Meet The Doctors"} />
-
-        {/* <!--====== Doctor Section End ======--> */}
       </Layouts>
-    </>
+    </div>
   );
 }
 
