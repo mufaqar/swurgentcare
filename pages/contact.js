@@ -8,7 +8,7 @@ import { gql } from "@apollo/client";
 import { client } from "../lib/client";
 import Head from "next/head";
 
-export default function contact({ all_ContactUs, all_services }) {
+export default function Contact({ all_ContactUs, all_services }) {
   const { seo } = all_ContactUs;
   const {
     register,
