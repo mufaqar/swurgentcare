@@ -297,6 +297,7 @@ span.plus_sign {
   .author-info
   .name {
   color: rgb(229, 229, 229);
+  text-transform: capitalize
 }
 .landing-map .contact-map {
   height: 420px;
