@@ -1,18 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 import Script from 'next/script'
+import { Contact_Us, GetAllServices } from "../lib/queries";
+import { gql } from "@apollo/client";
+import { client } from "../lib/client";
+import Head from "next/head";
 
-const Contact = ({ services }) => {
+const Contact = ({ all_ContactUs ,all_services }) => {
 
-
+  const {seo} = all_ContactUs
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
   const onSubmit = data => {
-
-    
-
     fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -31,9 +32,15 @@ const Contact = ({ services }) => {
   };
 
   return (
-    <Layouts footer={2} services={services}>
-
-      <PageBanner title={"Contact Us"} />
+    <Layouts footer={2} services={all_services}>
+    <Head>
+      <title>{seo?.title}</title>
+      <meta name="description" content={seo?.metaDesc} />
+      <meta property="og:description" content={seo?.metaDesc} />
+      <meta property="og:title" content={seo?.title} />
+      <meta name="keywords" content={seo?.metaKeywords}></meta>
+    </Head>
+    <PageBanner title={"Contact Us"} />
       {/*====== Page Title End ======*/}
       {/*====== Contact Info Section Start ======*/}
       <section className="section-gap contact-top-wrappper">
@@ -73,10 +80,7 @@ const Contact = ({ services }) => {
                     <h3 className="info-title">
                       <i className="fal fa-comments" /> Follow Us
                     </h3>
-                    <p>
-                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
-                      incididunt ut labore
-                    </p>
+                   
                     <p className="social-icon">
                       <a href="#" className="p-2 rounded social_icon " >
                         <i className="fab fa-facebook" />
@@ -260,15 +264,29 @@ const Contact = ({ services }) => {
 export default Contact;
 
 
-export async function getStaticProps() {
-  const services = await sanityClient.fetch(`*[_type == "services"]{
-    title,
-    slug,
-  }`);
 
+export async function getStaticProps() {
+  const GET_ContactUs = gql`
+    ${Contact_Us}
+  `;
+  const GET_SERVICES = gql`
+    ${GetAllServices}
+  `;
+  // HOMEPAGE QUERY
+  const response = await client.query({
+    query: GET_ContactUs,
+  });
+  // SERVICES QUERY
+  const res = await client.query({
+    query: GET_SERVICES,
+  });
+
+  const all_ContactUs = response?.data.page;
+  const all_services = res?.data?.services?.nodes;
   return {
     props: {
-      services,
-    }
+      all_ContactUs,
+      all_services,
+    },
   };
 }

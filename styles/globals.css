@@ -715,7 +715,9 @@ color: var(--color-tertiary);
 .testimonial-inner h5{
   margin-top: 1rem;
 }
-
+.site-logo{
+  cursor: pointer;
+}
 
 
 /* media Queries */

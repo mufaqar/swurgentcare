@@ -1,14 +1,25 @@
+import { gql } from "@apollo/client";
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { GetAllServices, Providers } from "../lib/queries";
 import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const Doctor = ({services}) => {
+const Doctor = ({ all_providers, all_services }) => {
+  const {seo} = all_providers
   return (
-    <Layouts services={services}>
-      <PageBanner title={"Meet The Doctors"} bgnone />
-       {/* <section className="doctors-section section-gap">
+    <Layouts footer={2} services={all_services}>
+      <Head>
+        <title>{seo?.title}</title>
+        <meta name="description" content={seo?.metaDesc} />
+        <meta property="og:description" content={seo?.metaDesc} />
+        <meta property="og:title" content={seo?.title} />
+        <meta name="keywords" content={seo?.metaKeywords}></meta>
+      </Head>
+      <PageBanner title={"Meet The Doctors"} />
+      {/* <section className="doctors-section section-gap">
         <div className="container">
           <div className="row doctors-loop justify-content-center">
             <div className="col-lg-4 col-md-6 col-sm-9">
@@ -351,120 +362,37 @@ const Doctor = ({services}) => {
             </a>
           </div>
         </div>
-      </section> */}
+        </section> */}
       {/* <!--====== Doctor Section End ======--> */}
-
-      {/* <!--====== Skill Section Start ======--> */}
-      {/* <section className="skill-section section-gap border-top-primary">
-        <div className="container">
-          <div className="row justify-content-center justify-content-lg-between align-items-center">
-            <div className="col-lg-6 col-md-10">
-              <div className="tile-gallery-two pr-lg-3">
-                <div className="image-one">
-                  <img src="assets/img/tile-gallery/04.jpg" alt="Image" />
-                </div>
-                <div
-                  className="image-two text-right wow fadeInUp"
-                  data-wow-delay="0.3s"
-                >
-                  <img src="assets/img/tile-gallery/05.jpg" alt="Image" />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-9">
-              <div className="skill-content pl-xl-5 mt-md-50">
-                <div className="section-heading mb-20">
-                  <span className="tagline">Professional Skills</span>
-                  <h2 className="title">
-                    25 Years Of Experience In Medical Services
-                  </h2>
-                </div>
-                <p>
-                  Sed ut perspiciatis unde omnis natus error voluptatem santium
-                  doloremque laudantium totam rem aperieaque ipsa quae abillo
-                  ven veritatis et quasi architecto beatae vitae dicta.
-                </p>
-                <div
-                  className="skills-items mt-50 wow fadeInUp"
-                  data-wow-delay="0.4s"
-                >
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="89"
-                    data-line-color="#499afa"
-                    data-line-bg="#e4f0fe"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Medical Care</h5>
-                      <span className="progress-percentage">89%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="64"
-                    data-line-color="#ffae00"
-                    data-line-bg="#fff3d9"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Family Care</h5>
-                      <span className="progress-percentage">64%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="78"
-                    data-line-color="#b505ff"
-                    data-line-bg="#f4daff"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Child Care</h5>
-                      <span className="progress-percentage">78%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                  <div
-                    className="progress-bar-wrapper mb-40"
-                    data-percentage="85"
-                    data-line-color="#ff3000"
-                    data-line-bg="#ffe0d9"
-                  >
-                    <div className="progress-title-wrap">
-                      <h5 className="progress-title">Senior Care</h5>
-                      <span className="progress-percentage">85%</span>
-                    </div>
-                    <div className="progress-line-wrap">
-                      <div className="progress-line"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </Layouts>
   );
 };
 export default Doctor;
 
 
-export async function getStaticProps() {
-  const services = await sanityClient.fetch(`*[_type == "services"]{
-    title,
-    slug,
-  }`);
 
+export async function getStaticProps() {
+  const GET_providers = gql`
+    ${Providers}
+  `;
+  const GET_SERVICES = gql`
+    ${GetAllServices}
+  `;
+  // HOMEPAGE QUERY
+  const response = await client.query({
+    query: GET_providers,
+  });
+  // SERVICES QUERY
+  const res = await client.query({
+    query: GET_SERVICES,
+  });
+
+  const all_providers = response?.data.page;
+  const all_services = res?.data?.services?.nodes;
   return {
     props: {
-      services,
-    }
+      all_providers,
+      all_services,
+    },
   };
 }

@@ -57,7 +57,7 @@ export const Doctor = () => (
 export const Blog = () => (
   <Fragment>
     <li>
-      <Link href="/blog-standard">Blog Standard</Link>
+      <Link href="/health-vault">Blog Standard</Link>
     </li>
     <li>
       <Link href="/blog-details">Blog Details</Link>
