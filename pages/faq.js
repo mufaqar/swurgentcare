@@ -7,6 +7,7 @@ import { GetAllServices, helpAndFaq } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
 import VideoPopup from "../src/components/VideoPopup";
 import Layouts from "../src/layouts/Layouts";
+import OwnImage from '../src/components/OwnImage'
 
 const Faq = ({ all_services, all_Faqs }) => {
   const { seo, faq } = all_Faqs;
@@ -74,7 +75,7 @@ const Faq = ({ all_services, all_Faqs }) => {
                   </form>
                     </div> */}
                 <div className="video-widget">
-                  <img src="assets/img/section-img/faq-video.jpg" alt="Image" />
+                  <OwnImage path="/assets/img/section-img/faq-video.jpg" alt="Image" />
                   <a
                     href="#"
                     className="video-popup"

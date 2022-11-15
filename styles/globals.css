@@ -722,7 +722,9 @@ color: var(--color-tertiary);
 .copyright-area p{
   font-size: 16px !important;
 }
-
+.single-img{
+  width: 270px;
+}
 
 /* media Queries */
 @media (max-width: 768px) {

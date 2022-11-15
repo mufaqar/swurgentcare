@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Blog, Doctor, Home, Pages, Services, Shop } from "./Menu";
+import OwnImage from '../../components/OwnImage'
 
 const MobileMenu = ({ mobileTrigger, setMobileTrigger }) => {
   const [activeMenu, setActiveMenu] = useState("");
@@ -16,7 +17,7 @@ const MobileMenu = ({ mobileTrigger, setMobileTrigger }) => {
       <div className="panel-overlay" onClick={() => setMobileTrigger()} />
       <div className="panel-inner">
         <div className="panel-logo">
-          <img src="assets/img/logo.png" alt="" />
+          <OwnImage src="/assets/img/logo.png" alt="" />
         </div>
         <nav className="mobile-menu">
           <ul className="primary-menu">

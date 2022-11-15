@@ -1,4 +1,5 @@
 import Link from "next/link";
+import OwnImage from "../../components/OwnImage";
 
 const Footer2 = ({ noNewsletters, services }) => {
   
@@ -14,7 +15,7 @@ const Footer2 = ({ noNewsletters, services }) => {
               <div className="col-lg-3 col-md-8">
                 <div className="widget text-widget">
                   <div className="footer-logo">
-                    <img src="assets/site-logo.png" alt="swurgentcare" />
+                    <OwnImage path="/assets/site-logo.png" alt="swurgentcare" />
                   </div>
                  
                   <ul className="content__list">

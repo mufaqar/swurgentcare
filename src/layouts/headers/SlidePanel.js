@@ -1,4 +1,5 @@
 import React from "react";
+import OwnImage from "../../components/OwnImage";
 
 const SlidePanel = ({ sidebarTrigger, setSidebarTrigger }) => {
   return (
@@ -10,7 +11,7 @@ const SlidePanel = ({ sidebarTrigger, setSidebarTrigger }) => {
       <div className="panel-overlay" onClick={() => setSidebarTrigger()} />
       <div className="panel-inner">
         <div className="canvas-logo">
-          <img src="assets/img/logo.png" alt="" />
+          <OwnImage src="/assets/img/logo.png" alt="" />
         </div>
         <div className="about-us">
           <h5 className="canvas-widget-title">About Us</h5>

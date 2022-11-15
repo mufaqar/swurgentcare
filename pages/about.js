@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { sanityClient } from "../lib/studio";
+import OwnImage from "../src/components/OwnImage";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
@@ -25,8 +26,8 @@ const About = ({services}) => {
                       className="single-img wow fadeInLeft"
                       data-wow-delay="0.3s"
                     >
-                      <img
-                        src="assets/s1.jpeg"
+                      <OwnImage
+                        path="/assets/s1.jpeg"
                         alt=""
                       />
                     </div>
@@ -34,8 +35,8 @@ const About = ({services}) => {
                       className="single-img wow fadeInRight"
                       data-wow-delay="0.4s"
                     >
-                      <img
-                        src="assets/s3.jpeg"
+                      <OwnImage
+                        path="/assets/s3.jpeg"
                         alt=""
                       />
                     </div>
@@ -45,9 +46,9 @@ const About = ({services}) => {
                       className="single-img wow fadeInRight"
                       data-wow-delay="0.5s"
                     >
-                      <img
+                      <OwnImage
                         className="animate-float-bob-y"
-                        src="assets/s2.jpeg"
+                        path="/assets/s2.jpeg"
                         alt=""
                       />
                     </div>
@@ -55,8 +56,8 @@ const About = ({services}) => {
                       className="single-img wow fadeInLeft"
                       data-wow-delay="0.6s"
                     >
-                      <img
-                        src="assets/s4.jpeg"
+                      <OwnImage
+                        path="/assets/s4.jpeg"
                         alt=""
                       />
                     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import OwnImage from "../../components/OwnImage";
 import {Pages} from "./Menu";
 import MobileMenu from "./MobileMenu";
 import SlidePanel from "./SlidePanel";
@@ -63,8 +64,8 @@ const Header1 = ({ headerTopbar, position }) => {
         <div className="header-navigation">
           <div className="header-left">
             <div className="site-logo">
-              <Link href="/">
-                <img src="assets/site-logo.png" alt="swurgentcare" />
+              <Link href="/" passHref>
+                <OwnImage path="/assets/site-logo.png" alt="swurgentcare" />
               </Link>
             </div>
 

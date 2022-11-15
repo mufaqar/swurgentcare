@@ -182,13 +182,13 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
             </h2>
             <div className="row mt-5">
               {all_services.map((service, index) => (
-                <Link href={`${service?.slug}`} key={index}>
-                  <div className="col-md-3 col-6 service_card">
-                    <img
-                      src={service.servicesFields?.icon?.mediaItemUrl}
-                      alt={service.title}
-                      className="services_icon"
-                    />
+                <Link href={`${service?.slug}`} key={index} passHref>
+                  <div className="col-md-3 col-6 service_card ">
+                    <figure style={{width:'52px'}}><OwnImage
+                    path={service.servicesFields?.icon?.mediaItemUrl}
+                    alt={service.title}
+                    className="services_icon"
+                  /></figure>
                     <h6 className="text-center ">{service.title}</h6>
                   </div>
                 </Link>
@@ -223,7 +223,6 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                     className="image-two wow fadeInDown"
                     data-wow-delay="0.4s"
                   >
-                    {/* <img src="assets/covid-testing.jpg" alt="Image" style={{ borderRadius: '18px' }} /> */}
                   </div>
                 </div>
               </div>
@@ -248,7 +247,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
               {homePage.insurancePlanSection.map((item, i) => (
                 <div className="single-partner p-3" key={i}>
                   <a href="#">
-                    <img src={item?.image.mediaItemUrl} alt="Partner" />
+                    <OwnImage path={item?.image.mediaItemUrl} alt="Partner" />
                   </a>
                 </div>
               ))}

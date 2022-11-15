@@ -10,6 +10,7 @@ import { client } from "../lib/client";
 import { gql } from "@apollo/client";
 import { GetAllServices } from "../lib/queries";
 import Head from "next/head";
+import OwnImage from "../src/components/OwnImage";
 
 const Slug = ({ service, all_services }) => {
   const router = useRouter();
@@ -33,10 +34,7 @@ const Slug = ({ service, all_services }) => {
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
                   <figure className="mt-b relative">
-                    <img
-                      src={service?.servicesFields.featureImage.mediaItemUrl}
-                      alt="skin-infection"
-                    />
+                  <OwnImage path={service?.servicesFields.featureImage.mediaItemUrl}/>
                   </figure>
                   <div className="content_wrapper">
                     <div
