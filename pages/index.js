@@ -13,6 +13,7 @@ import { client } from "../lib/client";
 import { gql } from "@apollo/client";
 import { GetAllServices, homePage, testimonials } from "../lib/queries";
 import Head from "next/head";
+import HeadSection from "../src/components/HeadSection";
 
 const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
   const [video, setVideo] = useState(false);
@@ -20,7 +21,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
 
  
   const { seo, homePage } = homePageResponse;
-  console.log("🚀 ~ file: index.js ~ line 56 ~ Index ~ homePage", homePage);
+  
   const IntroHeading = homePage.intro?.heading.replace(
     /On-Demand/g,
     '<span class="last">On-Demand</span>'
@@ -38,13 +39,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
 
   return (
     <Layouts headerTopbar footer={2} noNewsletters services={all_services}>
-      <Head>
-        <title>{seo?.title}</title>
-        <meta name="description" content={seo?.metaDesc} />
-        <meta property="og:description" content={seo?.metaDesc} />
-        <meta property="og:title" content={seo?.title} />
-        <meta name="keywords" content={seo?.metaKeywords}></meta>
-      </Head>
+      <HeadSection seo={seo}/>
       {video && <VideoPopup close={setVideo} />}
       <>
         {/*====== Hero Slider Start ======*/}

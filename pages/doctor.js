@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import Head from "next/head";
 import Link from "next/link";
 import client from "../lib/client";
 import React from "react";
