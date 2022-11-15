@@ -3,19 +3,13 @@ import { useForm } from "react-hook-form";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 import Script from "next/script";
-import { Contact_Us, GetAllServices } from "../lib/queries";
+import { ContactQ, GetAllServices } from "../lib/queries";
 import { gql } from "@apollo/client";
 import { client } from "../lib/client";
-import Head from "next/head";
 
-export default function Contact({ all_ContactUs, all_services }) {
+const Contact = ({ all_ContactUs, all_services }) => {
   const { seo } = all_ContactUs;
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
     fetch("/api/contact", {
@@ -76,9 +70,9 @@ export default function Contact({ all_ContactUs, all_services }) {
                           </a>
                         </li>
                         {/* <li>
-               <span>Hotline</span>
-               <a href="tel:+12345678">12345678</a>
-             </li> */}
+                   <span>Hotline</span>
+                   <a href="tel:+12345678">12345678</a>
+                 </li> */}
                       </ul>
                     </div>
                     <div className="single-contact-info">
@@ -277,15 +271,13 @@ export default function Contact({ all_ContactUs, all_services }) {
       </Layouts>
     </div>
   );
-}
+};
+
+export default Contact;
 
 export async function getStaticProps() {
-  const GET_ContactUs = gql`
-    ${Contact_Us}
-  `;
-  const GET_SERVICES = gql`
-    ${GetAllServices}
-  `;
+  const GET_ContactUs = gql`${ContactQ}`;
+  const GET_SERVICES = gql`${GetAllServices}`;
   // HOMEPAGE QUERY
   const response = await client.query({
     query: GET_ContactUs,
