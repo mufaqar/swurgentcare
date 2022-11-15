@@ -1,12 +1,15 @@
 import React from 'react'
 
-export default function HeroBanner() {
+export default function HeroBanner({text}) {
+
+    const bannerHeading = text.replace(/quality care/g, '<span class="last">quality care</span>');         
+
     return (
         <main className='hero_banner'>
-            {/* <img src="assets/FAMILY-2.jpg" alt="banner" className='banner_image'/> */}
             <div className='container mx-auto hero_wrapper row'>
+            {text}
                 <div className='left '>
-                    <h2>Southwest urgent are ensuraing <span className='last'>quality care</span> with compassion</h2>
+                    <h2>{<div dangerouslySetInnerHTML={{ __html: bannerHeading}}></div>}</h2>
                 </div>
                 {/* <section className="doctors-section col-md-6 right ">
                     <div className="container">

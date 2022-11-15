@@ -10,53 +10,35 @@ import Image from "next/image";
 import OwnImage from "../src/components/OwnImage";
 import Appoinment from "../src/components/appoinment";
 import { client } from "../lib/client";
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 import { GetAllServices, homePage, testimonials } from "../lib/queries";
 import Head from "next/head";
 
-
 const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
-  
   const [video, setVideo] = useState(false);
   const router = useRouter();
 
-  const partner = [
-    {
-      image: "AETNA-LOGO.png",
-    },
-    {
-      image: "bcbs-logo.jpg",
-    },
-    {
-      image: "We-Accept_wellcare-health-plans-logo-1200x481.png",
-    },
-    {
-      image: "We_Accept_cigna_Health_Plans_Logo_Logo.png",
-    },
-    {
-      image: "We_Accept_Friday_Health_Plans_Logo_Logo.jpg",
-    },
-    {
-      image: "We_Accept_medicare_Health_Plans_Logo_Logo.png",
-    },
-    {
-      image: "We_Accept_Tricare_Health_Plans_Logo_Logo.jpg",
-    },
-    {
-      image: "We_Accept_united health care_Health_Plans_Logo_Logo.png",
-    },
-    {
-      image: "We-Accept Community-Health-Choice.png",
-    },
-    {
-      image: "We-Accept_wellcare-health-plans-logo-1200x481.png",
-    },
-  ];
-  const {seo} = homePageResponse 
+ 
+  const { seo, homePage } = homePageResponse;
+  console.log("🚀 ~ file: index.js ~ line 56 ~ Index ~ homePage", homePage);
+  const IntroHeading = homePage.intro?.heading.replace(
+    /On-Demand/g,
+    '<span class="last">On-Demand</span>'
+  );
+  const PediatricHeading = homePage.qualityPediatricCareSection?.title.replace(
+    /quality pediatric care?/g,
+    '<span class="last">quality pediatric care</span>'
+  );
+  const Covid19 = homePage.covid19Section?.content.replace(
+    /COVID-19/g,
+    '<span class="last">COVID-19</span>'
+  );
+
+  const {virtualUrgentCareSection}  = homePage
 
   return (
     <Layouts headerTopbar footer={2} noNewsletters services={all_services}>
-       <Head>
+      <Head>
         <title>{seo?.title}</title>
         <meta name="description" content={seo?.metaDesc} />
         <meta property="og:description" content={seo?.metaDesc} />
@@ -67,7 +49,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
       <>
         {/*====== Hero Slider Start ======*/}
 
-        <HeroBanner />
+        <HeroBanner text={homePage.mainText} />
         <Appoinment />
         {/*====== Hero Slider End ======*/}
         {/*====== About Section Start ======*/}
@@ -89,19 +71,14 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">About Swurgentcare</span> */}
                     <h2 className="title">
-                      Southwest Urgent Care Bringing Forth Quality{" "}
-                      <span className="last2">On-Demand</span> Care
+                      {
+                        <div
+                          dangerouslySetInnerHTML={{ __html: IntroHeading }}
+                        ></div>
+                      }
                     </h2>
                   </div>
-                  <p>
-                    Southwest Urgent care providing care for patients of all
-                    ages. From infants to older adults, optimal medical care for
-                    your whole family. If you are in need of medical assistance
-                    regarding illness or injury which is not life threatening,
-                    our physicians are capable of treating your sickness in the
-                    most professional manner. Southwest Urgent Care provides a
-                    wide range of services to help patients get well faster.
-                  </p>
+                  <p>{homePage.intro?.content}</p>
 
                   <a
                     className="template-btn sas mt-4 button"
@@ -126,19 +103,14 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">Pediatric Care</span> */}
                     <h2 className="title">
-                      Are you looking for{" "}
-                      <span className="last"> quality pediatric care?</span>{" "}
-                      Well, your search ends at Southwest Urgent Care!
+                      {
+                        <div
+                          dangerouslySetInnerHTML={{ __html: PediatricHeading }}
+                        ></div>
+                      }{" "}
                     </h2>
                   </div>
-                  <p>
-                    Our Pediatric services are backed by outstanding expertise
-                    and advanced diagnostic services to ensure effective
-                    treatment and a streamlned care experience for kids.
-                    Available 7 days a week, so you and your child don’t have to
-                    spend hours in an emergency room. Southwest Urgent Care
-                    provides a wide range of services for your Child's health.
-                  </p>
+                  <p>{homePage.qualityPediatricCareSection?.content}</p>
 
                   <button
                     onClick={() => router.push("/appointments")}
@@ -192,29 +164,12 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                       <span className="last">Virtual</span> Urgent Care
                     </h2>
                     <div className="mt-3">
-                      <div className="d-flex item-center">
-                        <span className="mr-2 plus_sign">+</span>
-                        <h6 className="pt-2">
-                          Get face to face consultation from the comfort of your
-                          home.
-                        </h6>
-                      </div>
-                      <div className="d-flex item-center">
-                        <span className="mr-2 plus_sign">+</span>
-                        <h6 className="pt-2">
-                          See a healthcare provider from anywhere at any time.
-                        </h6>
-                      </div>
-                      <div className="d-flex item-center">
-                        <span className="mr-2 plus_sign">+</span>
-                        <h6 className="pt-2">
-                          Real time conversation with your provider
-                        </h6>
-                      </div>
-                      <div className="d-flex item-center">
-                        <span className="mr-2 plus_sign">+</span>
-                        <h6 className="pt-2">We Accept Most Insurance</h6>
-                      </div>
+                      {virtualUrgentCareSection.map((item, i) => (
+                        <div className="d-flex item-center">
+                          <span className="mr-2 plus_sign">+</span>
+                          <h6 className="pt-2">{item?.listItem}</h6>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -257,14 +212,11 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                   <div className="section-heading mb-30">
                     <h2 className="title">
                       <span className="last" style={{ fontSize: "42px" }}>
-                        Are you not feeling well ?
+                        {homePage.covid19Section?.heading}
                       </span>
-                      <br /> We offer rapid{" "}
-                      <span className="last">COVID-19</span> antigen testing or{" "}
-                      <span className="last">COVID-19</span> PCR testing for
-                      your travel requirement 7 days a week. Call today to book
-                      an appointment, set up a telemedicine appointment or just
-                      simply walk-in at our urgent care.
+                      <br /> {<div
+                        dangerouslySetInnerHTML={{ __html: Covid19 }}
+                      ></div>}
                     </h2>
                     <button>See all COVID-19 Initiatives</button>
                   </div>
@@ -298,10 +250,10 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
               </span>
             </div>
             <div className="partner-logo-grid">
-              {partner.map((item, i) => (
+              {homePage.insurancePlanSection.map((item, i) => (
                 <div className="single-partner p-3" key={i}>
                   <a href="#">
-                    <img src={`assets/partner/${item.image}`} alt="Partner" />
+                    <img src={item?.image.mediaItemUrl} alt="Partner" />
                   </a>
                 </div>
               ))}
@@ -365,14 +317,20 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
 export default Index;
 
 export async function getStaticProps() {
-  const GET_SERVICES = gql`${GetAllServices}`;
-  const GET_HOMEPAGE_DATA = gql`${homePage}`;
-  const GET_TESTIMONIALS = gql`${testimonials}`;
-  // HOMEPAGE QUERY 
+  const GET_SERVICES = gql`
+    ${GetAllServices}
+  `;
+  const GET_HOMEPAGE_DATA = gql`
+    ${homePage}
+  `;
+  const GET_TESTIMONIALS = gql`
+    ${testimonials}
+  `;
+  // HOMEPAGE QUERY
   const res = await client.query({
     query: GET_HOMEPAGE_DATA,
   });
-  // SERVICES QUERY 
+  // SERVICES QUERY
   const response = await client.query({
     query: GET_SERVICES,
   });
@@ -382,14 +340,14 @@ export async function getStaticProps() {
   });
 
   const all_services = response?.data?.services?.nodes;
-  const homePageResponse = res.data?.page
-  const AllTestimonials = t_response.data?.testimonials?.nodes
+  const homePageResponse = res.data?.page;
+  const AllTestimonials = t_response.data?.testimonials?.nodes;
 
   return {
     props: {
       AllTestimonials,
       all_services,
-      homePageResponse
+      homePageResponse,
     },
   };
 }

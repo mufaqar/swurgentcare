@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 export default function Appoinment() {
     const router = useRouter();
-    console.log("🚀 ~ file: appoinment.js ~ line 6 ~ Appoinment ~ router", router)
+    
     const ChangeRouter = () => {
         router.push('/appointments')
     }
