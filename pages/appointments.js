@@ -1,11 +1,23 @@
+import { gql } from "@apollo/client";
+import Head from "next/head";
 import React from "react";
-import { sanityClient } from "../lib/studio";
+import { client } from "../lib/client";
+import { appointment, GetAllServices } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
-const Appointments = ({services}) => {
+const Appointments = ({appointment_page, all_services}) => {
+  const {seo} = appointment_page
+
   return (
-    <Layouts footer={2} services={services}>
+    <Layouts footer={2} services={all_services}>
+      <Head>
+        <title>{seo?.title}</title>
+        <meta name="description" content={seo?.metaDesc} />
+        <meta property="og:description" content={seo?.metaDesc} />
+        <meta property="og:title" content={seo?.title} />
+        <meta name="keywords" content={seo?.metaKeywords}></meta>
+      </Head>
       <PageBanner title={"Appointment"} />
       <section className="appointment-section section-gap">
         <div className="container container-1500">
@@ -78,7 +90,6 @@ const Appointments = ({services}) => {
         </div>
       </section>
       {/* <!--====== Appointment Section End ======--> */}
-
    
     </Layouts>
   );
@@ -87,14 +98,29 @@ export default Appointments;
 
 
 export async function getStaticProps() {
-  const services = await sanityClient.fetch(`*[_type == "services"]{
-    title,
-    slug,
-  }`);
+  const GET_Appointment_Page = gql`
+    ${appointment}
+  `;
+  const GET_SERVICES = gql`
+    ${GetAllServices}
+  `;
 
+  // SERVICES QUERY
+  const response = await client.query({
+    query: GET_SERVICES,
+  });
+
+  // Appointment QUERY
+  const res = await client.query({
+    query: GET_Appointment_Page,
+  });
+
+  const appointment_page = res?.data.page;
+  const all_services = response?.data?.services?.nodes;
   return {
     props: {
-      services,
-    }
+      appointment_page,
+      all_services,
+    },
   };
 }

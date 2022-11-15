@@ -692,7 +692,7 @@ p{
   font-size: 18px !important;
 }
 .content__list li a p{
-  font-size: 18px !important;
+  font-size: 16px !important;
   margin-top: -5px;
   margin-left:10px;
   line-height: 25px
@@ -715,7 +715,6 @@ color: var(--color-tertiary);
 .testimonial-inner h5{
   margin-top: 1rem;
 }
-
 
 
 
