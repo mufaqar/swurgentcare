@@ -1,7 +1,5 @@
 import { gql } from "@apollo/client";
-import Link from "next/link";
-import client from "../lib/client";
-import React from "react";
+import {client} from "../lib/client";
 import { GetAllServices, Providers } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
@@ -18,12 +16,9 @@ export default function doctor({ all_providers, all_services }) {
 }
 
 export async function getStaticProps() {
-  const GET_providers = gql`
-    ${Providers}
-  `;
-  const GET_SERVICES = gql`
-    ${GetAllServices}
-  `;
+  const GET_providers = gql`${Providers}`;
+  const GET_SERVICES = gql`${GetAllServices}`;
+
   // HOMEPAGE QUERY
   const response = await client.query({
     query: GET_providers,
