@@ -21,7 +21,7 @@ const Footer2 = ({ noNewsletters, services }) => {
                     <li>
                       <a href="https://goo.gl/maps/inpkL6wUZqMR3opX7">
                         <i className="far fa-map-marker-alt" />
-                          <p>400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States</p>
+                          <p className="">400 Promenade Wy Ste 1500, Sugar Land, TX 77478, United States</p>
                       </a>
                     </li> 
                     
