@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 import Head from "next/head";
 import Link from "next/link";
+import client from "../lib/client";
 import React from "react";
 import { GetAllServices, Providers } from "../lib/queries";
-import { sanityClient } from "../lib/studio";
 import PageBanner from "../src/components/PageBanner";
 import Layouts from "../src/layouts/Layouts";
 
