@@ -165,7 +165,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                     </h2>
                     <div className="mt-3">
                       {virtualUrgentCareSection.map((item, i) => (
-                        <div className="d-flex item-center">
+                        <div className="d-flex item-center" key={i}>
                           <span className="mr-2 plus_sign">+</span>
                           <h6 className="pt-2">{item?.listItem}</h6>
                         </div>
