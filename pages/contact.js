@@ -6,6 +6,7 @@ import Script from "next/script";
 import { ContactQ, GetAllServices } from "../lib/queries";
 import { gql } from "@apollo/client";
 import { client } from "../lib/client";
+import HeadSection from '../src/components/HeadSection'
 
 const Contact = ({ all_ContactUs, all_services }) => {
   const { seo } = all_ContactUs;
@@ -30,6 +31,7 @@ const Contact = ({ all_ContactUs, all_services }) => {
 
   return (
     <div>
+      <HeadSection seo={seo}/>
       <Layouts footer={2} services={all_services}>
         <PageBanner title={"Contact Us"} />
         {/*====== Page Title End ======*/}
