@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import NextNProgress from 'nextjs-progressbar';
 import { store } from '../lib/store'
 import { Provider } from 'react-redux'
+import SignatureState from "../context/signatureState";
 
 function MyApp({ Component, pageProps }) {
   // const [loader, setLoader] = useState(true);
@@ -27,7 +28,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <NextNProgress />
       <Provider store={store}>
+        <SignatureState>
         <Component {...pageProps} />
+        </SignatureState>
       </Provider>
     </Fragment>
   );

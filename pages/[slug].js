@@ -13,6 +13,7 @@ import Head from "next/head";
 import OwnImage from "../src/components/OwnImage";
 
 const Slug = ({ service, all_services }) => {
+  console.log("🚀 ~ file: [slug].js:16 ~ Slug ~ service", service)
   const router = useRouter();
   const { seo } = service;
   

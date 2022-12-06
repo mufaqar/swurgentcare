@@ -1,13 +1,46 @@
 import { gql } from "@apollo/client";
 import Head from "next/head";
-import React from "react";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { Context } from "../context/signatureContext";
 import { client } from "../lib/client";
 import { appointment, GetAllServices } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
+import Signature from "../src/components/signature";
 import Layouts from "../src/layouts/Layouts";
 
-const Appointments = ({appointment_page, all_services}) => {
-  const {seo} = appointment_page
+
+const Appointments = ({ appointment_page, all_services }) => {
+  const { seo } = appointment_page;
+  const a = useContext(Context)
+  const {updateState} = a
+  console.log("🚀 ~ file: appointments.js:16 ~ Appointments ~ a", a)
+  
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    updateState("123")
+    // fetch("/api/appoinment", {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json, text/plain, */*",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // }).then((res) => {
+    //   console.log("Response received");
+    //   if (res.status === 200) {
+    //     console.log("Response succeeded!");
+    //     alert("Message Successfully send.!");
+    //   }
+    // });
+  };
+
 
   return (
     <Layouts footer={2} services={all_services}>
@@ -24,7 +57,10 @@ const Appointments = ({appointment_page, all_services}) => {
           <div className="appointment-form-two style-two">
             <div
               className="appointment-image"
-              style={{ backgroundImage: "url(assets/mildred-doctor-appointment-wait-times-ftr.jpeg)" }}
+              style={{
+                backgroundImage:
+                  "url(assets/mildred-doctor-appointment-wait-times-ftr.jpeg)",
+              }}
             ></div>
             <div className="form-wrap">
               <div className="section-heading mb-50">
@@ -37,17 +73,30 @@ const Appointments = ({appointment_page, all_services}) => {
                 <div className="row">
                   <div className="col-md-6">
                     <div className="input-field">
-                      <input type="text" placeholder="Your Full Name" />
+                      <input
+                        type="text"
+                        placeholder="Your Full Name"
+                        name="name"
+                        {...register("name", { required: true })}
+                      />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="input-field">
-                      <input type="email" placeholder="Email Address" />
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        {...register("email", { required: true })}
+                      />
                     </div>
                   </div>
-                  <div className="col-md-6">
-                    <div className="input-field">
-                      <select>
+                  <div className="col-md-6 select_value">
+                    
+                      <select
+                        name="doctor"
+                        {...register("doctor", { required: true })}
+                      >
                         <option value="1" selected disabled>
                           Choose Doctors
                         </option>
@@ -56,32 +105,37 @@ const Appointments = ({appointment_page, all_services}) => {
                         <option value="4">Doctor Three</option>
                         <option value="5">Doctor Four</option>
                       </select>
-                    </div>
+                    
                   </div>
                   <div className="col-md-6">
                     <div className="input-field">
-                      <input type="date" />
+                      <input
+                        type="date"
+                        {...register("date", { required: true })}
+                      />
                     </div>
                   </div>
-                  <div className="col-md-6">
-                    <div className="input-field">
-                      <select>
-                        <option value="1" selected disabled>
-                          Services Category
-                        </option>
-                        <option value="2">Service One</option>
-                        <option value="3">Service Two</option>
-                        <option value="4">Service Three</option>
-                        <option value="5">Service Four</option>
+
+                  <div className="col-md-6 select_value">
+                      <select {...register("gender")}>
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="other">other</option>
                       </select>
-                    </div>
                   </div>
-                  <div className="col-md-6">
-                    <div className="input-field">
-                      <button type="submit" className="template-btn">
-                        Make an Appointment <i className="far fa-plus"></i>
-                      </button>
-                    </div>
+                </div>
+                <div>
+                  <Signature />
+                </div>
+                <div className="col-md-6">
+                  <div className="input-field">
+                    <button
+                      type="submit"
+                      className="template-btn"
+                      onClick={handleSubmit(onSubmit)}
+                    >
+                      Make an Appointment <i className="far fa-plus"></i>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -90,12 +144,10 @@ const Appointments = ({appointment_page, all_services}) => {
         </div>
       </section>
       {/* <!--====== Appointment Section End ======--> */}
-   
     </Layouts>
   );
 };
 export default Appointments;
-
 
 export async function getStaticProps() {
   const GET_Appointment_Page = gql`
