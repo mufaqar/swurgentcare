@@ -264,11 +264,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="surgery" id="surgery_no" value="option1" />
-                          <label className="form-check-label" for="surgery_no">No</label>
+                          <label className="form-check-label" htmlFor="surgery_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="surgery" id="surgery_yes" value="option2" />
-                          <label className="form-check-label" for="surgery_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="surgery_yes">Yes</label>
                         </div>
                       </div>
 
@@ -284,11 +284,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="allergy" id="allergy_no" value="option1" />
-                          <label className="form-check-label" for="allergy_no">No</label>
+                          <label className="form-check-label" htmlFor="allergy_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="allergy" id="allergy_yes" value="option2" />
-                          <label className="form-check-label" for="allergy_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="allergy_yes">Yes</label>
                         </div>
                       </div>
 
@@ -304,11 +304,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_no" value="option1" />
-                          <label className="form-check-label" for="mediProblem_no">No</label>
+                          <label className="form-check-label" htmlFor="mediProblem_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_yes" value="option2" />
-                          <label className="form-check-label" for="mediProblem_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="mediProblem_yes">Yes</label>
                         </div>
                       </div>
 
@@ -326,11 +326,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="smoking" id="smoking_no" value="option1" />
-                          <label className="form-check-label" for="smoking_no">No</label>
+                          <label className="form-check-label" htmlFor="smoking_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="smoking" id="smoking_yes" value="option2" />
-                          <label className="form-check-label" for="smoking_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="smoking_yes">Yes</label>
                         </div>
                       </div>
 
@@ -346,11 +346,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="tabacco" id="tabacco_no" value="option1" />
-                          <label className="form-check-label" for="tabacco_no">No</label>
+                          <label className="form-check-label" htmlFor="tabacco_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="tabacco" id="tabacco_yes" value="option2" />
-                          <label className="form-check-label" for="tabacco_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="tabacco_yes">Yes</label>
                         </div>
                       </div>
 
@@ -366,11 +366,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="drink" id="drink_no" value="option1" />
-                          <label className="form-check-label" for="drink_no">No</label>
+                          <label className="form-check-label" htmlFor="drink_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="drink" id="drink_yes" value="option2" />
-                          <label className="form-check-label" for="drink_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="drink_yes">Yes</label>
                         </div>
                       </div>
 
@@ -386,11 +386,11 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="drugs" id="drugs_no" value="option1" />
-                          <label className="form-check-label" for="drugs_no">No</label>
+                          <label className="form-check-label" htmlFor="drugs_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
                           <input className="form-check-input" type="radio" name="drugs" id="drugs_yes" value="option2" />
-                          <label className="form-check-label" for="drugs_yes">Yes</label>
+                          <label className="form-check-label" htmlFor="drugs_yes">Yes</label>
                         </div>
                       </div>
 
@@ -479,13 +479,13 @@ const Appointments = ({ appointment_page, all_services }) => {
                   <div className="col-12 input-field">
                     <div className="chkB0x">
                       <input className="" type="checkbox" id="authorize" value="option1" />
-                      <label className="" for="authorize">
+                      <label className="" htmlFor="authorize">
                         I DO NOT AUTHORIZE SWUCFP TO DISCLOSE ANY INFORMATION.
                       </label>
                     </div>
                     <div className="chkB0x">
                       <input className="" type="checkbox" id="authorize2" value="option2" />
-                      <label className="" for="authorize2">
+                      <label className="" htmlFor="authorize2">
                         I herby authorize SWUCFP to use and disclose health information to the following person:
                       </label>
                     </div>
