@@ -1,28 +1,31 @@
-import Link from "next/link";
-import Image from "next/image";
-import React from "react";
-import PageBanner from "../src/components/PageBanner";
-import Layouts from "../src/layouts/Layouts";
-import { useRouter } from "next/router";
-import { sanityClient } from "../lib/studio";
-import PortableText from "react-portable-text";
-import { client } from "../lib/client";
-import { gql } from "@apollo/client";
-import { GetAllServices } from "../lib/queries";
-import Head from "next/head";
-import OwnImage from "../src/components/OwnImage";
+import Link from 'next/link';
+import Image from 'next/image';
+import React from 'react';
+import PageBanner from '../src/components/PageBanner';
+import Layouts from '../src/layouts/Layouts';
+import { useRouter } from 'next/router';
+import { sanityClient } from '../lib/studio';
+import PortableText from 'react-portable-text';
+import { client } from '../lib/client';
+import { gql } from '@apollo/client';
+import { GetAllServices } from '../lib/queries';
+import Head from 'next/head';
+import OwnImage from '../src/components/OwnImage';
 
 const Slug = ({ service, all_services }) => {
-  console.log("🚀 ~ file: [slug].js:16 ~ Slug ~ service", service)
+  console.log('🚀 ~ file: [slug].js:16 ~ Slug ~ service', service);
   const router = useRouter();
   const { seo } = service;
-  
+
   return (
     <Layouts footer={2} services={all_services}>
       <Head>
         <title>{seo?.title}</title>
         <meta name="description" content={seo?.metaDesc} />
-        <meta property="og:image" content={service?.servicesFields.featureImage.mediaItemUrl} />
+        <meta
+          property="og:image"
+          content={service?.servicesFields.featureImage.mediaItemUrl}
+        />
         <meta property="og:description" content={seo?.metaDesc} />
         <meta property="og:title" content={seo?.title} />
         <meta name="keywords" content={seo?.metaKeywords}></meta>
@@ -35,7 +38,9 @@ const Slug = ({ service, all_services }) => {
               <div className="col-lg-8 order-lg-last">
                 <div className="service-details-wrapper">
                   <figure className="mt-b relative">
-                  <OwnImage path={service?.servicesFields.featureImage.mediaItemUrl}/>
+                    <OwnImage
+                      path={service?.servicesFields.featureImage.mediaItemUrl}
+                    />
                   </figure>
                   <div className="content_wrapper">
                     <div
@@ -65,32 +70,7 @@ const Slug = ({ service, all_services }) => {
                       ))}
                     </ul>
                   </div>
-                  <div className="widget appointment-form">
-                    <h3 className="widget-title">Appointment</h3>
-                    <p>
-                      Consectetur adipiscing elit sed do eiusmod tempor
-                      incididunt
-                    </p>
-                    <form onSubmit={(e) => e.preventDefault()} action="#">
-                      <div className="input-field">
-                        <input type="text" placeholder="Full Name" />
-                      </div>
-                      <div className="input-field">
-                        <input type="text" placeholder="Departments" />
-                      </div>
-                      <div className="input-field">
-                        <input type="text" placeholder="Choose Doctors" />
-                      </div>
-                      <div className="input-field">
-                        <input type="text" placeholder="Date & Time" />
-                      </div>
-                      <div className="input-field">
-                        <button type="submit" className="template-btn">
-                          Appointment Now <i className="far fa-plus" />
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+
                   <div className="widget working-schedule">
                     <h3 className="widget-title">Working Hour</h3>
                     <ul>
@@ -213,7 +193,7 @@ const GET_POST = gql`
 
 export async function getStaticProps({ params }) {
   console.log(
-    "🚀 ~ file: [slug].js ~ line 242 ~ getStaticProps ~ params",
+    '🚀 ~ file: [slug].js ~ line 242 ~ getStaticProps ~ params',
     params
   );
   const response = await client.query({
@@ -245,6 +225,6 @@ export async function getStaticPaths() {
   const paths = [];
   return {
     paths,
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
