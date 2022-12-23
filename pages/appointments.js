@@ -75,7 +75,7 @@ const Appointments = ({ appointment_page, all_services }) => {
                 <div className="col-md-4">
                     <div className="input-field">
                       <input
-                        type="date"
+                        type="text"
                         placeholder="Oppaintment Date"
                         {...register("oppint_date", { required: true })}
                       />
@@ -106,7 +106,7 @@ const Appointments = ({ appointment_page, all_services }) => {
                   <div className="col-md-4">
                     <div className="input-field">
                       <input
-                        type="date"
+                        type="text"
                         placeholder="Date of Birth"
                         {...register("date", { required: true })}
                       />
