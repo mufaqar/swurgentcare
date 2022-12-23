@@ -2568,21 +2568,51 @@ button {
 	color: var(--color-primary) !important;
 }
 
+.input-field .chkB0x{
+	display: flex;
+	align-items: center;
+}
+.input-field .chkB0x input{
+	width: 20px;
+}
+.input-field .chkB0x label{
+	margin-left: 15px;
+	font-size: 16px;
+	line-height: 20px;
+}
+
 @media (max-width: 1199px) {
 	.section-heading .title {
 		font-size: 28px;
 	}
 }
 
+form .tagline {
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--color-secondary);
+	line-height: 1.6;
+	margin-right: 15px;
+	width: 620px;
+}
+
+
+
 @media (max-width: 991px) {
 	.section-heading .title {
 		font-size: 32px;
+	}
+	form .tagline {
+		width: 100%;
 	}
 }
 
 @media (max-width: 575px) {
 	.section-heading .title {
 		font-size: 28px;
+	}
+	form .tagline {
+		width: 100%;
 	}
 }
 
@@ -3997,7 +4027,7 @@ button {
 }
 
 .appointment-form-two.style-two .appointment-image {
-	width: 38%;
+	width: 30%;
 }
 
 @media (max-width: 991px) {
@@ -4014,7 +4044,7 @@ button {
 }
 
 .appointment-form-two.style-two .form-wrap {
-	width: 62%;
+	width: 70%;
 	padding: 125px 70px 95px;
 }
 
