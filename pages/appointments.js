@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
+import { useFormik } from "formik";
 import Head from "next/head";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Context } from "../context/signatureContext";
 import { client } from "../lib/client";
@@ -10,37 +11,97 @@ import Signature from "../src/components/signature";
 import Layouts from "../src/layouts/Layouts";
 
 
+
+
+
+const initialValues = {
+  oppintment_date: '',
+  name: '',
+  email: '',
+  birth_date: '',
+  age: '',
+  address: '',
+  city: '',
+  state: '',
+  zipcode: '',
+  gender: '',
+  maritual_status: '',
+  race: '',
+  occupation: '',
+  phone: '',
+  home_phone: '',
+  dl: '',
+  ssn: '',
+  medications: '',
+  surgery: '',
+  surgery_explain: '',
+  allergy: '',
+  allergy_explain: '',
+  mediProblem: '',
+  mediProblem_explain: '',
+  smoking: '',
+  smoking_explain: '',
+  tabacco: '',
+  tabacco_explain: '',
+  drink: '',
+  drink_explain: '',
+  drugs: '',
+  drugs_explain: '',
+  pharmacy_name: '',
+  pharmacy_phone: '',
+  pharmacy_address: '',
+  visit_for: '',
+  rfirst_name: '',
+  rlast_name: '',
+  rphone: '',
+  rname: '',
+  relation: '',
+  rphone2: '',
+  about_us: '',
+
+}
+
 const Appointments = ({ appointment_page, all_services }) => {
   const { seo } = appointment_page;
-  const a = useContext(Context)
-  const { updateState } = a
-  console.log("🚀 ~ file: appointments.js:16 ~ Appointments ~ a", a)
+  // const a = useContext(Context)
+  // const { updateState } = a
+  // //console.log("🚀 ~ file: appointments.js:16 ~ Appointments ~ a", a)
 
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
 
-  const onSubmit = (data) => {
-    updateState("123")
-    // fetch("/api/appoinment", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json, text/plain, */*",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then((res) => {
-    //   console.log("Response received");
-    //   if (res.status === 200) {
-    //     console.log("Response succeeded!");
-    //     alert("Message Successfully send.!");
-    //   }
-    // });
-  };
+  // const onSubmit = (data) => {
+  //   updateState("123")
+  //   // fetch("/api/appoinment", {
+  //   //   method: "POST",
+  //   //   headers: {
+  //   //     Accept: "application/json, text/plain, */*",
+  //   //     "Content-Type": "application/json",
+  //   //   },
+  //   //   body: JSON.stringify(data),
+  //   // }).then((res) => {
+  //   //   console.log("Response received");
+  //   //   if (res.status === 200) {
+  //   //     console.log("Response succeeded!");
+  //   //     alert("Message Successfully send.!");
+  //   //   }
+  //   // });
+  // };
 
+  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      console.log(values)
+    }
+  })
+
+  const [_gender,set_gender] = useState()
+
+console.log(_gender)
 
   return (
     <Layouts footer={2} services={all_services}>
@@ -69,15 +130,18 @@ const Appointments = ({ appointment_page, all_services }) => {
                   Fill-up The From to Get Our Medical Services{" "}
                 </h2>
               </div>
-              <form onSubmit={(e) => e.preventDefault()} action="#">
+              <form onSubmit={handleSubmit} action="#">
                 <div className="row">
 
-                <div className="col-md-4">
+                  <div className="col-md-4">
                     <div className="input-field">
                       <input
                         type="text"
                         placeholder="Oppaintment Date"
-                        {...register("oppint_date", { required: true })}
+                        name="oppintment_date"
+                        value={values.oppintment_date}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -88,7 +152,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Your Full Name"
                         name="name"
-                        {...register("name", { required: true })}
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -98,7 +164,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="email"
                         placeholder="Email Address"
                         name="email"
-                        {...register("email", { required: true })}
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -108,7 +176,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="Date of Birth"
-                        {...register("date", { required: true })}
+                        name="birth_date"
+                        value={values.birth_date}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -119,7 +190,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="number"
                         placeholder="Age"
                         name="age"
-                        {...register("age", { required: true })}
+                        value={values.age}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -130,7 +203,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Address"
                         name="address"
-                        {...register("address", { required: true })}
+                        value={values.address}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -141,7 +216,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="City"
                         name="city"
-                        {...register("city", { required: true })}
+                        value={values.city}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -152,7 +229,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="State"
                         name="state"
-                        {...register("state", { required: true })}
+                        value={values.state}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -163,21 +242,30 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="ZIP Code"
                         name="zipcode"
-                        {...register("zipcode", { required: true })}
+                        value={values.zipcode}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
 
                   <div className="col-md-4 select_value">
-                    <select {...register("gender")}>
-                      <option value="female">female</option>
+                    <select name="gender"
+                      value={_gender}
+                      onChange={(e)=> set_gender(e.target.value)}
+                      onBlur={handleBlur}
+                      >
+                      <option value="female" >female</option>
                       <option value="male">male</option>
                       <option value="other">other</option>
                     </select>
                   </div>
 
                   <div className="col-md-4 select_value">
-                    <select {...register("maritualstatus")}>
+                    <select name="maritual_status"
+                      value={values.maritual_status}
+                      onChange={handleChange}
+                      onBlur={handleBlur} >
                       <option value="single">Single</option>
                       <option value="married">Married</option>
                     </select>
@@ -189,7 +277,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Race"
                         name="race"
-                        {...register("race", { required: true })}
+                        value={values.race}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -200,7 +290,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Occupation"
                         name="occupation"
-                        {...register("occupation", { required: true })}
+                        value={values.occupation}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -211,7 +303,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="tel"
                         placeholder="Cell Phone No"
                         name="phone"
-                        {...register("phone", { required: true })}
+                        value={values.phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -221,8 +315,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="tel"
                         placeholder="Home Phone No"
-                        name="phone"
-                        {...register("phone", { required: true })}
+                        name="home_phone"
+                        value={values.home_phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -233,7 +329,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="DL#"
                         name="dl"
-                        {...register("dl", { required: true })}
+                        value={values.dl}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -244,7 +342,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="SSN"
                         name="ssn"
-                        {...register("ssn", { required: true })}
+                        value={values.ssn}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -254,6 +354,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="MEDICATIONS CURRENTLY TAKING"
+                        name="medications"
+                        value={values.medications}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -263,16 +367,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">HAVE YOU HAD ANY SURGERIES IN THE PAST?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="surgery" id="surgery_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="surgery" id="surgery_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.surgery === "no"} />
                           <label className="form-check-label" htmlFor="surgery_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="surgery" id="surgery_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="surgery" id="surgery_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.surgery === "yes"} />
                           <label className="form-check-label" htmlFor="surgery_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="surgery_explain"
                         placeholder="Explain" disabled />
                     </div>
 
@@ -283,16 +392,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">ARE YOU ALLERGIC TO ANY MEDICATIONS?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="allergy" id="allergy_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="allergy" id="allergy_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.allergy === "no"} />
                           <label className="form-check-label" htmlFor="allergy_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="allergy" id="allergy_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="allergy" id="allergy_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.allergy === "yes"} />
                           <label className="form-check-label" htmlFor="allergy_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="allergy_explain"
                         placeholder="IF YES, WHICH ONES" disabled />
                     </div>
 
@@ -303,16 +417,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">DO YOU HAVE ANY ONGOING MEDICAL PROBLEMS?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.mediProblem === "no"} />
                           <label className="form-check-label" htmlFor="mediProblem_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="mediProblem" id="mediProblem_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.mediProblem === "yes"} />
                           <label className="form-check-label" htmlFor="mediProblem_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="mediProblem_explain"
                         placeholder="Explain" disabled />
                     </div>
 
@@ -325,16 +444,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">DO YOU SMOKE?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="smoking" id="smoking_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="smoking" id="smoking_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.smoking === "no"} />
                           <label className="form-check-label" htmlFor="smoking_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="smoking" id="smoking_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="smoking" id="smoking_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.smoking === "yes"} />
                           <label className="form-check-label" htmlFor="smoking_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="smoking_explain"
                         placeholder="HOW MUCH" disabled />
                     </div>
 
@@ -345,16 +469,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">CHEW TOBACCO?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="tabacco" id="tabacco_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="tabacco" id="tabacco_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.tabacco === "no"} />
                           <label className="form-check-label" htmlFor="tabacco_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="tabacco" id="tabacco_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="tabacco" id="tabacco_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.tabacco === "yes"} />
                           <label className="form-check-label" htmlFor="tabacco_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="tabacco_explain"
                         placeholder="HOW MUCH" disabled />
                     </div>
 
@@ -365,16 +494,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">DO YOU DRINK ALCOHOL?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="drink" id="drink_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="drink" id="drink_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.drink === "no"} />
                           <label className="form-check-label" htmlFor="drink_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="drink" id="drink_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="drink" id="drink_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.drink === "yes"} />
                           <label className="form-check-label" htmlFor="drink_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="drink_explain"
                         placeholder="HOW MUCH" disabled />
                     </div>
 
@@ -385,16 +519,21 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <span className="tagline">RECREATIONAL DRUGS?</span>
                       <div className="d-flex">
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="drugs" id="drugs_no" value="option1" />
+                          <input className="form-check-input" type="radio" name="drugs" id="drugs_no" value="no"
+                            onChange={handleChange}
+                            defaultChecked={values.drugs === "no"} />
                           <label className="form-check-label" htmlFor="drugs_no">No</label>
                         </div>
                         <div className="form-check form-check-inline">
-                          <input className="form-check-input" type="radio" name="drugs" id="drugs_yes" value="option2" />
+                          <input className="form-check-input" type="radio" name="drugs" id="drugs_yes" value="yes"
+                            onChange={handleChange}
+                            defaultChecked={values.drugs === "yes"} />
                           <label className="form-check-label" htmlFor="drugs_yes">Yes</label>
                         </div>
                       </div>
 
                       <input type="text"
+                        name="drugs_explain"
                         placeholder="WHICH ONES" disabled />
                     </div>
 
@@ -405,6 +544,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="Your Pharmacy Name"
+                        name="pharmacy_name"
+                        value={values.pharmacy_name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -414,8 +557,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="tel"
                         placeholder="Your Pharmacy No"
-                        name="phone"
-                        {...register("phone", { required: true })}
+                        name="pharmacy_phone"
+                        value={values.pharmacy_phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -425,6 +570,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="Your Pharmacy Address"
+                        name="pharmacy_address"
+                        value={values.pharmacy_address}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -434,6 +583,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="Explain you visit for today"
+                        name="visit_for"
+                        value={values.visit_for}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -448,7 +601,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="First Name"
                         name="rfirst_name"
-                        {...register("rfirst_name", { required: true })}
+                        value={values.rfirst_name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -459,7 +614,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Last Name"
                         name="rlast_name"
-                        {...register("rlast_name", { required: true })}
+                        value={values.rlast_name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -470,7 +627,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="tel"
                         placeholder="Phone"
                         name="rphone"
-                        {...register("rphone", { required: true })}
+                        value={values.rphone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -478,13 +637,21 @@ const Appointments = ({ appointment_page, all_services }) => {
 
                   <div className="col-12 input-field">
                     <div className="chkB0x">
-                      <input className="" type="checkbox" id="authorize" value="option1" />
+                      <input className="" type="checkbox" id="authorize" name="authorize"
+                        value={values.authorize}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
                       <label className="" htmlFor="authorize">
                         I DO NOT AUTHORIZE SWUCFP TO DISCLOSE ANY INFORMATION.
                       </label>
                     </div>
                     <div className="chkB0x">
-                      <input className="" type="checkbox" id="authorize2" value="option2" />
+                      <input className="" type="checkbox" id="authorize2" name="authorize2"
+                        value={values.authorize2}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
                       <label className="" htmlFor="authorize2">
                         I herby authorize SWUCFP to use and disclose health information to the following person:
                       </label>
@@ -498,7 +665,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Name"
                         name="rname"
-                        {...register("rname", { required: true })}
+                        value={values.rname}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -509,7 +678,9 @@ const Appointments = ({ appointment_page, all_services }) => {
                         type="text"
                         placeholder="Relationship"
                         name="relation"
-                        {...register("relation", { required: true })}
+                        value={values.relation}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -519,8 +690,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="tel"
                         placeholder="Phone"
-                        name="rphone"
-                        {...register("rphone", { required: true })}
+                        name="rphone2"
+                        value={values.rphone2}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -531,8 +704,10 @@ const Appointments = ({ appointment_page, all_services }) => {
                       <input
                         type="text"
                         placeholder="How did you hear about us?"
-                        name="hear_about_us"
-                        {...register("hear_about_us", { required: true })}
+                        name="about_us"
+                        value={values.about_us}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
                   </div>
@@ -548,7 +723,7 @@ const Appointments = ({ appointment_page, all_services }) => {
                     <button
                       type="submit"
                       className="template-btn"
-                      onClick={handleSubmit(onSubmit)}
+                    //onClick={handleSubmit(onSubmit)}
                     >
                       Make an Appointment <i className="far fa-plus"></i>
                     </button>
