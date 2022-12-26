@@ -9,6 +9,7 @@ import { appointment, GetAllServices } from "../lib/queries";
 import PageBanner from "../src/components/PageBanner";
 import Signature from "../src/components/signature";
 import Layouts from "../src/layouts/Layouts";
+import { signUpschema } from "../src/schemas/form";
 
 
 
@@ -92,16 +93,16 @@ const Appointments = ({ appointment_page, all_services }) => {
   //   // });
   // };
 
-  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,
+    validationSchema: signUpschema,
     onSubmit: (values) => {
       console.log(values)
     }
   })
 
-  const [_gender,set_gender] = useState()
+  console.log(errors)
 
-console.log(_gender)
 
   return (
     <Layouts footer={2} services={all_services}>
@@ -143,6 +144,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.oppintment_date && touched.oppintment_date ? (
+                        <p>{errors.oppintment_date}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -156,6 +160,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.name && touched.name ? (
+                        <p>{errors.name}</p>
+                        ) : null }
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -168,6 +175,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.email && touched.email ? (
+                        <p>{errors.email}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -181,6 +191,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.birth_date && touched.birth_date ? (
+                        <p>{errors.birth_date}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -194,6 +207,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.age && touched.age ? (
+                        <p>{errors.age}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -207,6 +223,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.address && touched.address ? (
+                        <p>{errors.address}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -220,6 +239,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.city && touched.city ? (
+                        <p>{errors.city}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -233,6 +255,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.state && touched.state ? (
+                        <p>{errors.state}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -246,13 +271,16 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.zipcode && touched.zipcode ? (
+                        <p>{errors.zipcode}</p>
+                        ) : null }
                     </div>
                   </div>
 
                   <div className="col-md-4 select_value">
                     <select name="gender"
-                      value={_gender}
-                      onChange={(e)=> set_gender(e.target.value)}
+                      value={values.gender}
+                      onChange={handleChange}
                       onBlur={handleBlur}
                       >
                       <option value="female" >female</option>
@@ -281,6 +309,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.race && touched.race ? (
+                        <p>{errors.race}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -294,6 +325,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.occupation && touched.occupation ? (
+                        <p>{errors.occupation}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -307,6 +341,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.phone && touched.phone ? (
+                        <p>{errors.phone}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -320,6 +357,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.home_phone && touched.home_phone ? (
+                        <p>{errors.home_phone}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -333,6 +373,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                       {errors.dl && touched.dl ? (
+                        <p>{errors.dl}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -346,6 +389,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.ssn && touched.ssn ? (
+                        <p>{errors.ssn}</p>
+                        ) : null }
                     </div>
                   </div>
 
@@ -359,6 +405,9 @@ console.log(_gender)
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      {errors.medications && touched.medications ? (
+                        <p>{errors.medications}</p>
+                        ) : null }
                     </div>
                   </div>
 
