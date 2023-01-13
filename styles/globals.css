@@ -801,3 +801,13 @@ color: var(--color-tertiary);
     margin-top: -5.8rem;
   }
 }
+
+._blog img{
+  border-radius: 15px;
+}
+._blog h4{
+  cursor: pointer;
+}
+.blog_posts{
+  margin-bottom: 3rem;
+}
