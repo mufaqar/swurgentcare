@@ -811,3 +811,10 @@ color: var(--color-tertiary);
 .blog_posts{
   margin-bottom: 3rem;
 }
+
+.blog_single img{
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
