@@ -848,3 +848,7 @@ p {
 .blog_single .icon-box img {
   width: auto;
 }
+
+.blog_single .icon-box {
+  text-align: center;
+}
