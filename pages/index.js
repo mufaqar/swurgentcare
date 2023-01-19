@@ -51,6 +51,17 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
         <section className="about-section section-gap">
           <div className="container">
             <div className="row align-items-center justify-content-center">
+            <div className="section-heading text-center mb-30">
+                    
+                    <h2 className="title underline">
+                      {
+                        <div
+                          dangerouslySetInnerHTML={{ __html: IntroHeading }}
+                        ></div>
+                      }
+                    </h2>
+                  </div>
+
               <div className="col-md-6">
                 <div className=" mb-xl-50">
                   <div
@@ -61,18 +72,13 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                   </div>
                 </div>
               </div>
+
+
+              
               <div className="col-md-6">
+              
                 <div className="about-text">
-                  <div className="section-heading mb-30">
-                    
-                    <h2 className="title">
-                      {
-                        <div
-                          dangerouslySetInnerHTML={{ __html: IntroHeading }}
-                        ></div>
-                      }
-                    </h2>
-                  </div>
+                  
                   <p>{homePage.intro?.content}</p>
 
                   <a
@@ -97,7 +103,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">Pediatric Care</span> */}
-                    <h2 className="title">
+                    <h2 className="title ">
                       {
                         <div
                           dangerouslySetInnerHTML={{ __html: PediatricHeading }}
