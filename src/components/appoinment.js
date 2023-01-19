@@ -18,17 +18,17 @@ export default function Appoinment() {
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Monday - Friday</span></h5>
                     <p>9:00 am to 8:00 pm</p>
-                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
+                    <a rel="noreferrer" href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Saturday</span></h5>
                     <p>09:00 am to 03:00 pm</p>
-                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
+                    <a rel="noreferrer" href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Sunday</span></h5>
                     <p>09:00 am to 01:00 pm</p>
-                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
+                    <a rel="noreferrer" href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
 
             </section>
