@@ -846,5 +846,5 @@ p {
 }
 
 .blog_single .icon-box img {
-  max-width: 250px;
+  width: auto;
 }
