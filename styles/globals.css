@@ -387,12 +387,11 @@ span.plus_sign {
 .covid19 button{
   margin-top: 1rem;
   padding: 7px 1.5rem;
-  border-radius: 30px;
   border: 1px solid white;
   background: transparent;
   color: #fff;
   font-size: 14px;
-  box-shadow: -6px 6px 0px 0px rgba(33,205,192,0.38);
+  box-shadow: -6px 6px 0px 0px  rgba(255, 255, 255, 0.2);
   transition: .3s ease-in-out;
 }
 .covid19 button:hover{

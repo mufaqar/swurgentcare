@@ -161,7 +161,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
                 <div className="about-text">
                   <div className="section-heading mb-30">
                     {/* <span className="tagline">Virtual Urgent Care</span> */}
-                    <h2 className="title">
+                    <h2 className="title underline">
                       <span className="last">Virtual</span> Urgent Care
                     </h2>
                     <div className="mt-3">
@@ -183,7 +183,7 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
         {/*====== Services ======*/}
         <section id="services" className="section-gap services bg_">
           <div className="container mx-auto">
-            <h2 className="title text-center">
+            <h2 className="title text-center ">
               <span className="last">S</span>ervices
             </h2>
             <div className="row mt-5">
@@ -211,15 +211,15 @@ const Index = ({ AllTestimonials, all_services, homePageResponse }) => {
               <div className="lg:col-md-7">
                 <div className="about-text">
                   <div className="section-heading mb-30">
-                    <h2 className="title">
-                      <span className="last" style={{ fontSize: "42px" }}>
+                    <h2 className="title ">
+                      <span className="last mb-4" style={{ fontSize: "42px" }}>
                         {homePage.covid19Section?.heading}
                       </span>
                       <br /> {<div
                         dangerouslySetInnerHTML={{ __html: Covid19 }}
                       ></div>}
                     </h2>
-                    <button>See all COVID-19 Initiatives</button>
+                    <button className="mt-4">See all COVID-19 Initiatives</button>
                   </div>
                 </div>
               </div>
