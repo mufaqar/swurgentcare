@@ -99,7 +99,7 @@ const Header1 = ({ headerTopbar, position }) => {
                   </li>
                   <li>
                     <Link href={`${URL}/blog`}>
-                      Blogs
+                      <a>Blogs</a>
                     </Link>
                   </li>
                   <li>
