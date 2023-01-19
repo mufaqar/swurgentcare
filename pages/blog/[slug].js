@@ -33,9 +33,9 @@ const Slug = ({ post, all_services }) => {
             <div className="row justify-content-center">
               <div className="col-lg-12 order-lg-last">
                 <div className="service-details-wrapper">
-                  <figure className="mt-b relative">
+                  {/* <figure className="mt-b relative">
                     <OwnImage path={post.featuredImage?.node.mediaItemUrl} />
-                  </figure>
+                  </figure> */}
                   <div className="content_wrapper blog_single">
                     <div
                       className=""
