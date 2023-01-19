@@ -1,12 +1,10 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 export default function Appoinment() {
     const router = useRouter();
     
-    const ChangeRouter = () => {
-        router.push('/appointments')
-    }
     return (
         <>
             <section className='container mx-auto d-flex row appoinment_section'>
@@ -20,17 +18,17 @@ export default function Appoinment() {
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Monday - Friday</span></h5>
                     <p>9:00 am to 8:00 pm</p>
-                    <button onClick={ChangeRouter}>Get an appoinment</button>
+                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Saturday</span></h5>
                     <p>09:00 am to 03:00 pm</p>
-                    <button onClick={ChangeRouter}>Get an appoinment</button>
+                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
                 <div className='col-md-3 _card'>
                     <h5 className="title"> <span className='last'>Sunday</span></h5>
                     <p>09:00 am to 01:00 pm</p>
-                    <button onClick={ChangeRouter}>Get an appoinment</button>
+                    <a href="https://www.solvhealth.com/r/book-online/AXj6Oj/9o5Ft-2I5TecBSvaTW8Ej/slots/today" target="_blank"><button>Get an appoinment</button></a>
                 </div>
 
             </section>

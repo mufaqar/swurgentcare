@@ -580,7 +580,7 @@ ul.sub-menu > li {
 ._card {
   background: var(--color-primary);
   padding: 3rem 1.5rem;
-  border-right: 1px solid #1f355e;
+  border-right: 1px solid #514f5197;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -609,17 +609,16 @@ ul.sub-menu > li {
 ._card button {
   margin-top: 1rem;
   padding: 7px 1.5rem;
-  border-radius: 30px;
   border: 1px solid white;
   background: transparent;
   color: #fff;
   font-size: 14px;
-  box-shadow: -6px 6px 0px 0px rgba(33,205,192,0.38);
+  box-shadow: -6px 6px 0px 0px rgba(202, 188, 176, 0.397);
   transition: .3s ease-in-out;
 }
 ._card button:hover {
-  background: red;
-  border-color: red;
+  background: rgba(202, 188, 176, 0.397);
+  border-color: rgba(202, 188, 176, 0.397);
   box-shadow:none
 }
 ._image>div>span{
@@ -636,12 +635,12 @@ ul.sub-menu > li {
 .button{
   margin-top: 1rem;
   padding: .7rem 1.5rem;
-  border-radius: 30px;
+  border-radius: 0;
   border: 1px solid white;
-  background: transparent;
+  background: rgba(202, 188, 176, 0.397);
   color: #fff;
   font-size: 14px;
-  box-shadow: -6px 6px 0px 0px rgba(33,205,192,0.38);
+  /* box-shadow: -6px 6px 0px 0px rgba(202, 188, 176, 0.397); */
   transition: .3s ease-in-out;
 }
 .btn_padding{
