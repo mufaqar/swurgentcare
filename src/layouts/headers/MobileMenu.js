@@ -48,9 +48,9 @@ const MobileMenu = ({ mobileTrigger, setMobileTrigger }) => {
               </a>
             </li>
             <li>
-              <a href="/blog">
-                Blogs
-              </a>
+              <Link href="/blog">
+               <a>Blogs</a>
+              </Link>
             </li>
             <li>
               <Link href="/doctor">
