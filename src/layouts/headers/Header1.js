@@ -98,9 +98,9 @@ const Header1 = ({ headerTopbar, position }) => {
                     </a>
                   </li>
                   <li>
-                    <a href={`${URL}/blog`}>
+                    <Link href={`${URL}/blog`}>
                       Blogs
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link href="/doctor">
