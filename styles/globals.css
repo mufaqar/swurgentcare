@@ -842,7 +842,7 @@ p {
 
 .blog_single .row {
   padding: 50px 0;
-  vertical-align: middle;
+  align-items: center;
 }
 
 .blog_single .icon-box img {
