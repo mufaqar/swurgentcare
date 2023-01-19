@@ -844,3 +844,7 @@ p {
   padding: 50px 0;
   vertical-align: middle;
 }
+
+.blog_single .icon-box img {
+  max-width: 250px;
+}
