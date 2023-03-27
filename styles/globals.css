@@ -430,8 +430,17 @@ span.plus_sign {
   font-size: 1.5em;
   margin: 0.6rem 0;
 }
+.content_wrapper figure {
+  width: 100% !important;
+  margin-top: 1.5rem;
+}
+.content_wrapper figure img {
+  width: 100% !important;
+  height: 100% !important;
+}
 .content_wrapper h2, .content_wrapper h2 strong {
   font-size: 1.5rem;
+  margin: 1rem 0;
   color: #464246 !important;
 }
 .content_wrapper h3, .content_wrapper h3 strong {
