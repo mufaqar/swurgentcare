@@ -432,11 +432,11 @@ span.plus_sign {
 }
 .content_wrapper figure {
   width: 100% !important;
-  margin-top: 1.5rem;
 }
 .content_wrapper figure img, .content_wrapper img {
   width: 100% !important;
   height: 100% !important;
+  margin-top: 1.5rem;
 }
 .content_wrapper h2, .content_wrapper h2 strong {
   font-size: 1.5rem;
