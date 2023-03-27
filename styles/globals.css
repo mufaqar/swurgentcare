@@ -434,7 +434,7 @@ span.plus_sign {
   width: 100% !important;
   margin-top: 1.5rem;
 }
-.content_wrapper figure img {
+.content_wrapper figure img, .content_wrapper img {
   width: 100% !important;
   height: 100% !important;
 }
