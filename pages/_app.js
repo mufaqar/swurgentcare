@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       {/* {loader && <PreLoader />} */}
       <Head>
         <title>Urgent Medical Care in Houston, TX - SWUrgentCare</title>
+        <meta name="google-site-verification" content="EtyPxKNRa3SL9TDO4Ol7TULA57YazMjkw-K-YW6NaWg" />
         <link
           rel="shortcut icon"
           href="favicon.ico"
