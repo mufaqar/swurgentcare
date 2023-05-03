@@ -1,18 +1,18 @@
-import { gql } from "@apollo/client";
-import Head from "next/head";
-import React, { useState } from "react";
-import { Accordion } from "react-bootstrap";
-import { client } from "../lib/client";
-import { GetAllServices, helpAndFaq } from "../lib/queries";
-import PageBanner from "../src/components/PageBanner";
-import VideoPopup from "../src/components/VideoPopup";
-import Layouts from "../src/layouts/Layouts";
-import OwnImage from '../src/components/OwnImage'
+import { gql } from '@apollo/client';
+import Head from 'next/head';
+import React, { useState } from 'react';
+import { Accordion } from 'react-bootstrap';
+import { client } from '../lib/client';
+import { GetAllServices, helpAndFaq } from '../lib/queries';
+import PageBanner from '../src/components/PageBanner';
+import VideoPopup from '../src/components/VideoPopup';
+import Layouts from '../src/layouts/Layouts';
+import OwnImage from '../src/components/OwnImage';
 
 const Faq = ({ all_services, all_Faqs }) => {
   const { seo, faq } = all_Faqs;
-  const [active, setActive] = useState("collapse1");
-  const active_ = (value) => (value === active ? "active-accordion" : "");
+  const [active, setActive] = useState('collapse1');
+  const active_ = (value) => (value === active ? 'active-accordion' : '');
   const [video, setVideo] = useState(false);
   var i;
   return (
@@ -25,14 +25,13 @@ const Faq = ({ all_services, all_Faqs }) => {
         <meta name="keywords" content={seo?.metaKeywords}></meta>
       </Head>
       {video && <VideoPopup close={setVideo} />}
-      <PageBanner title={"Help & FAQ"} />
+      <PageBanner title={'Help & FAQ'} />
       <section className="faq-section section-gap">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7">
               <div className="faq-page-content pr-xl-4">
                 <h3 className="faq-title">Frequently Asked Questions</h3>
-
                 <Accordion
                   defaultActiveKey={`collapse${i + 1}`}
                   className="accordion"
@@ -75,7 +74,10 @@ const Faq = ({ all_services, all_Faqs }) => {
                   </form>
                     </div> */}
                 <div className="video-widget">
-                  <OwnImage path="/assets/img/section-img/faq-video.jpg" alt="Image" />
+                  <OwnImage
+                    path="/assets/img/section-img/faq-video.jpg"
+                    alt="Image"
+                  />
                   <a
                     href="#"
                     className="video-popup"
@@ -96,7 +98,6 @@ const Faq = ({ all_services, all_Faqs }) => {
   );
 };
 export default Faq;
-
 
 export async function getStaticProps() {
   const GET_FAQS = gql`
