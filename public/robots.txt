@@ -1,2 +1,15 @@
+# *
 User-agent: *
-Disallow:
+Disallow: /404
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://swurgentcare.com
+
+# Sitemaps
+Sitemap: https://swurgentcare.com/sitemap.xml
+Sitemap: https://swurgentcare.comsitemap.xml
+Sitemap: https://swurgentcare.comserver-sitemap.xml
