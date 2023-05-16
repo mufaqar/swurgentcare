@@ -1,107 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-         <url><loc>https://swurgentcare.com</loc><lastmod>2023-05-04T14:13:23.588Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-         <url><loc>https://swurgentcare.com/about</loc><lastmod>2023-05-04T14:13:23.589Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-         <url><loc>https://swurgentcare.com/appointments</loc><lastmod>2023-05-04T14:13:23.589Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-     
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/covid-testing</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/strep-throat</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/virtual-visits</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/sports-physicals</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/cold-and-flu</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/std-testing</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/skin-infection-rash</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/xray</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/flu-shot</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/uti-treatment</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/injury-care</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/allergies</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/general-illness</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-         
-        <url>
-          <loc>https://swurgentcare.com/ear-infection</loc>
-          <lastmod>11:51</lastmod>
-          <priority>0.70</priority>
-        </url>
-      
-    </urlset>
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://swurgentcare.com</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/about</loc>
+      <lastmod>2023-05-04T14:13:23.589Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/appointments</loc>
+      <lastmod>2023-05-04T14:13:23.589Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/covid-testing</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/strep-throat</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/virtual-visits</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/sports-physicals</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/cold-and-flu</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/std-testing</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/skin-infection-rash</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/xray</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/flu-shot</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/uti-treatment</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/injury-care</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/allergies</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/general-illness</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+   <url>
+      <loc>https://swurgentcare.com/ear-infection</loc>
+      <lastmod>2023-05-04T14:13:23.588Z</lastmod>
+      <priority>0.70</priority>
+   </url>
+</urlset>

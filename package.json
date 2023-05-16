@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "sitemap": "node next-sitemap.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build ",
     "start": "next start",
-    "lint": "next lint",
-    "sitemap": "node next-sitemap.js"
+    "lint": "next lint"
+   
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",

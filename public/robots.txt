@@ -11,5 +11,4 @@ Host: https://swurgentcare.com
 
 # Sitemaps
 Sitemap: https://swurgentcare.com/sitemap.xml
-Sitemap: https://swurgentcare.com/sitemap.xml
-Sitemap: https://swurgentcare.com/server-sitemap.xml
+
