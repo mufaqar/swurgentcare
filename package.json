@@ -4,22 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && sitemap",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "sitemap": "node next-sitemap.js"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@reduxjs/toolkit": "^1.8.6",
     "formik": "^2.2.9",
+    "fs": "^0.0.1-security",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",
     "i": "^0.3.7",
     "isotope-layout": "^3.0.6",
     "next": "^12.1.0",
     "next-sanity": "^1.0.0",
-    "next-sitemap": "^4.0.9",
     "nextjs-progressbar": "^0.0.16",
     "nodemailer": "^6.8.0",
     "npm": "^8.19.2",
