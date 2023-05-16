@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sitemap": "node next-sitemap.js"
+    "postbuild": "node next-sitemap.js"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
