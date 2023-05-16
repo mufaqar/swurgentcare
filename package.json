@@ -1,13 +1,13 @@
 {
   "name": "swurgentcare",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
-  "scripts": {
-    "sitemap": "node next-sitemap.js",
+  "scripts": {   
     "dev": "next dev",
     "build": "next build ",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap": "node next-sitemap.js"
    
   },
   "dependencies": {
